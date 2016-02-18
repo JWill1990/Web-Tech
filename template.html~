@@ -4,7 +4,11 @@
     <head>
         <meta charset="UTF-8"/>
         <title>uPd8</title>
+		  <link href="resetstyle.css" rel="stylesheet" type="text/css" />
         <link href="style.css" rel="stylesheet" type="text/css" />
+		  <!--[if lt IE 9]>
+  		  <script src="dist/html5shiv.js"></script>
+		  <![endif]-->
     </head>
     <body>
         <header>uPd8</header>
@@ -18,10 +22,6 @@
 							   <li><a href="#about" target="_blank"> About </a></li>
 								<li><a href="#devblog" target="_blank"> Development blog </a></li>
 								<li><a href="#registration" target="_blank"> Registration </a></li>
-						  </ul>
-						  <ul class="login">
-						      <li><a href="#login">Login</a></li>
-							   <li><a href="#about" target="_blank" > About </a></li>
 						  </ul>
                 </section>
                 <section class="right">
