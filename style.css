@@ -1,0 +1,53 @@
+
+html, body, #container { 
+    height: 100%; 
+}
+
+body > #container { 
+    height: auto; 
+    min-height: 100%; 
+}
+
+#content{
+    padding-bottom: 70px;
+}
+
+header {
+    background-color: rgb(127,127,127);
+    font-size: 60px;
+    font-family: Arial,Helvetica,FreeSans,sans-serif;
+    font-weight: bold;
+    text-align: center;
+    padding: 20px;
+    height: 50px;
+    clear: both; 
+    color: rgb(255,255,255);
+}
+
+footer { 
+    background-color: rgb(127,127,127);
+    clear: both; 
+    width: 100%;
+    position: relative;
+    height: 20px;
+    margin-top: -20px;
+}
+
+section.left, section.right {
+    text-align: justify;
+}
+section.left { 
+    float: left; 
+    width: 15%; 
+    margin: 0 2% 0 4%; 
+}
+
+section.right { 
+    float: right; 
+    width: 60%; 
+    margin: 0 4% 0 2%;
+}
+
+.indent { 
+    margin-left: 20px; 
+}
