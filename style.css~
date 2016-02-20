@@ -87,11 +87,12 @@ li a {
 	 border: 1px solid #555;
     padding: 10px 12px;
 	 text-decoration: none;
-	 background: #dbe24d; /* Old browsers */
+	/*The following is from ColorZilla.com to generate gradients */
+	 background: #dbe24d; /* Old browsers */	
 	 background: -moz-radial-gradient(center, ellipse cover, #dbe24d 15%, #29307c 75%, #29307c 76%, #29307c 99%); /* FF3.6-15 */
 	 background: -webkit-radial-gradient(center, ellipse cover, #dbe24d 15%,#29307c 75%,#29307c 76%,#29307c 99%); /* Chrome10-25,Safari5.1-6 */
 	 background: radial-gradient(ellipse at center, #dbe24d 15%,#29307c 75%,#29307c 76%,#29307c 99%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-	 filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#dbe24d', endColorstr='#29307c',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+	 filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#dbe24d', endColorstr='#29307c',GradientType=1 ); /* IE6-9 */
 }
 
 .active {
