@@ -15,12 +15,13 @@ body {
                  linear-gradient(#1d1d1d 25%, #1a1a1a 25%, #1a1a1a 50%, transparent 50%, transparent 75%, #242424 75%, #242424)
                  0 0 / 20px #131313;
 	behavior: url(/pie/PIE.htc);
-	max-width: 1400px;
+	max-width: 1200px;
 	margin: 0 auto;
 }
 
 html, body, #container { 
     height: 100%; 
+	 width: 100%;
 }
 
 body > #container { 
@@ -33,26 +34,14 @@ body > #container {
 }
 
 header {
-    background: -webkit-linear-gradient(63deg, #151515 5px, transparent 5px) 0 5px,
-           	    -webkit-linear-gradient(243deg, #151515 5px, transparent 5px) 10px 0px,
-				    -webkit-linear-gradient(63deg, #222 5px, transparent 5px) 0px 10px,
-				    -webkit-linear-gradient(243deg, #222 5px, transparent 5px) 10px 5px,
-				    -webkit-linear-gradient(0deg, #1b1b1b 10px, transparent 10px),
-				    -webkit-linear-gradient(#1d1d1d 25%, #1a1a1a 25%, #1a1a1a 50%, transparent 50%, transparent 75%, #242424 75%, #242424);
-	background-size: 20px 20px;
-	background-color: #131313;
-	-pie-background: linear-gradient(27deg, #151515 5px, transparent 5px) 0 5px / 20px,
-                 linear-gradient(207deg, #151515 5px, transparent 5px) 10px 0px / 20px,
-                 linear-gradient(27deg, #222 5px, transparent 5px) 0px 10px / 20px,
-                 linear-gradient(207deg, #222 5px, transparent 5px) 10px 5px / 20px,
-                 linear-gradient(90deg, #1b1b1b 10px, transparent 10px) 0 0 / 20px,
-                 linear-gradient(#1d1d1d 25%, #1a1a1a 25%, #1a1a1a 50%, transparent 50%, transparent 75%, #242424 75%, #242424)
-                 0 0 / 20px #131313;
-	 behavior: url(/pie/PIE.htc);
 	 height: 100px;
+	 background-color: white;
+	 float: left;
 	 width: 100%;
 	 border:5px solid white;
+	 margin: 10px 10px;
 	 clear: both;
+	 border-radius: 16px;
 }
 
 #logo {
@@ -63,7 +52,13 @@ header {
 	float: right;
 }
 
-
+#updatepic {
+	height: 80px;
+	width: 200px;
+	padding: 10px;
+	margin: auto 10px;
+	float: left;
+}
 
 footer { 
     background-color: rgb(127,127,127);
@@ -117,11 +112,7 @@ nav ul li a {
 	color: black;
 	padding: 8px 0;
 	width: 100%;
-	background: #bbd9f9; /* Old browsers */
-	background: -moz-linear-gradient(-45deg, #bbd9f9 100%, #98b0d9 100%); /* FF3.6-15 */
-	background: -webkit-linear-gradient(-45deg, #bbd9f9 100%,#98b0d9 100%); /* Chrome10-25,Safari5.1-6 */
-	background: linear-gradient(135deg, #bbd9f9 100%,#98b0d9 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#bbd9f9', endColorstr='#98b0d9',GradientType=1 ); /* IE6-9*/
+   background-color: rgba(250,250,250,0.5);
 }
 
 nav ul li a:hover {
@@ -144,5 +135,73 @@ nav ul li:last-child a {
     color: white;
 }
 
+label {
+	display: block;
+	color: black;
+	text-shadow: 2px 2px #ff0000;
+	letter-spacing: 2px;
+}
+
+.login {
+	width: 200px;
+	float: right;
+	margin: 10px auto;
+	padding: 25px;
+	background-color: rgba(250,250,250,0.5);
+	border-radius: 5px;
+   border: 1px solid rgba(0, 0, 0, 0.3);
+}
+.login ul {
+	padding: 0;
+	margin: 0;
+}
+.login li {
+	display: inline;
+	float: left;
+}
+.login input:not([type=submit]) {
+	padding: 5px;
+	margin-right: 10px;
+	border: 1px solid rgba(0, 0, 0, 0.3);
+	border-radius: 8px;
+}
+.login input[type=submit] {
+	border: 1px solid rgba(0, 0, 0, 0.3);
+	color: black;
+	padding: 5px 15px;
+	margin-right: 0;
+	margin-top: 15px;
+	border-radius: 8px;
+	text-shadow: 1px 1px 0px rgba(0, 0, 0, 0.3);
+}
+
+.marquee {
+   width: 300px;
+	float: right;
+   margin-right: 10px;
+   background-color: rgb(127, 127, 127);
+	border-radius: 6px;
+	color: black;
+   white-space: nowrap;
+	text-shadow: 2px 2px #ff0000;	
+   overflow: hidden;
+   font-size:24px;
+}
+
+.marquee span {
+   display: inline-block;
+   padding-left: 100%;
+   text-indent: 0;
+   animation: marquee 15s linear infinite;
+}
+
+.marquee span:hover {
+    animation-play-state: paused
+}
+
+@keyframes marquee {
+    0%   { transform: translate(0, 0); }
+    100% { transform: translate(-100%, 0); }
+}
 
 

@@ -10,9 +10,19 @@
 		  <![endif]-->
     </head>
     <body>
-        <header> <img id="logo" src="Logo.png" alt="uPd8" /> </header>
+        <header> 
+				<img id="logo" src="Logo.png" alt="uPd8" />
+				<img id="updatepic" src="updatefinishedlogo.png" alt="update tick" />		
+        </header>
         <main id="container">
         <div id="content">
+				<p class="marquee">
+    				<span id="dtText"></span>
+					<script>
+						var today = new Date();
+						document.getElementById('dtText').innerHTML=today;
+					</script>
+				</p>
 				<nav>
 					<ul>
   					 	<li><a class="active" href="#home">Home</a></li>
@@ -23,13 +33,26 @@
 						<li><a href="#registration" target="_blank"> Registration </a></li>
 					</ul>
 				</nav>
-                <section class="left">
-                </section>
-                <section class="right">
-						
-                   
-                </section>
-        </div>
+				<section class="login">
+					<form name="login" action="index_submit" method="get" accept-charset="utf-8">
+						<ul>
+							<li>
+							<label for="usermail">Email</label>
+							<input type="email" name="usermail" placeholder="name@email.com" required>
+							</li>
+							<li>
+							<label for="password">Password</label>
+							<input type="password" name="password" placeholder="password" required>
+							</li>
+							<li>
+							<input type="submit" value="Login">
+							</li>
+						</ul>
+					</form>
+				</section>
+        		<section class="left"> </section>
+        		<section class="right"> </section>   
+    	  </div>
         </main>
         <footer>Footer</footer>
     </body>
@@ -38,6 +61,9 @@
 
 
 
+
+
+</html>
 
 
 </html>
