@@ -132,7 +132,7 @@ nav ul li a {
 	letter-spacing: 2px;
 	color: black;
 	width: 100%;
-   background-color: rgba(250,250,250,0.5);
+   background-color: rgba(127,127,250,0.5);
 }
 
 nav ul li a:hover {
@@ -163,13 +163,13 @@ label {
 }
 
 .login {
-	width: 200px;
+	width: 20%;
 	float: right;
 	margin-right: 10%;
-	padding: 10px;
-	background-color: rgba(250,250,250,0.5);
-	border-radius: 5px;
-   border: 1px solid rgba(0, 0, 0, 0.3);
+	padding: 1%;
+	background-color: rgba(127,127,250,0.5);
+	border-radius: 4%;
+   border: 1px solid rgb(0, 0, 0);
 }
 .login ul {
 	padding: 0;
@@ -198,7 +198,7 @@ label {
    width: 300px;
 	float: right;
    margin-right: 40%;
-   background-color: rgb(127, 127, 127);
+   background-color: rgba(127,127,250,0.5);
 	border-radius: 6px;
 	color: black;
    white-space: nowrap;
@@ -256,6 +256,12 @@ fieldset {
 	padding: 4px;
 }
 
+hr {
+	width: 100%;
+	padding: 1px;
+	background-color: white;
+}
+
 .about {
 	margin-left: 10%;
 	margin-right: 10%;
@@ -263,7 +269,6 @@ fieldset {
 }
 
 .about p {
-	width: 40%;
 	padding: 2%;
 	border-radius: 5px;
    border: 2px solid rgb(0, 0, 0);

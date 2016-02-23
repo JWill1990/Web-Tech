@@ -22,7 +22,6 @@
 						var today = new Date();
 						document.getElementById('dtText').innerHTML=today;
 					</script>
-				 <hr style="width: 100%">
 				</p>
 				<nav>
 					<ul>
@@ -41,7 +40,7 @@
 					</p>
 				</section>
 
-			   <form id="contact-form" method="post" action="/contact.php">
+			   <form id="contact-form" method="post" action="/contact.php"> 
 		 			<fieldset>
 						<legend>Contact Us</legend>
 							<p>
