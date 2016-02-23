@@ -5,7 +5,7 @@ body {
             -webkit-linear-gradient(243deg, #222 5px, transparent 5px) 10px 5px,
             -webkit-linear-gradient(0deg, #1b1b1b 10px, transparent 10px),
             -webkit-linear-gradient(#1d1d1d 25%, #1a1a1a 25%, #1a1a1a 50%, transparent 50%, transparent 75%, #242424 75%, #242424);
-	background-size: 20px 20px;
+	background-size: 20px;
 	background-color: #131313;
 	-pie-background: linear-gradient(27deg, #151515 5px, transparent 5px) 0 5px / 20px,
                  linear-gradient(207deg, #151515 5px, transparent 5px) 10px 0px / 20px,
@@ -15,8 +15,6 @@ body {
                  linear-gradient(#1d1d1d 25%, #1a1a1a 25%, #1a1a1a 50%, transparent 50%, transparent 75%, #242424 75%, #242424)
                  0 0 / 20px #131313;
 	behavior: url(/pie/PIE.htc);
-	max-width: 1200px;
-	margin: 0 auto;
 }
 
 html, body, #container { 
@@ -37,18 +35,18 @@ header {
 	 height: 100px;
 	 background-color: white;
 	 float: left;
-	 width: 100%;
+	 width: 80%;
 	 border:5px solid white;
-	 margin: 10px 10px;
+	 margin-left: 10%;
+	 margin-right: 10%;
 	 clear: both;
-	 border-radius: 16px;
+	 border-radius: 8px;
 }
 
 #logo {
 	height: 80px;
 	width: 200px;
 	padding: 10px;
-	margin: auto 10px;
 	float: right;
 }
 
@@ -56,43 +54,65 @@ header {
 	height: 80px;
 	width: 200px;
 	padding: 10px;
-	margin: auto 10px;
 	float: left;
 }
 
 footer { 
     background-color: rgb(127,127,127);
     clear: both; 
-    width: 100%;
+    width: 80%;
     position: relative;
     height: 20px;
-    margin-top: -20px;
+	 margin-left: 10%;
+	 margin-right: 10%;
+	 border-radius: 8px;
+}
+
+footer small {
+	float: right;
+	color: white;
+	margin-right: 5px;
 }
 
 section.left, section.right {
     text-align: justify;
 }
 
-section.left { 
-    float: left; 
+.left { 
+	 display: inline-block;
     width: 20%; 
-    margin: 0 2% 0 4%; 
+	 margin-left: 10%;
+	 height: 800px;
+	 border-radius: 8px;
+	 background-color: white;
 }
 
-section.right { 
-    float: right; 
-    width: 20%;
-	 margin: 0 2% 0 4%;      
+.rightone { 
+	 display: inline-block;
+    width: 40%;
+	 position: absolute;
+	 height: 800px;
+	 margin-left: 10px;
+	 border-radius: 8px;
+	 background-color: white;	     
 }
 
-nav {
-	width: 100%;
+.righttwo { 
+	 display: inline-block;
+    width: 15%;
+	 height: 800px;
+	 margin-left: 10px;
+	 border-radius: 8px;
+	 background-color: white;	     
 }
+
 
 nav ul {
-	width: 100%;
 	list-style: none;
 	overflow: hidden;	
+	width: 80%;
+	margin-left: 10%;
+	margin-right: 10%;
 }
 
 nav ul li {
@@ -110,7 +130,6 @@ nav ul li a {
 	text-shadow: 2px 2px #ff0000;
 	letter-spacing: 2px;
 	color: black;
-	padding: 8px 0;
 	width: 100%;
    background-color: rgba(250,250,250,0.5);
 }
@@ -145,8 +164,8 @@ label {
 .login {
 	width: 200px;
 	float: right;
-	margin: 10px auto;
-	padding: 25px;
+	margin-right: 10%;
+	padding: 10px;
 	background-color: rgba(250,250,250,0.5);
 	border-radius: 5px;
    border: 1px solid rgba(0, 0, 0, 0.3);
@@ -160,7 +179,6 @@ label {
 	float: left;
 }
 .login input:not([type=submit]) {
-	padding: 5px;
 	margin-right: 10px;
 	border: 1px solid rgba(0, 0, 0, 0.3);
 	border-radius: 8px;
@@ -169,8 +187,8 @@ label {
 	border: 1px solid rgba(0, 0, 0, 0.3);
 	color: black;
 	padding: 5px 15px;
-	margin-right: 0;
-	margin-top: 15px;
+	margin-right: 10%;
+	margin-top: 10px;
 	border-radius: 8px;
 	text-shadow: 1px 1px 0px rgba(0, 0, 0, 0.3);
 }
@@ -178,21 +196,21 @@ label {
 .marquee {
    width: 300px;
 	float: right;
-   margin-right: 10px;
+   margin-right: 40%;
    background-color: rgb(127, 127, 127);
 	border-radius: 6px;
 	color: black;
    white-space: nowrap;
 	text-shadow: 2px 2px #ff0000;	
    overflow: hidden;
-   font-size:24px;
+   font-size:20px;
 }
 
 .marquee span {
    display: inline-block;
    padding-left: 100%;
    text-indent: 0;
-   animation: marquee 15s linear infinite;
+   animation: marquee 20s linear infinite;
 }
 
 .marquee span:hover {
