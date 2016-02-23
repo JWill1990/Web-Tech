@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+  lang="en-GB" xml:lang="en-GB">
+    <head>
+		<meta charset="UTF-8"/>
+        <title>Contact uPd8</title>
+        <link href="style.css" rel="stylesheet" type="text/css" />
+		<!--[if lt IE 9]>
+  		<script src="dist/html5shiv.js"></script>
+	    <![endif]-->
+    </head>
+	<body>
+		<header> 
+			<img id="logo" src="Images/Logo.png" alt="uPd8" />
+			<img id="updatepic" src="Images/updatefinishedlogo.png" alt="update tick" />		
+      </header>
+		<main id="container">
+        <div id="content">
+				<p class="marquee">
+    				<span id="dtText"></span>
+					<script>
+						var today = new Date();
+						document.getElementById('dtText').innerHTML=today;
+					</script>
+				 <hr style="width: 100%">
+				</p>
+				<nav>
+					<ul>
+  					 	<li><a href="homepage.html">Home</a></li>
+						<li><a href="#categories" target="_blank" > Categories </a></li>
+						<li><a class="active" href="Contactpage.html"> Contact </a></li>
+						<li><a href="Aboutpage.html"> About </a></li>
+						<li><a href="Devblog.html"> Blog </a></li>
+						<li><a href="Registrationpage.html"> Registration </a></li>
+					</ul>
+			   </nav>
+
+				<section class="about">
+					<p> Please use the contact form provided below for any general enquiries. 
+						 Alternatively, you can report a bug or complaint to our Customer Service team.
+					</p>
+				</section>
+
+			   <form id="contact-form" method="post" action="/contact.php"> 
+		 			<fieldset>
+						<legend>Contact Us</legend>
+							<p>
+								<label for="contact">Name (required)</label>
+								<input id="contact" name="contact" role="input" aria-required="true" value="" />	
+						   </p>
+							<p>
+								<label for="email">Email (required)</label>
+								<input id="email" name="email" role="input" aria-required="true" value="" />
+							</p>		
+							<p>
+								<label for="subject">Subject</label>
+								<select name="subject" id="subject" aria-required="true" title="Select a subject">
+								<option value="">– Please Select –</option>
+								<option value="General Enquiry" >General Enquiry</option>
+								<option value="Free Quotation" >Report a bug</option>
+								<option value="Site Visit" >Complaints and Issues</option>
+							</select></p>
+							<p>
+								<label for="message">Your message (required)</label>
+								<textarea id="message" name="message" cols="22" aria-required="true"></textarea>	
+							</p>
+							<p>
+								<input name="submit" id="submitButton" type="submit" value="Submit"/>
+							</p>
+					</fieldset>
+				</form>
+
+
+	   </div>
+       </main>
+       <footer> <small> © Copyright 2015- 2016, uPd8</small> </footer>
+    </body>
+</html>
