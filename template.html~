@@ -4,38 +4,70 @@
     <head>
         <meta charset="UTF-8"/>
         <title>uPd8</title>
-		  <link href="resetstyle.css" rel="stylesheet" type="text/css" />
         <link href="style.css" rel="stylesheet" type="text/css" />
 		  <!--[if lt IE 9]>
   		  <script src="dist/html5shiv.js"></script>
 		  <![endif]-->
     </head>
     <body>
-        <header>uPd8</header>
+        <header> 
+				<img id="logo" src="Logo.png" alt="uPd8" />
+				<img id="updatepic" src="updatefinishedlogo.png" alt="update tick" />	
+				<a id="weather" href="http://www.weathercast.co.uk/" style="padding:0;background:none" target="_blank" title="Your weather service"><img src="http://www.weathercast.co.uk/meteo/hptool/logo_meteogroup.png" alt="" ><a href="http://www.weathercast.co.uk/world-weather/city-weather/city/44X21/london.html" target="_blank" style="color:#00B0CA;font-family:Verdana,Arial,Tahoma,Times New Roman;font-weight:bold;font-size:10px;padding:0;background:none" title="Detailed weather forecast for Weather London">Weather London</a></div><iframe width="120" height="151" scrolling="no" frameborder="0" src="http://www.weathercast.co.uk/meteo/hptool/index.php?cid=44X21&cityName=London&l=en&style=1&v=gb&ver=2&c1=00B0CA&c2=102840&c3=102840&c4=ffffff&c5=102840&c6=ffffff&c7=102840&f1a=1&f1b=2&f2a=1&f2b=1&f3a=1&f3b=1&ct1=1&ct2=2&ct3=6&ct4=10&ct5=12&fcd=0"></iframe><div style="height:14px;width:120px;text-align:center;background-color:#f8b920"><a href="http://www.weathercast.co.uk/" target="_blank" style="background:none;padding:0;text-decoration:none;color:#000000;font-family:Verdana,Arial,Tahoma,Times New Roman;font-weight:bold;font-size:10px" title="Latest weather observations and 14 day forecasts for over 2 MM locations worldwide">&copy; weathercast.co.uk</a></div>	
+        </header>
         <main id="container">
         <div id="content">
-                <section class="left">
-                    <ul class="navbar">
-  								<li><a class="active" href="#home">Home</a></li>
-							   <li><a href="#categories" target="_blank" > Categories </a></li>
-							   <li><a href="#contact" target="_blank"> Contact </a></li>
-							   <li><a href="#about" target="_blank"> About </a></li>
-								<li><a href="#devblog" target="_blank"> Blog </a></li>
-								<li><a href="#registration" target="_blank"> Registration </a></li>
-						  </ul>
-                </section>
-                <section class="right">
-                    <h3> test </h3>
-                </section>
-        </div>
+				<p class="marquee">
+    				<span id="dtText"></span>
+					<script>
+						var today = new Date();
+						document.getElementById('dtText').innerHTML=today;
+					</script>
+				</p>
+				<nav>
+					<ul>
+  					 	<li><a class="active" href="#home">Home</a></li>
+						<li><a href="#categories" target="_blank" > Categories </a></li>
+						<li><a href="#contact" target="_blank"> Contact </a></li>
+						<li><a href="#about" target="_blank"> About </a></li>
+						<li><a href="#devblog" target="_blank"> Blog </a></li>
+						<li><a href="#registration" target="_blank"> Registration </a></li>
+					</ul>
+				</nav>
+				<section class="login">
+					<form name="login" action="index_submit" method="get" accept-charset="utf-8">
+						<ul>
+							<li>
+							<label for="usermail">Email</label>
+							<input type="email" name="usermail" placeholder="name@email.com" required>
+							</li>
+							<li>
+							<label for="password">Password</label>
+							<input type="password" name="password" placeholder="password" required>
+							</li>
+							<li>
+							<input type="submit" value="Login">
+							</li>
+						</ul>
+					</form>
+				</section>
+        		<section class="left"> </section>
+        		<section class="rightone"> </section>  
+				<section class="righttwo"> </section>  
+
+				 
+    	  </div>
         </main>
-        <footer>Footer</footer>
+        <footer> <small> © Copyright 2015- 2016, uPd8</small> </footer>
     </body>
 
 
 
 
 
+
+
+</html>
 
 
 </html>

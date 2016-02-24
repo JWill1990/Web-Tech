@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+  lang="en-GB" xml:lang="en-GB">
+    <head>
+		<meta charset="UTF-8"/>
+        <title>About uPd8</title>
+        <link href="style.css" rel="stylesheet" type="text/css" />
+		<!--[if lt IE 9]>
+  		<script src="dist/html5shiv.js"></script>
+	    <![endif]-->
+    </head>
+	<body>
+		<header> 
+			<img id="logo" src="Images/Logo.png" alt="uPd8" />
+			<img id="updatepic" src="Images/updatefinishedlogo.png" alt="update tick" />	
+      </header>
+		<main id="container">
+        <div id="content">
+				<p class="marquee">
+    				<span id="dtText"></span>
+					<script>
+						var today = new Date();
+						document.getElementById('dtText').innerHTML=today;
+					</script>
+				</p>
+				<hr>
+				<nav>
+					<ul>
+  					 	<li><a href="homepage.html">Home</a></li>
+						<li><a href="#categories" target="_blank" > Categories </a></li>
+						<li><a href="Contactpage.html"> Contact </a></li>
+						<li><a href="Aboutpage.html"> About </a></li>
+						<li><a class="active" href="Devblog.html"> Blog </a></li>
+						<li><a href="Registrationpage.html"> Registration </a></li>
+					</ul>
+			   </nav>
+				<hr>
+	   </div>
+       </main>
+       <footer> <small> © Copyright 2015- 2016, uPd8</small> </footer>
+    </body>
+</html>
