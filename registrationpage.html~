@@ -27,11 +27,11 @@
 				<nav>
 					<ul>
   					 	<li><a href="homepage.html">Home</a></li>
-						<li><a href="#categories"> Categories </a></li>
-						<li><a href="contactpage.html"> Contact </a></li>
-						<li><a href="aboutpage.html"> About </a></li>
-						<li><a href="devblog.html"> Blog </a></li>
-						<li><a class="active" href="registrationpage.html"> Registration </a></li>
+						<li><a href="#categories" target="_blank" > Categories </a></li>
+						<li><a href="Contactpage.html"> Contact </a></li>
+						<li><a href="Aboutpage.html"> About </a></li>
+						<li><a href="Devblog.html"> Blog </a></li>
+						<li><a class="active" href="Registrationpage.html"> Registration </a></li>
 					</ul>
 			    </nav>
 				<hr>
