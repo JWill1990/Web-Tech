@@ -19,9 +19,9 @@ body {
 
 html, body, #container { 
     height: 100%; 
-	 width: 100%;
-	 font-family: helvetica, arial, verdana, sans-serif;
-	 font-size: 100%;
+    width: 100%;
+    font-family: helvetica, arial, verdana, sans-serif;
+    font-size: 100%;
 }
 
 body > #container { 
@@ -36,7 +36,6 @@ body > #container {
 header {
 	 height: 100px;
 	 background-color: rgba(127,127,250,0.5);
-	 float: left;
 	 width: 80%;
 	 border:5px solid white;
 	 margin-left: 10%;
@@ -63,11 +62,10 @@ footer {
     background-color: rgb(127,127,127);
     clear: both; 
     width: 80%;
-    position: relative;
     height: 20px;
-	 margin-left: 10%;
-	 margin-right: 10%;
-	 border-radius: 8px;
+    margin-left: 10%;
+    margin-right: 10%;
+    border-radius: 8px;
 }
 
 footer small {
@@ -81,37 +79,38 @@ section.left, section.right {
 }
 
 .left { 
-	 display: inline-block;
+    display: inline-block;
     width: 20%; 
-	 margin-left: 10%;
-	 height: 800px;
-	 border-radius: 8px;
-	 background-color: white;
+    margin-left: 10%;
+    height: 800px;
+    border-radius: 8px;
+    background-color: white;
 }
 
 .center { 
-	 display: inline-block;
+    display: inline-block;
     width: 40%;
-	 position: absolute;
-	 margin-left: 10px;
-	 border-radius: 8px;
-	 background-color: white;	     
+    position: absolute;
+    margin-left: 10px;
+    border-radius: 8px;
+    background-color: white;	     
 }
 
 .righttwo { 
-	 display: inline-block;
+    display: inline-block;
     width: 15%;
-	 height: 800px;
-	 margin-left: 10px;
-	 border-radius: 8px;
-	 background-color: white;	     
+    height: 800px;
+    margin-left: 10px;
+    border-radius: 8px;
+    background-color: white;	     
 }
 
 
 nav ul {
+	clear: both;
 	list-style: none;
 	overflow: hidden;	
-	width: 80%;
+	width: 80%; 
 	margin-left: 10%;
 	margin-right: 10%;
 }
@@ -124,7 +123,7 @@ nav ul li {
 }
 
 nav ul li a {
-	display: block;
+	display: inline-block;
 	text-decoration: none;
 	text-align: center;
 	border: 1px solid white;
@@ -132,7 +131,7 @@ nav ul li a {
 	letter-spacing: 2px;
 	color: black;
 	width: 100%;
-   background-color: rgba(127,127,250,0.5);
+    	background-color: rgba(127,127,250,0.5);
 }
 
 nav ul li a:hover {
@@ -166,10 +165,10 @@ label {
 	width: 20%;
 	float: right;
 	margin-right: 10%;
-	padding: 1%;
+	padding: 10px;
 	background-color: rgba(127,127,250,0.5);
 	border-radius: 4%;
-   border: 1px solid rgb(0, 0, 0);
+   	border: 1px solid rgb(0, 0, 0);
 }
 .login ul {
 	padding: 0;
@@ -195,15 +194,16 @@ label {
 }
 
 .marquee {
-   width: 300px;
-	float: right;
-   margin-right: 40%;
-   background-color: rgba(127,127,250,0.5);
+    width: 300px;
+    float: right;
+    margin-right: 40%;
+	clear: both;
+    background-color: rgba(127,127,250,0.5);
 	border-radius: 6px;
 	color: black;
-   white-space: nowrap;
+    white-space: nowrap;
 	text-shadow: 2px 2px #ff0000;	
-   overflow: hidden;
+    overflow: hidden;
 
 }
 
@@ -262,16 +262,16 @@ hr {
 	background-color: white;
 }
 
-.about {
+.contact {
 	margin-left: 10%;
 	margin-right: 10%;
 	width: 80%;
 }
 
-.about p {
+.contact p {
 	padding: 2%;
 	border-radius: 5px;
-   border: 2px solid rgb(0, 0, 0);
+    border: 2px solid rgb(0, 0, 0);
 	background-color: white;
 }
 
