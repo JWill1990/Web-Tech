@@ -4,7 +4,10 @@
     <head>
 		<meta charset="UTF-8"/>
         <title>About uPd8</title>
-        <link href="style.css" rel="stylesheet" type="text/css" />
+        <link href="resetstyle.css" rel="stylesheet" type="text/css" />
+		  <link href="navigation.css" rel="stylesheet" type="text/css" />
+		  <link href="time.css" rel="stylesheet" type="text/css" />
+		  <link href="style.css" rel="stylesheet" type="text/css" />
 	<script type="text/javascript" src="html5shiv.js"></script>
 		<!--[if lt IE 9]>
   		<script src="dist/html5shiv.js"></script>
@@ -24,20 +27,18 @@
 						document.getElementById('dtText').innerHTML=today;
 					</script>
 				</p>
-			 
-			 <script>
-                		document.createElement('nav');
-                	</script>
+				<hr>
 				<nav>
 					<ul>
   					 	<li><a href="homepage.html">Home</a></li>
 						<li><a href="#categories"> Categories </a></li>
 						<li><a href="contactpage.html"> Contact </a></li>
-						<li><a class="active" href="Aboutpage.html"> About </a></li>
+						<li><a class="active" href="aboutpage.html"> About </a></li>
 						<li><a href="devblog.html"> Blog </a></li>
 						<li><a href="registrationpage.html"> Registration </a></li>
 					</ul>
 			    </nav>
+				 <hr>
 	   </div>
        </main>
        <footer> <small> © Copyright 2015- 2016, uPd8</small> </footer>

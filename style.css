@@ -19,6 +19,7 @@ body {
 
 html, body, #container { 
     height: 100%; 
+	 margin-top: 1%;
     width: 100%;
     font-family: helvetica, arial, verdana, sans-serif;
     font-size: 100%;
@@ -35,10 +36,10 @@ body > #container {
 }
 
 header {
-	 height: 100px;
-	 background-color: rgba(127,127,250,0.5);
+	 height: 120px;
+	 background-color: rgb(255,255,255);
 	 width: 80%;
-	 border:5px solid white;
+	 border:5px solid rgb(248, 211, 6);
 	 margin-left: 10%;
 	 margin-right: 10%;
 	 padding: 10px;
@@ -47,11 +48,13 @@ header {
 }
 
 #logo {
-	height: 80px;
+	height: 100px;
 	width: 200px;
 	padding: 10px;
-	float: right;
+	float: left;
 }
+
+
 
 #updatepic {
 	height: 80px;
@@ -76,10 +79,6 @@ footer small {
 	margin-right: 5px;
 }
 
-section.left, section.right {
-    text-align: justify;
-}
-
 .left { 
     display: inline-block;
     width: 20%; 
@@ -98,7 +97,7 @@ section.left, section.right {
     background-color: white;	     
 }
 
-.righttwo { 
+.right { 
     display: inline-block;
     width: 15%;
     height: 800px;
@@ -112,7 +111,8 @@ section.left, section.right {
 hr {
 	width: 100%;
 	padding: 1px;
-	background-color: white;
+	border: 1px rgb(248, 211, 6);
+	background-color: rgb(248, 211, 6);
 }
 
 

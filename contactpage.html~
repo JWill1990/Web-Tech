@@ -4,11 +4,11 @@
     <head>
 		<meta charset="UTF-8"/>
         <title>Contact uPd8</title>
-	<link href="resetstyle.css" rel="stylesheet"/>
-	<link href="navigation.css" rel="stylesheet"/>
-	<link href="time.css" rel="stylesheet"/>
-	<link href="contactform.css" rel="stylesheet"/>
-        <link href="style.css" rel="stylesheet"/>
+		<link href="resetstyle.css" rel="stylesheet"/>
+		<link href="navigation.css" rel="stylesheet"/>
+		<link href="time.css" rel="stylesheet"/>
+		<link href="contactform.css" rel="stylesheet"/>
+		<link href="style.css" rel="stylesheet"/>
 		<!--[if lt IE 9]>
   		<script src="dist/html5shiv.js"></script>
 	    <![endif]-->
@@ -31,15 +31,14 @@
 				<nav>
 					<ul>
   					 	<li><a href="homepage.html">Home</a></li>
-						<li><a href="#categories" target="_blank" > Categories </a></li>
-						<li><a class="active" href="Contactpage.html"> Contact </a></li>
-						<li><a href="Aboutpage.html"> About </a></li>
-						<li><a href="Devblog.html"> Blog </a></li>
-						<li><a href="Registrationpage.html"> Registration </a></li>
+						<li><a href="#categories"> Categories </a></li>
+						<li><a class="active" href="contactpage.html"> Contact </a></li>
+						<li><a href="aboutpage.html"> About </a></li>
+						<li><a href="devblog.html"> Blog </a></li>
+						<li><a href="registrationpage.html"> Registration </a></li>
 					</ul>
 			   </nav>
 				<hr>
-
 				<section class="contact">
 					<p> Please use the contact form provided below for any general enquiries. 
 						 Alternatively, you can report a bug or complaint to our Customer Service team.
