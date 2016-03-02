@@ -1,34 +1,35 @@
 nav ul {
-	clear: both;
-	list-style: none;
-	overflow: hidden;	
-	width: 80%; 
-	margin-left: 10%;
-	margin-right: 10%;
+    clear: both;
+    list-style: none;
+    overflow: hidden;	
+    width: 80%;
+    min-width: 630px;
+    margin: 0 auto;
 }
 
 nav ul li {
-	float: left;
-	font-family: Arial,Helvetica,FreeSans,sans-serif;
-	font-size: 20px;	
-	width: 16%	 
+    float: left;
+    font-family: Arial,Helvetica,FreeSans,sans-serif;
+    font-size: 20px;	
+    width: 16%;
+    min-width: 105px;
 }
 
 nav ul li a {
-	display: inline-block;
-	text-decoration: none;
-	text-align: center;
-	border: 1px solid white;
-	text-shadow: 2px 2px #ff0000;
-	letter-spacing: 2px;
-	color: black;
-	width: 100%;
-   background-color: rgba(127,127,250,0.5);
+    display: inline-block;
+    text-decoration: none;
+    text-align: center;
+    border: 1px solid white;
+    text-shadow: 2px 2px #ff0000;
+    letter-spacing: 2px;
+    color: black;
+    width: 100%;
+    background-color: rgba(127,127,250,0.5);
 }
 
 nav ul li a:hover {
-	color: white;
-	background-color: #555;
+    color: white;
+    background-color: #555;
 }
 
 nav ul li:first-child a {
@@ -37,7 +38,6 @@ nav ul li:first-child a {
 }
 
 nav ul li:last-child a {
-
     border-top-right-radius: 8px;
     border-bottom-right-radius: 8px;
 }

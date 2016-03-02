@@ -2,16 +2,16 @@ nav ul {
     clear: both;
     list-style: none;
     overflow: hidden;	
-    width: 80%; 
-    margin-left: 10%;
-    margin-right: 10%;
+    width: 80%;
+    min-width: 630px;
+    margin: 0 auto;
 }
 
 nav ul li {
     float: left;
     font-family: Arial,Helvetica,FreeSans,sans-serif;
     font-size: 20px;	
-    width: 16%	 
+    width: 16%;
 }
 
 nav ul li a {
