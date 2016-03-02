@@ -1,9 +1,10 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml"
-  lang="en-GB" xml:lang="en-GB">
+lang="en-GB" xml:lang="en-GB">
     <head>
-		<meta charset="UTF-8"/>
+        <meta charset="UTF-8"/>
         <title>Registration</title>
+<<<<<<< HEAD
 			<script src="ourscripts.js"></script>
 			<link href="resetstyle.css" rel="stylesheet"/>
 		   <link href="navigation.css" rel="stylesheet"/>
@@ -64,6 +65,64 @@
 	   </div>
        </main>
        <footer> <small> © Copyright 2015- 2016, uPd8</small> </footer>
+=======
+        <link href="resetstyle.css" rel="stylesheet"/>
+        <link href="navigation.css" rel="stylesheet"/>
+        <link href="registration.css" rel="stylesheet"/>
+        <link href="time.css" rel="stylesheet"/>
+        <link href="style.css" rel="stylesheet" type="text/css" />
+        <!--[if lt IE 9]>
+        <script src="dist/html5shiv.js"></script>
+        <![endif]-->
+    </head>
+    <body>
+        <header> 
+            <img id="logo" src="Images/Logo.png" alt="uPd8" />
+        </header>
+        <main id="container">
+            <div id="content">
+                <p class="marquee">
+                <span id="dtText"></span>
+                <script>
+                var today = new Date();
+                document.getElementById('dtText').innerHTML=today;
+                </script>
+                </p>
+                <hr>
+                <nav>
+                <ul>
+                <li><a href="homepage.html">Home</a></li>
+                <li><a href="#categories"> Categories </a></li>
+                <li><a href="contactpage.html"> Contact </a></li>
+                <li><a href="aboutpage.html"> About </a></li>
+                <li><a href="devblog.html"> Blog </a></li>
+                <li><a class="active" href="registrationpage.html"> Registration </a></li>
+                </ul>
+                </nav>
+                <hr>
+                <form id="registerform">
+                <fieldset>
+                <h2 class="header-title">Create your Profile</h2>
+                <h3 class="header-subtitle">Please fill in all details</h3>
+                <input type="text" name="email" placeholder="Email" />
+                <input type="password" name="pass" placeholder="Password" />
+                <input type="password" name="cpass" placeholder="Confirm Password" />
+                <input type="text" name="fname" placeholder="First Name" />
+                <input type="text" name="lname" placeholder="Last Name" />
+                <input type="datetime-local" name="bdaytime" placeholder="Date of Birth" />
+                <input type="text" name="twitter" placeholder="Twitter" />
+                <input type="text" name="facebook" placeholder="Facebook" />
+                <input type="text" name="gplus" placeholder="Google Plus" />
+                <input type="text" name="phone" placeholder="Phone" />
+                <textarea name="address" placeholder="Address"></textarea>
+                <input type="url" name="homepage" placeholder="Add your homepage" />
+                <input name="submit" id="submitButton" type="submit" value="Submit" />
+                </fieldset>
+                </form>
+            </div>
+        </main>
+        <footer> <small> © Copyright 2015- 2016, uPd8</small> </footer>
+>>>>>>> 779bff7182b6371790a84d4fd4892108b44b3e92
     </body>
 </html>
-	
+
