@@ -12,7 +12,7 @@ html, body, #container {
     width: 100%;
     font-family: helvetica, arial, verdana, sans-serif;
     font-size: 100%;
-    min-width: 800px;
+    min-width: 640px;
 }
 
 body > #container { 

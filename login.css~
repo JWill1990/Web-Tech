@@ -1,40 +1,43 @@
 form {
-	margin-left: 10%;
-	margin-right: 10%;
+    margin-left: 10%;
+    margin-right: 10%;
 }
-
 
 .login {
-	width: 20%;
-	float: right;
-	color: black bold;
-	padding-bottom: 10px;
-	background-color: rgb(127,127,250);
-	border-radius: 8px;
-   border: 1px solid rgb(0, 0, 0);
+    width: 20%;    
+    min-width: 300px;
+    float: right;
+    color: black bold;
+    padding-bottom: 10px;
+    background-color: rgb(127,127,250);
+    border-radius: 8px;
+    border: 1px solid rgb(0, 0, 0);
 }
+
 .login ul {
-	padding: 0;
-	margin: 0;
+    padding: 0;
+    margin: 0;
 }
 
 .login li {
-	display: inline;
-	padding: 5px;
-	float: left;
+    display: inline;
+    padding: 5px;
+    float: left;
 }
+
 .login input:not([type=submit]) {
-	margin-right: 10px;
-	border: 1px solid rgba(0, 0, 0, 0.3);
-	float: right;
-	border-radius: 8px;
+    margin-right: 10px;
+    border: 1px solid rgba(0, 0, 0, 0.3);
+    float: right;
+    border-radius: 8px;
 }
+
 .login input[type=submit] {
-	border: 1px solid rgba(0, 0, 0, 0.3);
-	color: black;
-	padding: 5px 15px;
-	margin-right: 10%;
-	margin-top: 10px;
-	border-radius: 8px;
-	text-shadow: 1px 1px 0px rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(0, 0, 0, 0.3);
+    color: black;
+    padding: 5px 15px;
+    margin-right: 10%;
+    margin-top: 10px;
+    border-radius: 8px;
+    text-shadow: 1px 1px 0px rgba(0, 0, 0, 0.3);
 }

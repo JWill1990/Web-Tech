@@ -1,14 +1,14 @@
 body {
-		background: url('http://thecodeplayer.com/uploads/media/gs.png');
-	/*background = gradient + image pattern combo*/
-	background: 
-		linear-gradient(rgba(196, 102, 0, 0.2), rgba(155, 89, 182, 0.2)), 
-		url('http://thecodeplayer.com/uploads/media/gs.png');
+    background: url('http://thecodeplayer.com/uploads/media/gs.png');
+    /*background = gradient + image pattern combo*/
+    background: 
+    linear-gradient(rgba(196, 102, 0, 0.2), rgba(155, 89, 182, 0.2)), 
+    url('http://thecodeplayer.com/uploads/media/gs.png');
 }
 
 html, body, #container { 
     height: 100%; 
-	 margin-top: 1%;
+    margin-top: 1%;
     width: 100%;
     font-family: helvetica, arial, verdana, sans-serif;
     font-size: 100%;
@@ -25,23 +25,23 @@ body > #container {
 }
 
 header {
-	 height: 120px;
-	 background-color: rgb(255,255,255);
-	 width: 80%;
-	 border:5px solid rgb(248, 211, 6);
-	 margin-left: 10%;
-	 margin-right: 10%;
-	 padding: 10px;
-	 clear: both;
-	 border-radius: 8px;
+    height: 120px;
+    background-color: rgb(255,255,255);
+    width: 80%;
+    border:5px solid rgb(248, 211, 6);
+    margin-left: 10%;
+    margin-right: 10%;
+    padding: 10px;
+    clear: both;
+    border-radius: 8px;
 }
 
 #logo {
-	height: 100px;
-	width: 200px;
-	margin: 10px auto;
-	padding: 10px;
-	float: left;
+    height: 100px;
+    width: 200px;
+    margin: 10px auto;
+    padding: 10px;
+    float: left;
 }
 
 footer { 
@@ -55,9 +55,9 @@ footer {
 }
 
 footer small {
-	float: right;
-	color: white;
-	margin-right: 5px;
+    float: right;
+    color: white;
+    margin-right: 5px;
 }
 
 .left { 
@@ -90,12 +90,8 @@ footer small {
 
 
 hr {
-	width: 100%;
-	padding: 1px;
-	border: 1px rgb(248, 211, 6);
-	background-color: rgb(248, 211, 6);
+    width: 100%;
+    padding: 1px;
+    border: 1px rgb(248, 211, 6);
+    background-color: rgb(248, 211, 6);
 }
-
-
-
-
