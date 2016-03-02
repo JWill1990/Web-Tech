@@ -46,7 +46,6 @@
 
 			   <form id="contact-form" method="post" action="/contact.php"> 
 		 			<fieldset>
-						<legend>Contact Us</legend>
 							<p>
 								<label for="contact">Name (required)</label>
 								<input id="contact" name="contact" role="input" aria-required="true" value="" placeholder="Name" />	

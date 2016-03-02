@@ -4,11 +4,12 @@
     <head>
 		<meta charset="UTF-8"/>
         <title>Registration</title>
+			<script src="ourscripts.js"></script>
 			<link href="resetstyle.css" rel="stylesheet"/>
 		   <link href="navigation.css" rel="stylesheet"/>
 			<link href="registration.css" rel="stylesheet"/>
 		   <link href="time.css" rel="stylesheet"/>
-         <link href="style.css" rel="stylesheet" type="text/css" />
+         <link href="style.css" rel="stylesheet"/>
 		<!--[if lt IE 9]>
   		<script src="dist/html5shiv.js"></script>
 	    <![endif]-->
@@ -55,7 +56,7 @@
 					<input type="text" name="phone" placeholder="Phone" />
 					<textarea name="address" placeholder="Address"></textarea>
 					<input type="url" name="homepage" placeholder="Add your homepage" />
-					<input name="submit" id="submitButton" type="submit" value="Submit" />
+					<input name="submit" id="submitButton" type="submit" value="Submit" onclick="document.getElementById('registerform').innerHTML = 'This information 										will be handled on the Server Side'" />
 			</fieldset>
 		</form>
 

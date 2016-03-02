@@ -4,6 +4,7 @@
     <head>
         <meta charset="UTF-8"/>
         <title>uPd8</title>
+	<script src="ourscripts.js"></script>
 	<link href="resetstyle.css" rel="stylesheet"/>
 	<link href="login.css" rel="stylesheet"/>
 	<link href="navigation.css" rel="stylesheet"/>
@@ -16,12 +17,10 @@
     <body>
         <header> 
 				<img id="logo" src="Images/Logo.png" alt="uPd8" />
-				<img id="headerbackground" src="Images/header.png" alt="header background" />
 				<section class="login">
 					<form name="login" action="index_submit" method="get" accept-charset="utf-8">
 						<ul>
 							<li>
-
 							<input type="email" name="usermail" placeholder="name@email.com" required>
 							</li>
 							<li>

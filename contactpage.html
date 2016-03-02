@@ -45,7 +45,7 @@
 				</section>
 
 			   <form id="contact-form" method="post" action="/contact.php"> 
-		 			<fieldset>
+		 			<fieldset>  
 							<p>
 								<label for="contact">Name (required)</label>
 								<input id="contact" name="contact" role="input" aria-required="true" value="" placeholder="Name" />	
@@ -67,7 +67,7 @@
 								<textarea id="message" name="message" cols="22" aria-required="true" placeholder="Please provide details here"></textarea>	
 							</p>
 							<p>
-								<input name="submit" id="submitButton" type="submit" value="Submit"/>
+								<input name="submit" id="submitButton" type="submit" value="Submit" onclick="document.getElementById('registerform').innerHTML = 'This information 										will be handled on the Server Side'" />
 							</p>
 					</fieldset>
 				</form>
