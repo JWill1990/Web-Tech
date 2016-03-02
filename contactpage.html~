@@ -13,36 +13,6 @@
         <script src="dist/html5shiv.js"></script>
         <![endif]-->
     </head>
-
-<<<<<<< HEAD
-			   <form id="contact-form" method="post" action="/contact.php"> 
-		 			<fieldset>
-							<p>
-								<label for="contact">Name (required)</label>
-								<input id="contact" name="contact" role="input" aria-required="true" value="" placeholder="Name" />	
-						   </p>
-							<p>
-								<label for="email">Email (required)</label>
-								<input id="email" name="email" role="input" aria-required="true" value="" placeholder="Email address" />
-							</p>		
-							<p>
-								<label for="subject">Subject</label>
-								<select name="subject" id="subject" aria-required="true" title="Select a subject">
-								<option value="">– Please Select –</option>
-								<option value="General Enquiry" >General Enquiry</option>
-								<option value="Free Quotation" >Report a bug</option>
-								<option value="Site Visit" >Complaints and Issues</option>
-							</select></p>
-							<p>
-								<label for="message">Your message (required)</label>
-								<textarea id="message" name="message" cols="22" aria-required="true" placeholder="Please provide details here"></textarea>	
-							</p>
-							<p>
-								<input name="submit" id="submitButton" type="submit" value="Submit"/>
-							</p>
-					</fieldset>
-				</form>
-=======
     <body>
         <header> 
             <img id="logo" src="Images/Logo.png" alt="uPd8" />
@@ -69,38 +39,38 @@
                 </nav>
                 <hr>
                 <section class="contact">
-                <p> Please use the contact form provided below for any general enquiries. 
-                Alternatively, you can report a bug or complaint to our Customer Service team.
-                </p>
+                    <p> Please use the contact form provided below for any general enquiries. 
+                    Alternatively, you can report a bug or complaint to our Customer Service team.
+                    </p>
                 </section>
->>>>>>> 779bff7182b6371790a84d4fd4892108b44b3e92
 
                 <form id="contact-form" method="post" action="/contact.php"> 
-                <fieldset>
-                <p>
-                <label for="contact">Name (required)</label>
-                <input id="contact" name="contact" role="input" aria-required="true" value="" placeholder="Name" />	
-                </p>
-                <p>
-                <label for="email">Email (required)</label>
-                <input id="email" name="email" role="input" aria-required="true" value="" placeholder="Email address" />
-                </p>		
-                <p>
-                <label for="subject">Subject</label>
-                <select name="subject" id="subject" aria-required="true" title="Select a subject">
-                <option value="">– Please Select –</option>
-                <option value="General Enquiry" >General Enquiry</option>
-                <option value="Free Quotation" >Report a bug</option>
-                <option value="Site Visit" >Complaints and Issues</option>
-                </select></p>
-                <p>
-                <label for="message">Your message (required)</label>
-                <textarea id="message" name="message" cols="22" aria-required="true" placeholder="Please provide details here"></textarea>	
-                </p>
-                <p>
-                <input name="submit" id="submitButton" type="submit" value="Submit"/>
-                </p>
-                </fieldset>
+                    <fieldset>
+                        <p>
+                            <label for="contact">Name (required)</label>
+                            <input id="contact" name="contact" role="input" aria-required="true" value="" placeholder="Name" />	
+                        </p>
+                        <p>
+                            <label for="email">Email (required)</label>
+                            <input id="email" name="email" role="input" aria-required="true" value="" placeholder="Email address" />
+                        </p>		
+                        <p>
+                            <label for="subject">Subject</label>
+                            <select name="subject" id="subject" aria-required="true" title="Select a subject">
+                                <option value="">– Please Select –</option>
+                                <option value="General Enquiry" >General Enquiry</option>
+                                <option value="Free Quotation" >Report a bug</option>
+                                <option value="Site Visit" >Complaints and Issues</option>
+                            </select>
+                        </p>
+                        <p>
+                            <label for="message">Your message (required)</label>
+                            <textarea id="message" name="message" cols="22" aria-required="true" placeholder="Please provide details here"></textarea>	
+                        </p>
+                        <p>
+                            <input name="submit" id="submitButton" type="submit" value="Submit"/>
+                        </p>
+                    </fieldset>
                 </form>
             </div>
         </main>

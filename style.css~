@@ -1,17 +1,10 @@
 body {
-<<<<<<< HEAD
-	background: url('http://thecodeplayer.com/uploads/media/gs.png');
-	background: 
-		linear-gradient(rgba(196, 102, 0, 0.2), rgba(155, 89, 182, 0.2)), 
-		url('http://thecodeplayer.com/uploads/media/gs.png');
-=======
     background: url('http://thecodeplayer.com/uploads/media/gs.png');
     /*background = gradient + image pattern combo
-        tint goes back and forth between two colours*/
+        gradient goes back and forth between two colours*/
     background: 
     linear-gradient(rgba(155, 89, 182, 0.2), rgba(196, 102, 0, 0.2), rgba(155, 89, 182, 0.2)), 
     url('http://thecodeplayer.com/uploads/media/gs.png');
->>>>>>> 779bff7182b6371790a84d4fd4892108b44b3e92
 }
 
 html, body, #container { 
@@ -33,25 +26,6 @@ body > #container {
 }
 
 header {
-<<<<<<< HEAD
-	 height: 120px;	
-	 background-color: white;
-	 width: 80%;
-	 border:5px solid black;
-	 margin-left: 10%;
-	 margin-right: 10%;
-	 padding: 10px;
-	 clear: both;
-	 border-radius: 8px;
-}
-
-#logo {
-	height: 100px;
-	width: 200px;
-	margin: 10px auto;
-	padding: 10px;
-	float: left;
-=======
     height: 120px;
     background-color: rgb(255,255,255);
     width: 80%;
@@ -69,7 +43,6 @@ header {
     margin: 10px auto;
     padding: 10px;
     float: left;
->>>>>>> 779bff7182b6371790a84d4fd4892108b44b3e92
 }
 
 footer { 
@@ -121,7 +94,6 @@ hr {
 <<<<<<< HEAD
 	width: 100%;
 	padding: 1px;
-	border: 1px rgb(248, 211, 6);
 	background-color: black
 =======
     width: 100%;

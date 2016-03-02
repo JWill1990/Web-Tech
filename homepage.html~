@@ -4,37 +4,6 @@ lang="en-GB" xml:lang="en-GB">
     <head>
         <meta charset="UTF-8"/>
         <title>uPd8</title>
-<<<<<<< HEAD
-	<script src="ourscripts.js"></script>
-	<link href="resetstyle.css" rel="stylesheet"/>
-	<link href="login.css" rel="stylesheet"/>
-	<link href="navigation.css" rel="stylesheet"/>
-	<link href="time.css" rel="stylesheet"/>
-   <link href="style.css" rel="stylesheet" type="text/css" />
-		<!--[if lt IE 9]>
-  		<script src="dist/html5shiv.js"></script>
-		<![endif]-->
-    </head>
-    <body>
-        <header> 
-				<img id="logo" src="Images/Logo.png" alt="uPd8" />
-				<section class="login">
-					<form name="login" action="index_submit" method="get" accept-charset="utf-8">
-						<ul>
-							<li>
-							<input type="email" name="usermail" placeholder="name@email.com" required>
-							</li>
-							<li>
-			
-							<input type="password" name="password" placeholder="password" required>
-							</li>
-							<li>
-							<input type="submit" value="Login">
-							</li>
-						</ul>
-					</form>
-				</section>
-=======
         <link href="resetstyle.css" rel="stylesheet"/>
         <link href="login.css" rel="stylesheet"/>
         <link href="navigation.css" rel="stylesheet"/>
@@ -62,7 +31,6 @@ lang="en-GB" xml:lang="en-GB">
                     </ul>
                 </form>
             </section>
->>>>>>> 779bff7182b6371790a84d4fd4892108b44b3e92
         </header>
         <main id="container">
             <div id="content">
