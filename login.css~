@@ -9,7 +9,7 @@ form {
 	float: right;
 	color: black bold;
 	padding-bottom: 10px;
-	background-color: rgba(127,127,250,0.8);
+	background-color: rgb(127,127,250);
 	border-radius: 8px;
    border: 1px solid rgb(0, 0, 0);
 }

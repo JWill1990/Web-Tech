@@ -16,7 +16,6 @@
     <body>
         <header> 
 				<img id="logo" src="Images/Logo.png" alt="uPd8" />
-				<img id="headerbackground" src="Images/header.png" alt="header background" />
 				<section class="login">
 					<form name="login" action="index_submit" method="get" accept-charset="utf-8">
 						<ul>

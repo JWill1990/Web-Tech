@@ -39,15 +39,7 @@ header {
 #logo {
 	height: 100px;
 	width: 200px;
-	padding: 10px;
-	float: left;
-}
-
-
-
-#updatepic {
-	height: 80px;
-	width: 200px;
+	margin: 10px auto;
 	padding: 10px;
 	float: left;
 }

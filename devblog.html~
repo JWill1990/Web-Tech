@@ -15,7 +15,6 @@
 	<body>
 		<header> 
 			<img id="logo" src="Images/Logo.png" alt="uPd8" />
-			<img id="updatepic" src="Images/updatefinishedlogo.png" alt="update tick" />	
       </header>
 		<main id="container">
         <div id="content">

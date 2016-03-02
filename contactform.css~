@@ -4,7 +4,7 @@ form {
 }
 
 #contact-form {
-	background-color: white;
+	background-color: rgba(127,127,250,0.5);
 	text-align: center;
 	color: black;
 	width: 80%;
