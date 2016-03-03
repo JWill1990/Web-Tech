@@ -6,6 +6,7 @@
         <title>About uPd8</title>
         <link href="resetstyle.css" rel="stylesheet" type="text/css" />
         <link href="navigation.css" rel="stylesheet" type="text/css" />
+	    <link href="login.css" rel="stylesheet"/>
         <link href="time.css" rel="stylesheet" type="text/css" />
         <link href="style.css" rel="stylesheet" type="text/css" />
         <script type="text/javascript" src="html5shiv.js"></script>
@@ -16,6 +17,21 @@
     <body>
         <header> 
             <img id="logo" src="Images/Logo.png" alt="uPd8" />
+	        <section class="login">
+                <form name="login" action="index_submit" method="get" accept-charset="utf-8">
+                    <ul>
+                        <li>
+                            <input type="email" name="usermail" placeholder="name@email.com" required>
+                        </li>
+                        <li>
+                            <input type="password" name="password" placeholder="password" required>
+                        </li>
+                        <li>
+                            <input type="submit" value="Login">
+                        </li>
+                    </ul>
+                </form>
+            </section>
         </header>
         <main id="container">
             <div id="content">
@@ -30,7 +46,7 @@
                 <nav>
                     <ul>
                         <li><a href="homepage.html">Home</a></li>
-                        <li><a href="#categories"> Categories </a></li>
+                        <li><a href="categories.html"> Categories </a></li>
                         <li><a href="contactpage.html"> Contact </a></li>
                         <li><a class="active" href="aboutpage.html"> About </a></li>
                         <li><a href="devblog.html"> Blog </a></li>
