@@ -20,42 +20,42 @@ lang="en-GB" xml:lang="en-GB">
         <main id="container">
             <div id="content">
                 <p class="marquee">
-                <span id="dtText"></span>
-                <script>
-                var today = new Date();
-                document.getElementById('dtText').innerHTML=today;
-                </script>
+                    <span id="dtText"></span>
+                    <script>
+                        var today = new Date();
+                        document.getElementById('dtText').innerHTML=today;
+                    </script>
                 </p>
                 <hr>
                 <nav>
-                <ul>
-                <li><a href="homepage.html">Home</a></li>
-                <li><a href="#categories"> Categories </a></li>
-                <li><a href="contactpage.html"> Contact </a></li>
-                <li><a href="aboutpage.html"> About </a></li>
-                <li><a href="devblog.html"> Blog </a></li>
-                <li><a class="active" href="registrationpage.html"> Registration </a></li>
-                </ul>
+                    <ul>
+                        <li><a href="homepage.html">Home</a></li>
+                        <li><a href="#categories"> Categories </a></li>
+                        <li><a href="contactpage.html"> Contact </a></li>
+                        <li><a href="aboutpage.html"> About </a></li>
+                        <li><a href="devblog.html"> Blog </a></li>
+                        <li><a class="active" href="registrationpage.html"> Registration </a></li>
+                    </ul>
                 </nav>
                 <hr>
                 <form id="registerform">
-                <fieldset>
-                <h2 class="header-title">Create your Profile</h2>
-                <h3 class="header-subtitle">Please fill in all details</h3>
-                <input type="text" name="email" placeholder="Email" />
-                <input type="password" name="pass" placeholder="Password" />
-                <input type="password" name="cpass" placeholder="Confirm Password" />
-                <input type="text" name="fname" placeholder="First Name" />
-                <input type="text" name="lname" placeholder="Last Name" />
-                <input type="datetime-local" name="bdaytime" placeholder="Date of Birth" />
-                <input type="text" name="twitter" placeholder="Twitter" />
-                <input type="text" name="facebook" placeholder="Facebook" />
-                <input type="text" name="gplus" placeholder="Google Plus" />
-                <input type="text" name="phone" placeholder="Phone" />
-                <textarea name="address" placeholder="Address"></textarea>
-                <input type="url" name="homepage" placeholder="Add your homepage" />
-                <input name="submit" id="submitButton" type="submit" value="Submit" />
-                </fieldset>
+                    <fieldset>
+                        <h2 class="header-title">Create your Profile</h2>
+                        <h3 class="header-subtitle">Please fill in all details</h3>
+                        <input type="text" name="email" placeholder="Email" />
+                        <input type="password" name="pass" placeholder="Password" />
+                        <input type="password" name="cpass" placeholder="Confirm Password" />
+                        <input type="text" name="fname" placeholder="First Name" />
+                        <input type="text" name="lname" placeholder="Last Name" />
+                        <input type="datetime-local" name="bdaytime" placeholder="Date of Birth" />
+                        <input type="text" name="twitter" placeholder="Twitter" />
+                        <input type="text" name="facebook" placeholder="Facebook" />
+                        <input type="text" name="gplus" placeholder="Google Plus" />
+                        <input type="text" name="phone" placeholder="Phone" />
+                        <textarea name="address" placeholder="Address"></textarea>
+                        <input type="url" name="homepage" placeholder="Add your homepage" />
+                        <input name="submit" id="submitButton" type="submit" value="Submit" onclick="document.getElementById('registerform').innerHTML = 'This information will be handled on the Server Side'" />
+                    </fieldset>
                 </form>
             </div>
         </main>
