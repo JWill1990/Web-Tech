@@ -1,0 +1,8 @@
+#slide {
+    opacity:1;
+    transition: opacity 1s; 
+}
+
+#slide.fadeOut {
+    opacity:0;
+}
