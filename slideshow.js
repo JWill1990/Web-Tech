@@ -1,10 +1,10 @@
 var slides = [
-    'Images/car1.gif',
-    'Images/car2.gif',
-    'Images/car3.gif',];
+    'Images/index-gallery.svg',
+    'Images/index-brush.svg',
+    'Images/index-camera.svg'];
 
 var current=0;
-var duration=3000;
+var duration=5000;
 
 function slideShow() {
     document.getElementById('slide').className += "fadeOut";

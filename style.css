@@ -61,8 +61,7 @@ footer small {
 }
 
 hr {
-	 border: 0;
+    border: 0;
     height: 4px;
     background-image: linear-gradient(to right, rgba(248, 211, 6, 0), rgba(248, 211, 6, 0.75), rgba(248, 211, 6, 0));	
 }
-
