@@ -1,10 +1,9 @@
 body {
-    background: url('http://thecodeplayer.com/uploads/media/gs.png');
     /*background = gradient + image pattern combo
         gradient goes back and forth between two colours*/
-    background: 
-    linear-gradient(rgba(155, 89, 182, 0.2), rgba(196, 102, 0, 0.2), rgba(155, 89, 182, 0.2)), 
-    url('http://thecodeplayer.com/uploads/media/gs.png');
+    background: rgb(70,76,86);
+    background-image: url('background.png');
+    background-image: linear-gradient(rgba(155, 89, 182, 0.2), rgba(196, 102, 0, 0.2), rgba(155, 89, 182, 0.2)), url('background.png'); 
 }
 
 html, body, #container { 
@@ -30,7 +29,7 @@ header {
     background-color: rgb(255,255,255);
     width: 80%;
     min-width: 630px;
-    border:5px solid rgb(248, 211, 6);
+    border:3px solid rgb(248, 211, 6);
     margin: 0 auto;
     padding: 10px;
     clear: both;
@@ -88,17 +87,9 @@ footer small {
     background-color: white;	     
 }
 
-
-
 hr {
-<<<<<<< HEAD
-	width: 100%;
-	padding: 1px;
-	background-color: black
-=======
-    width: 100%;
-    padding: 1px;
-    border: 1px rgb(248, 211, 6);
-    background-color: rgb(248, 211, 6);
->>>>>>> 779bff7182b6371790a84d4fd4892108b44b3e92
+	 border: 0;
+    height: 4px;
+    background-image: linear-gradient(to right, rgba(248, 211, 6, 0), rgba(248, 211, 6, 0.75), rgba(248, 211, 6, 0));	
 }
+

@@ -6,9 +6,11 @@
         <title>About uPd8</title>
         <link href="resetstyle.css" rel="stylesheet" type="text/css" />
         <link href="navigation.css" rel="stylesheet" type="text/css" />
-	    <link href="login.css" rel="stylesheet"/>
+		  <link href="about.css" rel="stylesheet" type="text/css" />
+	     <link href="login.css" rel="stylesheet"/>
         <link href="time.css" rel="stylesheet" type="text/css" />
         <link href="style.css" rel="stylesheet" type="text/css" />
+        <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Tangerine">
         <script type="text/javascript" src="html5shiv.js"></script>
         <!--[if lt IE 9]>
         <script src="dist/html5shiv.js"></script>
@@ -48,7 +50,7 @@
                 <hr/>
                 <nav>
                     <ul>
-                        <li><a href="homepage.html">Home</a></li>
+                        <li><a href="index.html">Home</a></li>
                         <li><a href="categories.html"> Categories </a></li>
                         <li><a href="contactpage.html"> Contact </a></li>
                         <li><a class="active" href="aboutpage.html"> About </a></li>
@@ -56,6 +58,20 @@
                     </ul>
                 </nav>
                 <hr/>
+
+					 <section class="left">
+							<h2> About uPd8 </h2>
+								<p> uPd8 was formed as a collaborative effort between 2 University of Bristol
+									 Computer Science students. </p>
+								<p> The motive behind the development of uPd8 was centered upon our belief
+									 that web users should have the ability to be kept updated on the release
+									 of the latest issues of their favourite comic and book series, negating the
+									 need to constantly having to search through your bookmarks on the off-chance of
+									 finding the latest issue! <p>
+								<p> We hope you find this a useful application for your hobbyist needs! </p>
+								<p> The uPd8 team. </p>
+					 </section>
+
             </div>
         </main>
         <footer> <small> © Copyright 2015- 2016, uPd8</small> </footer>

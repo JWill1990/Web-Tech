@@ -5,18 +5,12 @@ form {
 
 .login {
     width: 20%;    
-    min-width: 300px;
+    min-width: 290px;
     float: right;
     color: black bold;
-    padding-bottom: 10px;
-    background-color: rgb(127,127,250);
+    background-color: rgba(127,127,250,0.5);
     border-radius: 8px;
     border: 1px solid rgb(0, 0, 0);
-}
-
-.login ul {
-    padding: 0;
-    margin: 0;
 }
 
 .login li {
