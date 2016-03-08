@@ -15,7 +15,7 @@ lang="en-GB" xml:lang="en-GB">
     </head>
     <body>
         <header> 
-            <img id="logo" src="Images/Logo.png" alt="uPd8" />
+            <img id="logo" src="Images/Logo2.png" alt="uPd8" />
 			<section class="login">
                 <form name="login" action="index_submit" method="get" accept-charset="utf-8">
                     <ul>
@@ -34,6 +34,7 @@ lang="en-GB" xml:lang="en-GB">
                     </ul>
                 </form>
             </section>
+			<h1> Stay updated. </h1>
         </header>
         <main id="container">
             <div id="content">
@@ -47,7 +48,7 @@ lang="en-GB" xml:lang="en-GB">
                 <hr/>
                 <nav>
                     <ul>
-                        <li><a href="homepage.html">Home</a></li>
+                        <li><a href="index.html">Home</a></li>
                         <li><a href="categories.html"> Categories </a></li>
                         <li><a href="contactpage.html"> Contact </a></li>
                         <li><a href="aboutpage.html"> About </a></li>

@@ -9,13 +9,15 @@ lang="en-GB" xml:lang="en-GB">
         <link href="navigation.css" rel="stylesheet"/>
         <link href="time.css" rel="stylesheet"/>
         <link href="style.css" rel="stylesheet" type="text/css" />
+		  <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Tangerine">
         <!--[if lt IE 9]>
         <script src="dist/html5shiv.js"></script>
         <![endif]-->
     </head>
     <body>
         <header> 
-            <img id="logo" src="Images/Logo.png" alt="uPd8" />
+            <img id="logo" src="Images/Logo2.png" alt="uPd8" />
+				<h1> Stay updated. </h1>
             <section class="login">
                 <form name="login" action="index_submit" method="get" accept-charset="utf-8">
                     <ul>
@@ -47,7 +49,7 @@ lang="en-GB" xml:lang="en-GB">
                 <hr/>
                 <nav>
                     <ul>
-                        <li><a class="active" href="homepage.html">Home</a></li>
+                        <li><a class="active" href="index.html">Home</a></li>
                         <li><a href="categories.html" > Categories </a></li>
                         <li><a href="contactpage.html"> Contact </a></li>
                         <li><a href="aboutpage.html"> About </a></li>
