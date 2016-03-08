@@ -70,8 +70,16 @@ footer small {
 }
 
 hr {
+<<<<<<< HEAD
 	 border: 0;
     height: 3px;
+=======
+    border: 0;
+    height: 4px;
+>>>>>>> 056e063a2220911fbb760ea3449b7cb8130232f9
     background-image: linear-gradient(to right, rgba(248, 211, 6, 0), rgba(248, 211, 6, 0.75), rgba(248, 211, 6, 0));	
 }
 
+article {
+    margin: 0 auto;
+}
