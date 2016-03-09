@@ -39,7 +39,7 @@ header {
 header h1 {
 	font-size: 80px;
 	padding: 30px;
-	margin-left: 40%;
+	margin-left: 30%;
 	font-family: 'Tangerine', serif;
    text-shadow: 4px 4px 4px #aaa;
 }
@@ -78,8 +78,4 @@ hr {
     height: 4px;
 >>>>>>> 056e063a2220911fbb760ea3449b7cb8130232f9
     background-image: linear-gradient(to right, rgba(248, 211, 6, 0), rgba(248, 211, 6, 0.75), rgba(248, 211, 6, 0));	
-}
-
-article {
-    margin: 0 auto;
 }

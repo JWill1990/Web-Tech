@@ -22,7 +22,6 @@ lang="en-GB" xml:lang="en-GB">
     <body>
         <header> 
             <img id="logo" src="Images/Logo2.png" alt="uPd8" />
-				<h1> Stay updated. </h1>
             <section class="login">
                 <form name="login" action="index_submit" method="get" accept-charset="utf-8">
                     <ul>
@@ -41,6 +40,7 @@ lang="en-GB" xml:lang="en-GB">
                     </ul>
                 </form>
             </section>
+			<h1> Stay updated. </h1>
         </header>
         <main id="container">
             <div id="content">
