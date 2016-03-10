@@ -6,12 +6,10 @@ form {
 .login {
     width: 20%;    
     min-width: 290px;
-	 display: inline-block;
     float: right;
     color: black bold;
-	 padding: 5px;
     background-color: rgb(255,255,255);
-	 box-shadow: 0 0 15px 1px rgba(0, 0, 0, 0.4);
+    box-shadow: 0 0 15px 1px rgba(0, 0, 0, 0.4);
     border-radius: 8px;
     border: 1px solid rgb(0, 0, 0);
 }
@@ -32,9 +30,7 @@ form {
 .login input[type=submit] {
     border: 1px solid rgba(0, 0, 0, 0.3);
     color: black;
-    padding: 5px 15px;
     margin-right: 10%;
-    margin-top: 10px;
     border-radius: 8px;
     text-shadow: 1px 1px 0px rgba(0, 0, 0, 0.3);
 }
