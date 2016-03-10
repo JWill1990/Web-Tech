@@ -1,23 +1,23 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml"
-    lang="en-GB" xml:lang="en-GB">
+lang="en-GB" xml:lang="en-GB">
     <head>
         <meta charset="UTF-8"/>
-        <title> Title Here </title>
-        <link href="resetstyle.css" rel="stylesheet" type="text/css" />
-        <link href="navigation.css" rel="stylesheet" type="text/css" />
-	    <link href="login.css" rel="stylesheet"/>
-        <link href="time.css" rel="stylesheet" type="text/css" />
+        <title>Template page</title>
+        <link href="resetstyle.css" rel="stylesheet"/>
+        <link href="login.css" rel="stylesheet"/>
+        <link href="navigation.css" rel="stylesheet"/>
+        <link href='https://fonts.googleapis.com/css?family=Indie+Flower' rel='stylesheet' type='text/css' />
+        <link href="time.css" rel="stylesheet"/>
         <link href="style.css" rel="stylesheet" type="text/css" />
-        <script type="text/javascript" src="html5shiv.js"></script>
         <!--[if lt IE 9]>
         <script src="dist/html5shiv.js"></script>
         <![endif]-->
     </head>
     <body>
         <header> 
-            <img id="logo" src="Images/Logo.png" alt="uPd8" />
-            <section class="login">
+            <img id="logo" src="Images/Logo2.png" alt="uPd8" />
+			<section class="login">
                 <form name="login" action="index_submit" method="get" accept-charset="utf-8">
                     <ul>
                         <li>
@@ -29,21 +29,22 @@
                         <li>
                             <input type="submit" value="Login"/>
                         </li>
-			            <li>
+								<li>
                             <input type="submit" onclick="location.href='registrationpage.html';" value="Register"/>
                         </li>
                     </ul>
                 </form>
             </section>
+            <h1> Stay uPd8ed </h1>
         </header>
         <main id="container">
             <div id="content">
                 <p class="marquee">
-                    <span id="dtText"></span>
-                    <script>
-                        var today = new Date();
-                        document.getElementById('dtText').innerHTML=today;
-                    </script>
+                <span id="dtText"></span>
+                <script>
+                    var today = new Date();
+                    document.getElementById('dtText').innerHTML=today;
+                </script>
                 </p>
                 <hr/>
                 <nav>
@@ -51,8 +52,8 @@
                         <li><a href="index.html">Home</a></li>
                         <li><a href="categories.html"> Categories </a></li>
                         <li><a href="contactpage.html"> Contact </a></li>
-                        <li><a class="active" href="aboutpage.html"> About </a></li>
-                        <li><a href="devblog.html"> Blog </a></li>
+                        <li><a href="aboutpage.html"> About </a></li>
+                        <li><a class="active" href="devblog.html"> Blog </a></li>
                     </ul>
                 </nav>
                 <hr/>
