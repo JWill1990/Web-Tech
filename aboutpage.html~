@@ -6,11 +6,11 @@
         <title>About uPd8</title>
         <link href="resetstyle.css" rel="stylesheet" type="text/css" />
         <link href="navigation.css" rel="stylesheet" type="text/css" />
-		  <link href="about.css" rel="stylesheet" type="text/css" />
-	     <link href="login.css" rel="stylesheet"/>
+        <link href="about.css" rel="stylesheet" type="text/css" />
+        <link href="login.css" rel="stylesheet"/>
         <link href="time.css" rel="stylesheet" type="text/css" />
         <link href="style.css" rel="stylesheet" type="text/css" />
-        <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Tangerine" />
+        <link href='https://fonts.googleapis.com/css?family=Indie+Flower' rel='stylesheet' type='text/css' />
         <script type="text/javascript" src="html5shiv.js"></script>
         <!--[if lt IE 9]>
         <script src="dist/html5shiv.js"></script>
@@ -37,6 +37,7 @@
                     </ul>
                 </form>
             </section>
+            <h1> Stay uPd8ed </h1>
         </header>
         <main id="container">
             <div id="content">
@@ -64,9 +65,10 @@
 								<p> uPd8 was formed as a collaborative effort between 2 University of Bristol
 									 Computer Science students. </p>
 								<p> The motive behind the development of uPd8 was centered upon our belief
-									 that web users should have the ability to be kept updated on the release
-									 of the latest issues of their favourite comic and book series, negating the
-									 need to constantly having to search through your bookmarks on the off-chance of
+									 that web users should be able to easily keep updated on the progress of
+                                     projects they're interested in, find the latest issues of their favourite comic 
+                                     and book series, or whatever else they're interested in. Gone are the days of
+									 constantly having to search through your bookmarks on the off-chance of
 									 finding the latest issue! </p>
 								<p> We hope you find this a useful application for your hobbyist needs! </p>
 								<p> The uPd8 team. </p>

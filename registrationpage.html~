@@ -8,6 +8,7 @@ lang="en-GB" xml:lang="en-GB">
         <link href="navigation.css" rel="stylesheet"/>
         <link href="login.css" rel="stylesheet"/>
         <link href="registration.css" rel="stylesheet"/>
+        <link href='https://fonts.googleapis.com/css?family=Indie+Flower' rel='stylesheet' type='text/css' />
         <link href="time.css" rel="stylesheet"/>
         <link href="style.css" rel="stylesheet" type="text/css" />
         <!--[if lt IE 9]>
@@ -35,7 +36,7 @@ lang="en-GB" xml:lang="en-GB">
                     </ul>
                 </form>
             </section>
-			<h1> Stay updated. </h1>
+            <h1> Stay uPd8ed </h1>
         </header>
         <main id="container">
             <div id="content">
