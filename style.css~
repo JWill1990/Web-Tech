@@ -10,7 +10,7 @@ html, body, #container {
     height: 100%; 
     margin-top: 1%;
     width: 100%;
-    font-family: helvetica, arial, verdana, sans-serif;
+    font-family: 'Indie Flower', serif;
     font-size: 100%;
     min-width: 640px;
 }
@@ -37,11 +37,11 @@ header {
 }
 
 header h1 {
-	font-size: 80px;
-	padding: 30px;
-	margin-left: 30%;
-	font-family: 'Tangerine', serif;
-   text-shadow: 4px 4px 4px #aaa;
+    font-size: 4vw;
+    padding: 30px;
+    margin-left: 30%;
+    font-family: 'Indie Flower', serif;
+    text-shadow: 4px 4px 4px #aaa;
 }
 
 #logo {
@@ -54,7 +54,7 @@ header h1 {
 
 footer { 
     background-color: rgba(127,127,250, 0.5);
-	 border:3px solid rgb(248, 211, 6);
+	border:3px solid rgb(248, 211, 6);
     clear: both; 
     width: 80%;
     height: 20px;
@@ -70,12 +70,7 @@ footer small {
 }
 
 hr {
-<<<<<<< HEAD
 	 border: 0;
     height: 3px;
-=======
-    border: 0;
-    height: 4px;
->>>>>>> 056e063a2220911fbb760ea3449b7cb8130232f9
     background-image: linear-gradient(to right, rgba(248, 211, 6, 0), rgba(248, 211, 6, 0.75), rgba(248, 211, 6, 0));	
 }
