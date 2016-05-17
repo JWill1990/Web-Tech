@@ -1,0 +1,510 @@
+0 info it worked if it ends with ok
+1 verbose cli [ '/usr/local/bin/node',
+1 verbose cli   '/usr/local/bin/npm',
+1 verbose cli   'install',
+1 verbose cli   'sqlite3' ]
+2 info using npm@1.3.21
+3 info using node@v0.10.24
+4 verbose node symlink /usr/local/bin/node
+5 verbose cache add [ 'sqlite3', null ]
+6 verbose cache add name=undefined spec="sqlite3" args=["sqlite3",null]
+7 verbose parsed url { protocol: null,
+7 verbose parsed url   slashes: null,
+7 verbose parsed url   auth: null,
+7 verbose parsed url   host: null,
+7 verbose parsed url   port: null,
+7 verbose parsed url   hostname: null,
+7 verbose parsed url   hash: null,
+7 verbose parsed url   search: null,
+7 verbose parsed url   query: null,
+7 verbose parsed url   pathname: 'sqlite3',
+7 verbose parsed url   path: 'sqlite3',
+7 verbose parsed url   href: 'sqlite3' }
+8 silly lockFile b54e393c-sqlite3 sqlite3
+9 verbose lock sqlite3 /home/msc15/jw15326/linux/.npm/b54e393c-sqlite3.lock
+10 silly lockFile b54e393c-sqlite3 sqlite3
+11 silly lockFile b54e393c-sqlite3 sqlite3
+12 verbose addNamed [ 'sqlite3', '' ]
+13 verbose addNamed [ null, '*' ]
+14 silly lockFile b9879749-sqlite3 sqlite3@
+15 verbose lock sqlite3@ /home/msc15/jw15326/linux/.npm/b9879749-sqlite3.lock
+16 silly addNameRange { name: 'sqlite3', range: '*', hasData: false }
+17 verbose url raw sqlite3
+18 verbose url resolving [ 'https://registry.npmjs.org/', './sqlite3' ]
+19 verbose url resolved https://registry.npmjs.org/sqlite3
+20 info trying registry request attempt 1 at 16:55:42
+21 verbose etag "3CFEIL3GTKKJCYMML0WU2YOL6"
+22 http GET https://registry.npmjs.org/sqlite3
+23 http 304 https://registry.npmjs.org/sqlite3
+24 silly registry.get cb [ 304,
+24 silly registry.get   { date: 'Tue, 17 May 2016 15:55:42 GMT',
+24 silly registry.get     via: '1.1 varnish',
+24 silly registry.get     'cache-control': 'max-age=300',
+24 silly registry.get     etag: '"3CFEIL3GTKKJCYMML0WU2YOL6"',
+24 silly registry.get     age: '278',
+24 silly registry.get     connection: 'keep-alive',
+24 silly registry.get     'x-served-by': 'cache-lhr6338-LHR',
+24 silly registry.get     'x-cache': 'HIT',
+24 silly registry.get     'x-cache-hits': '1',
+24 silly registry.get     'x-timer': 'S1463500542.588817,VS0,VE0',
+24 silly registry.get     vary: 'Accept-Encoding' } ]
+25 verbose etag sqlite3 from cache
+26 silly addNameRange number 2 { name: 'sqlite3', range: '*', hasData: true }
+27 silly addNameRange versions [ 'sqlite3',
+27 silly addNameRange   [ '2.0.0',
+27 silly addNameRange     '2.0.1',
+27 silly addNameRange     '2.0.2',
+27 silly addNameRange     '2.0.3',
+27 silly addNameRange     '2.0.4',
+27 silly addNameRange     '2.0.5',
+27 silly addNameRange     '2.0.6',
+27 silly addNameRange     '2.0.7',
+27 silly addNameRange     '2.0.8',
+27 silly addNameRange     '2.0.9',
+27 silly addNameRange     '2.0.10',
+27 silly addNameRange     '2.0.11',
+27 silly addNameRange     '2.0.12',
+27 silly addNameRange     '2.0.13',
+27 silly addNameRange     '2.0.14',
+27 silly addNameRange     '2.0.15',
+27 silly addNameRange     '2.0.16',
+27 silly addNameRange     '2.0.17',
+27 silly addNameRange     '2.0.18',
+27 silly addNameRange     '2.1.0',
+27 silly addNameRange     '2.1.1',
+27 silly addNameRange     '2.1.2',
+27 silly addNameRange     '2.1.3',
+27 silly addNameRange     '2.1.4',
+27 silly addNameRange     '2.1.5',
+27 silly addNameRange     '2.1.7',
+27 silly addNameRange     '2.1.8',
+27 silly addNameRange     '2.1.9',
+27 silly addNameRange     '2.1.10',
+27 silly addNameRange     '2.1.11',
+27 silly addNameRange     '2.1.12',
+27 silly addNameRange     '2.1.13',
+27 silly addNameRange     '2.1.14',
+27 silly addNameRange     '2.1.15',
+27 silly addNameRange     '2.1.16',
+27 silly addNameRange     '2.1.17',
+27 silly addNameRange     '2.1.18',
+27 silly addNameRange     '2.1.19',
+27 silly addNameRange     '2.2.0',
+27 silly addNameRange     '2.2.1',
+27 silly addNameRange     '2.2.2',
+27 silly addNameRange     '2.2.3',
+27 silly addNameRange     '2.2.4',
+27 silly addNameRange     '2.2.6',
+27 silly addNameRange     '2.2.7',
+27 silly addNameRange     '3.0.0',
+27 silly addNameRange     '3.0.1',
+27 silly addNameRange     '3.0.2',
+27 silly addNameRange     '3.0.4',
+27 silly addNameRange     '3.0.5',
+27 silly addNameRange     '3.0.6',
+27 silly addNameRange     '3.0.7',
+27 silly addNameRange     '3.0.8',
+27 silly addNameRange     '3.0.9',
+27 silly addNameRange     '3.0.10',
+27 silly addNameRange     '3.1.0',
+27 silly addNameRange     '3.1.1',
+27 silly addNameRange     '3.1.2',
+27 silly addNameRange     '3.1.3',
+27 silly addNameRange     '3.1.4' ] ]
+28 verbose addNamed [ 'sqlite3', '3.1.4' ]
+29 verbose addNamed [ '3.1.4', '3.1.4' ]
+30 silly lockFile e7274f70-sqlite3-3-1-4 sqlite3@3.1.4
+31 verbose lock sqlite3@3.1.4 /home/msc15/jw15326/linux/.npm/e7274f70-sqlite3-3-1-4.lock
+32 silly lockFile e7274f70-sqlite3-3-1-4 sqlite3@3.1.4
+33 silly lockFile e7274f70-sqlite3-3-1-4 sqlite3@3.1.4
+34 silly lockFile b9879749-sqlite3 sqlite3@
+35 silly lockFile b9879749-sqlite3 sqlite3@
+36 silly resolved [ { name: 'sqlite3',
+36 silly resolved     description: 'Asynchronous, non-blocking SQLite3 bindings',
+36 silly resolved     version: '3.1.4',
+36 silly resolved     homepage: 'http://github.com/mapbox/node-sqlite3',
+36 silly resolved     author: { name: 'MapBox', url: 'https://mapbox.com/' },
+36 silly resolved     binary:
+36 silly resolved      { module_name: 'node_sqlite3',
+36 silly resolved        module_path: './lib/binding/{node_abi}-{platform}-{arch}',
+36 silly resolved        host: 'https://mapbox-node-binary.s3.amazonaws.com',
+36 silly resolved        remote_path: './{name}/v{version}/{toolset}/',
+36 silly resolved        package_name: '{node_abi}-{platform}-{arch}.tar.gz' },
+36 silly resolved     contributors:
+36 silly resolved      [ [Object],
+36 silly resolved        [Object],
+36 silly resolved        [Object],
+36 silly resolved        [Object],
+36 silly resolved        [Object],
+36 silly resolved        [Object],
+36 silly resolved        [Object],
+36 silly resolved        [Object],
+36 silly resolved        [Object],
+36 silly resolved        [Object],
+36 silly resolved        [Object],
+36 silly resolved        [Object],
+36 silly resolved        [Object],
+36 silly resolved        [Object],
+36 silly resolved        [Object],
+36 silly resolved        [Object] ],
+36 silly resolved     repository: { type: 'git', url: 'git://github.com/mapbox/node-sqlite3.git' },
+36 silly resolved     dependencies: { nan: '~2.3.3', 'node-pre-gyp': '~0.6.28' },
+36 silly resolved     devDependencies: { mocha: '2.x', 'aws-sdk': '2.x' },
+36 silly resolved     scripts:
+36 silly resolved      { prepublish: 'npm ls',
+36 silly resolved        install: 'node-pre-gyp install --fallback-to-build',
+36 silly resolved        pretest: 'node test/support/createdb.js',
+36 silly resolved        test: 'mocha -R spec --timeout 480000' },
+36 silly resolved     license: 'BSD-3-Clause',
+36 silly resolved     keywords: [ 'sql', 'sqlite', 'sqlite3', 'database' ],
+36 silly resolved     main: './lib/sqlite3',
+36 silly resolved     bugs: { url: 'https://github.com/mapbox/node-sqlite3/issues' },
+36 silly resolved     readme: 'ERROR: No README data found!',
+36 silly resolved     bundleDependencies: [ 'node-pre-gyp' ],
+36 silly resolved     _id: 'sqlite3@3.1.4',
+36 silly resolved     _from: 'sqlite3@' } ]
+37 info install sqlite3@3.1.4 into /home/msc15/jw15326/linux/Private/Web Tech/Web-Tech
+38 info installOne sqlite3@3.1.4
+39 info /home/msc15/jw15326/linux/Private/Web Tech/Web-Tech/node_modules/sqlite3 unbuild
+40 verbose tar unpack /home/msc15/jw15326/linux/.npm/sqlite3/3.1.4/package.tgz
+41 silly lockFile 538cfc59-ch-Web-Tech-node-modules-sqlite3 tar:///home/msc15/jw15326/linux/Private/Web Tech/Web-Tech/node_modules/sqlite3
+42 verbose lock tar:///home/msc15/jw15326/linux/Private/Web Tech/Web-Tech/node_modules/sqlite3 /home/msc15/jw15326/linux/.npm/538cfc59-ch-Web-Tech-node-modules-sqlite3.lock
+43 silly lockFile 2f128a33-ux-npm-sqlite3-3-1-4-package-tgz tar:///home/msc15/jw15326/linux/.npm/sqlite3/3.1.4/package.tgz
+44 verbose lock tar:///home/msc15/jw15326/linux/.npm/sqlite3/3.1.4/package.tgz /home/msc15/jw15326/linux/.npm/2f128a33-ux-npm-sqlite3-3-1-4-package-tgz.lock
+45 silly gunzTarPerm modes [ '755', '644' ]
+46 silly gunzTarPerm extractEntry package.json
+47 silly gunzTarPerm extractEntry LICENSE
+48 silly gunzTarPerm extractEntry sqlite3.js
+49 silly gunzTarPerm extractEntry deps/common-sqlite.gypi
+50 silly gunzTarPerm extractEntry deps/extract.py
+51 silly gunzTarPerm extractEntry deps/sqlite-autoconf-3090100.tar.gz
+52 silly gunzTarPerm extractEntry deps/sqlite3.gyp
+53 silly gunzTarPerm extractEntry binding.gyp
+54 silly gunzTarPerm extractEntry CONTRIBUTING.md
+55 silly gunzTarPerm extractEntry lib/index.js
+56 silly gunzTarPerm extractEntry lib/sqlite3.js
+57 silly gunzTarPerm extractEntry lib/trace.js
+58 silly gunzTarPerm extractEntry CHANGELOG.md
+59 silly gunzTarPerm extractEntry appveyor.yml
+60 silly gunzTarPerm extractEntry src/async.h
+61 silly gunzTarPerm extractEntry src/database.cc
+62 silly gunzTarPerm extractEntry src/database.h
+63 silly gunzTarPerm extractEntry src/gcc-preinclude.h
+64 silly gunzTarPerm extractEntry src/macros.h
+65 silly gunzTarPerm extractEntry src/node_sqlite3.cc
+66 silly gunzTarPerm extractEntry src/statement.cc
+67 silly gunzTarPerm extractEntry src/statement.h
+68 silly gunzTarPerm extractEntry src/threading.h
+69 silly gunzTarPerm extractEntry node_modules/node-pre-gyp/package.json
+70 silly gunzTarPerm extractEntry node_modules/node-pre-gyp/README.md
+71 silly gunzTarPerm extractEntry node_modules/node-pre-gyp/LICENSE
+72 silly gunzTarPerm extractEntry node_modules/node-pre-gyp/CHANGELOG.md
+73 silly gunzTarPerm extractEntry node_modules/node-pre-gyp/appveyor.yml
+74 silly gunzTarPerm extractEntry node_modules/node-pre-gyp/bin/node-pre-gyp
+75 silly gunzTarPerm extractEntry node_modules/node-pre-gyp/bin/node-pre-gyp.cmd
+76 silly gunzTarPerm extractEntry node_modules/node-pre-gyp/lib/build.js
+77 silly gunzTarPerm extractEntry node_modules/node-pre-gyp/lib/install.js
+78 silly gunzTarPerm extractEntry node_modules/node-pre-gyp/lib/node-pre-gyp.js
+79 silly gunzTarPerm extractEntry node_modules/node-pre-gyp/lib/package.js
+80 silly gunzTarPerm extractEntry node_modules/node-pre-gyp/lib/pre-binding.js
+81 silly gunzTarPerm extractEntry node_modules/node-pre-gyp/lib/info.js
+82 silly gunzTarPerm extractEntry node_modules/node-pre-gyp/lib/rebuild.js
+83 silly gunzTarPerm extractEntry node_modules/node-pre-gyp/lib/reinstall.js
+84 silly gunzTarPerm extractEntry node_modules/node-pre-gyp/lib/reveal.js
+85 silly gunzTarPerm extractEntry node_modules/node-pre-gyp/lib/testbinary.js
+86 silly gunzTarPerm extractEntry node_modules/node-pre-gyp/lib/testpackage.js
+87 silly gunzTarPerm extractEntry node_modules/node-pre-gyp/lib/configure.js
+88 silly gunzTarPerm extractEntry node_modules/node-pre-gyp/lib/unpublish.js
+89 silly gunzTarPerm extractEntry node_modules/node-pre-gyp/lib/clean.js
+90 silly gunzTarPerm extractEntry node_modules/node-pre-gyp/lib/publish.js
+91 silly gunzTarPerm extractEntry node_modules/node-pre-gyp/lib/util/compile.js
+92 silly gunzTarPerm extractEntry node_modules/node-pre-gyp/lib/util/handle_gyp_opts.js
+93 silly gunzTarPerm extractEntry node_modules/node-pre-gyp/lib/util/s3_setup.js
+94 silly gunzTarPerm extractEntry node_modules/node-pre-gyp/lib/util/versioning.js
+95 silly gunzTarPerm extractEntry node_modules/node-pre-gyp/lib/util/abi_crosswalk.json
+96 silly gunzTarPerm extractEntry node_modules/node-pre-gyp/lib/util/nw-pre-gyp/package.json
+97 silly gunzTarPerm extractEntry node_modules/node-pre-gyp/lib/util/nw-pre-gyp/index.html
+98 silly lockFile 538cfc59-ch-Web-Tech-node-modules-sqlite3 tar:///home/msc15/jw15326/linux/Private/Web Tech/Web-Tech/node_modules/sqlite3
+99 silly lockFile 538cfc59-ch-Web-Tech-node-modules-sqlite3 tar:///home/msc15/jw15326/linux/Private/Web Tech/Web-Tech/node_modules/sqlite3
+100 silly lockFile 2f128a33-ux-npm-sqlite3-3-1-4-package-tgz tar:///home/msc15/jw15326/linux/.npm/sqlite3/3.1.4/package.tgz
+101 silly lockFile 2f128a33-ux-npm-sqlite3-3-1-4-package-tgz tar:///home/msc15/jw15326/linux/.npm/sqlite3/3.1.4/package.tgz
+102 info preinstall sqlite3@3.1.4
+103 verbose readDependencies using package.json deps
+104 verbose readDependencies using package.json deps
+105 verbose cache add [ 'nan@~2.3.3', null ]
+106 verbose cache add name=undefined spec="nan@~2.3.3" args=["nan@~2.3.3",null]
+107 verbose parsed url { protocol: null,
+107 verbose parsed url   slashes: null,
+107 verbose parsed url   auth: null,
+107 verbose parsed url   host: null,
+107 verbose parsed url   port: null,
+107 verbose parsed url   hostname: null,
+107 verbose parsed url   hash: null,
+107 verbose parsed url   search: null,
+107 verbose parsed url   query: null,
+107 verbose parsed url   pathname: 'nan@~2.3.3',
+107 verbose parsed url   path: 'nan@~2.3.3',
+107 verbose parsed url   href: 'nan@~2.3.3' }
+108 verbose cache add name="nan" spec="~2.3.3" args=["nan","~2.3.3"]
+109 verbose parsed url { protocol: null,
+109 verbose parsed url   slashes: null,
+109 verbose parsed url   auth: null,
+109 verbose parsed url   host: null,
+109 verbose parsed url   port: null,
+109 verbose parsed url   hostname: null,
+109 verbose parsed url   hash: null,
+109 verbose parsed url   search: null,
+109 verbose parsed url   query: null,
+109 verbose parsed url   pathname: '~2.3.3',
+109 verbose parsed url   path: '~2.3.3',
+109 verbose parsed url   href: '~2.3.3' }
+110 verbose addNamed [ 'nan', '~2.3.3' ]
+111 verbose addNamed [ null, '>=2.3.3-0 <2.4.0-0' ]
+112 silly lockFile 01d0f43e-nan-2-3-3 nan@~2.3.3
+113 verbose lock nan@~2.3.3 /home/msc15/jw15326/linux/.npm/01d0f43e-nan-2-3-3.lock
+114 silly addNameRange { name: 'nan', range: '>=2.3.3-0 <2.4.0-0', hasData: false }
+115 verbose url raw nan
+116 verbose url resolving [ 'https://registry.npmjs.org/', './nan' ]
+117 verbose url resolved https://registry.npmjs.org/nan
+118 info trying registry request attempt 1 at 16:55:43
+119 verbose etag "DKC1YJIJGP1AZK26YNWQ05M27"
+120 http GET https://registry.npmjs.org/nan
+121 http 200 https://registry.npmjs.org/nan
+122 silly registry.get cb [ 200,
+122 silly registry.get   { server: 'CouchDB/1.5.0 (Erlang OTP/R16B03)',
+122 silly registry.get     etag: '"24B26O57Z0ASCDVIYEYKA8KVW"',
+122 silly registry.get     'content-type': 'application/json',
+122 silly registry.get     'cache-control': 'max-age=300',
+122 silly registry.get     'content-length': '112442',
+122 silly registry.get     'accept-ranges': 'bytes',
+122 silly registry.get     date: 'Tue, 17 May 2016 15:55:43 GMT',
+122 silly registry.get     via: '1.1 varnish',
+122 silly registry.get     age: '1',
+122 silly registry.get     connection: 'keep-alive',
+122 silly registry.get     'x-served-by': 'cache-lcy1124-LCY',
+122 silly registry.get     'x-cache': 'HIT',
+122 silly registry.get     'x-cache-hits': '1',
+122 silly registry.get     'x-timer': 'S1463500543.067142,VS0,VE0',
+122 silly registry.get     vary: 'Accept-Encoding' } ]
+123 silly addNameRange number 2 { name: 'nan', range: '>=2.3.3-0 <2.4.0-0', hasData: true }
+124 silly addNameRange versions [ 'nan',
+124 silly addNameRange   [ '0.3.0-wip',
+124 silly addNameRange     '0.3.0-wip2',
+124 silly addNameRange     '0.3.0',
+124 silly addNameRange     '0.3.1',
+124 silly addNameRange     '0.3.2',
+124 silly addNameRange     '0.4.0',
+124 silly addNameRange     '0.4.1',
+124 silly addNameRange     '0.4.2',
+124 silly addNameRange     '0.4.3',
+124 silly addNameRange     '0.4.4',
+124 silly addNameRange     '0.5.0',
+124 silly addNameRange     '0.5.1',
+124 silly addNameRange     '0.5.2',
+124 silly addNameRange     '0.6.0',
+124 silly addNameRange     '0.7.0',
+124 silly addNameRange     '0.7.1',
+124 silly addNameRange     '0.8.0',
+124 silly addNameRange     '1.0.0',
+124 silly addNameRange     '1.1.0',
+124 silly addNameRange     '1.1.1',
+124 silly addNameRange     '1.1.2',
+124 silly addNameRange     '1.2.0',
+124 silly addNameRange     '1.3.0',
+124 silly addNameRange     '1.4.0',
+124 silly addNameRange     '1.4.1',
+124 silly addNameRange     '1.5.0',
+124 silly addNameRange     '1.4.2',
+124 silly addNameRange     '1.4.3',
+124 silly addNameRange     '1.5.1',
+124 silly addNameRange     '1.5.2',
+124 silly addNameRange     '1.6.0',
+124 silly addNameRange     '1.5.3',
+124 silly addNameRange     '1.6.1',
+124 silly addNameRange     '1.6.2',
+124 silly addNameRange     '1.7.0',
+124 silly addNameRange     '1.8.0',
+124 silly addNameRange     '1.8.1',
+124 silly addNameRange     '1.8.2',
+124 silly addNameRange     '1.8.3',
+124 silly addNameRange     '1.8.4',
+124 silly addNameRange     '1.9.0',
+124 silly addNameRange     '2.0.0',
+124 silly addNameRange     '2.0.1',
+124 silly addNameRange     '2.0.2',
+124 silly addNameRange     '2.0.3',
+124 silly addNameRange     '2.0.4',
+124 silly addNameRange     '2.0.5',
+124 silly addNameRange     '2.0.6',
+124 silly addNameRange     '2.0.7',
+124 silly addNameRange     '2.0.8',
+124 silly addNameRange     '2.0.9',
+124 silly addNameRange     '2.1.0',
+124 silly addNameRange     '2.2.0',
+124 silly addNameRange     '2.2.1',
+124 silly addNameRange     '2.3.0',
+124 silly addNameRange     '2.3.1',
+124 silly addNameRange     '2.3.2',
+124 silly addNameRange     '2.3.3' ] ]
+125 verbose addNamed [ 'nan', '2.3.3' ]
+126 verbose addNamed [ '2.3.3', '2.3.3' ]
+127 silly lockFile 9af36e34-nan-2-3-3 nan@2.3.3
+128 verbose lock nan@2.3.3 /home/msc15/jw15326/linux/.npm/9af36e34-nan-2-3-3.lock
+129 silly lockFile 9af36e34-nan-2-3-3 nan@2.3.3
+130 silly lockFile 9af36e34-nan-2-3-3 nan@2.3.3
+131 silly lockFile 01d0f43e-nan-2-3-3 nan@~2.3.3
+132 silly lockFile 01d0f43e-nan-2-3-3 nan@~2.3.3
+133 silly resolved [ { name: 'nan',
+133 silly resolved     version: '2.3.3',
+133 silly resolved     description: 'Native Abstractions for Node.js: C++ header for Node 0.8 -> 6 compatibility',
+133 silly resolved     main: 'include_dirs.js',
+133 silly resolved     repository: { type: 'git', url: 'git://github.com/nodejs/nan.git' },
+133 silly resolved     scripts:
+133 silly resolved      { test: 'tap --gc --stderr test/js/*-test.js',
+133 silly resolved        'rebuild-tests': 'node-gyp rebuild --msvs_version=2013 --directory test',
+133 silly resolved        docs: 'doc/.build.sh' },
+133 silly resolved     contributors:
+133 silly resolved      [ [Object],
+133 silly resolved        [Object],
+133 silly resolved        [Object],
+133 silly resolved        [Object],
+133 silly resolved        [Object],
+133 silly resolved        [Object],
+133 silly resolved        [Object] ],
+133 silly resolved     devDependencies:
+133 silly resolved      { bindings: '~1.2.1',
+133 silly resolved        commander: '^2.8.1',
+133 silly resolved        glob: '^5.0.14',
+133 silly resolved        'node-gyp': '~3.0.1',
+133 silly resolved        tap: '~0.7.1',
+133 silly resolved        xtend: '~4.0.0' },
+133 silly resolved     license: 'MIT',
+133 silly resolved     readme: 'Native Abstractions for Node.js\n===============================\n\n**A header file filled with macro and utility goodness for making add-on development for Node.js easier across versions 0.8, 0.10, 0.12, 1, 4, 5 and 6.**\n\n***Current version: 2.3.3***\n\n*(See [CHANGELOG.md](https://github.com/nodejs/nan/blob/master/CHANGELOG.md) for complete ChangeLog)*\n\n[![NPM](https://nodei.co/npm/nan.png?downloads=true&downloadRank=true)](https://nodei.co/npm/nan/) [![NPM](https://nodei.co/npm-dl/nan.png?months=6&height=3)](https://nodei.co/npm/nan/)\n\n[![Build Status](https://api.travis-ci.org/nodejs/nan.svg?branch=master)](http://travis-ci.org/nodejs/nan)\n[![Build status](https://ci.appveyor.com/api/projects/status/kh73pbm9dsju7fgh)](https://ci.appveyor.com/project/RodVagg/nan)\n\nThanks to the crazy changes in V8 (and some in Node core), keeping native addons compiling happily across versions, particularly 0.10 to 0.12 to 4.0, is a minor nightmare. The goal of this project is to store all logic necessary to develop native Node.js addons without having to inspect `NODE_MODULE_VERSION` and get yourself into a macro-tangle.\n\nThis project also contains some helper utilities that make addon development a bit more pleasant.\n\n * **[News & Updates](#news)**\n * **[Usage](#usage)**\n * **[Example](#example)**\n * **[API](#api)**\n * **[Tests](#tests)**\n * **[Governance & Contributing](#governance)**\n\n<a name="news"></a>\n## News & Updates\n\n<a name="usage"></a>\n## Usage\n\nSimply add **NAN** as a dependency in the *package.json* of your Node addon:\n\n``` bash\n$ npm install --save nan\n```\n\nPull in the path to **NAN** in your *binding.gyp* so that you can use `#include <nan.h>` in your *.cpp* files:\n\n``` python\n"include_dirs" : [\n    "<!(node -e \\"require(\'nan\')\\")"\n]\n```\n\nThis works like a `-I<path-to-NAN>` when compiling your addon.\n\n<a name="example"></a>\n## Example\n\nJust getting started with Nan? Take a look at the **[Node Add-on Examples](https://github.com/nodejs/node-addon-examples)**.\n\nRefer to a [quick-start **Nan** Boilerplate](https://github.com/fcanas/node-native-boilerplate) for a ready-to-go project that utilizes basic Nan functionality.\n\nFor a simpler example, see the **[async pi estimation example](https://github.com/nodejs/nan/tree/master/examples/async_pi_estimate)** in the examples directory for full code and an explanation of what this Monte Carlo Pi estimation example does. Below are just some parts of the full example that illustrate the use of **NAN**.\n\nYet another example is **[nan-example-eol](https://github.com/CodeCharmLtd/nan-example-eol)**. It shows newline detection implemented as a native addon.\n\nAlso take a look at our comprehensive **[C++ test suite](https://github.com/nodejs/nan/tree/master/test/cpp)** which has a plehora of code snippets for your pasting pleasure.\n\n<a name="api"></a>\n## API\n\nAdditional to the NAN documentation below, please consult:\n\n* [The V8 Getting Started Guide](https://developers.google.com/v8/get_started)\n* [The V8 Embedders Guide](https://developers.google.com/v8/embed)\n* [V8 API Documentation](http://v8docs.nodesource.com/)\n* [Node Add-on Documentation](https://nodejs.org/api/addons.html)\n\n<!-- START API -->\n\n### JavaScript-accessible methods\n\nA _template_ is a blueprint for JavaScript functions and objects in a context. You can use a template to wrap C++ functions and data structures within JavaScript objects so that they can be manipulated from JavaScript. See the V8 Embedders Guide section on [Templates](https://developers.google.com/v8/embed#templates) for further information.\n\nIn order to expose functionality to JavaScript via a template, you must provide it to V8 in a form that it understands. Across the versions of V8 supported by NAN, JavaScript-accessible method signatures vary widely, NAN fully abstracts method declaration and provides you with an interface that is similar to the most recent V8 API but is backward-compatible with older versions that still use the now-deceased `v8::Argument` type.\n\n* **Method argument types**\n - <a href="doc/methods.md#api_nan_function_callback_info"><b><code>Nan::FunctionCallbackInfo</code></b></a>\n - <a href="doc/methods.md#api_nan_property_callback_info"><b><code>Nan::PropertyCallbackInfo</code></b></a>\n - <a href="doc/methods.md#api_nan_return_value"><b><code>Nan::ReturnValue</code></b></a>\n* **Method declarations**\n - <a href="doc/methods.md#api_nan_method"><b>Method declaration</b></a>\n - <a href="doc/methods.md#api_nan_getter"><b>Getter declaration</b></a>\n - <a href="doc/methods.md#api_nan_setter"><b>Setter declaration</b></a>\n - <a href="doc/methods.md#api_nan_property_getter"><b>Property getter declaration</b></a>\n - <a href="doc/methods.md#api_nan_property_setter"><b>Property setter declaration</b></a>\n - <a href="doc/methods.md#api_nan_property_enumerator"><b>Property enumerator declaration</b></a>\n - <a href="doc/methods.md#api_nan_property_deleter"><b>Property deleter declaration</b></a>\n - <a href="doc/methods.md#api_nan_property_query"><b>Property query declaration</b></a>\n - <a href="doc/methods.md#api_nan_index_getter"><b>Index getter declaration</b></a>\n - <a href="doc/methods.md#api_nan_index_setter"><b>Index setter declaration</b></a>\n - <a href="doc/methods.md#api_nan_index_enumerator"><b>Index enumerator declaration</b></a>\n - <a href="doc/methods.md#api_nan_index_deleter"><b>Index deleter declaration</b></a>\n - <a href="doc/methods.md#api_nan_index_query"><b>Index query declaration</b></a>\n* Method and template helpers\n - <a href="doc/methods.md#api_nan_set_method"><b><code>Nan::SetMethod()</code></b></a>\n - <a href="doc/methods.md#api_nan_set_prototype_method"><b><code>Nan::SetPrototypeMethod()</code></b></a>\n - <a href="doc/methods.md#api_nan_set_accessor"><b><code>Nan::SetAccessor()</code></b></a>\n - <a href="doc/methods.md#api_nan_set_named_property_handler"><b><code>Nan::SetNamedPropertyHandler()</code></b></a>\n - <a href="doc/methods.md#api_nan_set_indexed_property_handler"><b><code>Nan::SetIndexedPropertyHandler()</code></b></a>\n - <a href="doc/methods.md#api_nan_set_template"><b><code>Nan::SetTemplate()</code></b></a>\n - <a href="doc/methods.md#api_nan_set_prototype_template"><b><code>Nan::SetPrototypeTemplate()</code></b></a>\n - <a href="doc/methods.md#api_nan_set_instance_template"><b><code>Nan::SetInstanceTemplate()</code></b></a>\n - <a href="doc/methods.md#api_nan_set_call_handler"><b><code>Nan::SetCallHandler()</code></b></a>\n - <a href="doc/methods.md#api_nan_set_call_as_function_handler"><b><code>Nan::SetCallAsFunctionHandler()</code></b></a>\n\n### Scopes\n\nA _local handle_ is a pointer to an object. All V8 objects are accessed using handles, they are necessary because of the way the V8 garbage collector works.\n\nA handle scope can be thought of as a container for any number of handles. When you\'ve finished with your handles, instead of deleting each one individually you can simply delete their scope.\n\nThe creation of `HandleScope` objects is different across the supported versions of V8. Therefore, NAN provides its own implementations that can be used safely across these.\n\n - <a href="doc/scopes.md#api_nan_handle_scope"><b><code>Nan::HandleScope</code></b></a>\n - <a href="doc/scopes.md#api_nan_escapable_handle_scope"><b><code>Nan::EscapableHandleScope</code></b></a>\n\nAlso see the V8 Embedders Guide section on [Handles and Garbage Collection](https://developers.google.com/v8/embed#handles).\n\n### Persistent references\n\nAn object reference that is independent of any `HandleScope` is a _persistent_ reference. Where a `Local` handle only lives as long as the `HandleScope` in which it was allocated, a `Persistent` handle remains valid until it is explicitly disposed.\n\nDue to the evolution of the V8 API, it is necessary for NAN to provide a wrapper implementation of the `Persistent` classes to supply compatibility across the V8 versions supported.\n\n - <a href="doc/persistent.md#api_nan_persistent_base"><b><code>Nan::PersistentBase & v8::PersistentBase</code></b></a>\n - <a href="doc/persistent.md#api_nan_non_copyable_persistent_traits"><b><code>Nan::NonCopyablePersistentTraits & v8::NonCopyablePersistentTraits</code></b></a>\n - <a href="doc/persistent.md#api_nan_copyable_persistent_traits"><b><code>Nan::CopyablePersistentTraits & v8::CopyablePersistentTraits</code></b></a>\n - <a href="doc/persistent.md#api_nan_persistent"><b><code>Nan::Persistent</code></b></a>\n - <a href="doc/persistent.md#api_nan_global"><b><code>Nan::Global</code></b></a>\n - <a href="doc/persistent.md#api_nan_weak_callback_info"><b><code>Nan::WeakCallbackInfo</code></b></a>\n - <a href="doc/persistent.md#api_nan_weak_callback_type"><b><code>Nan::WeakCallbackType</code></b></a>\n\nAlso see the V8 Embedders Guide section on [Handles and Garbage Collection](https://developers.google.com/v8/embed#handles).\n\n### New\n\nNAN provides a `Nan::New()` helper for the creation of new JavaScript objects in a way that\'s compatible across the supported versions of V8.\n\n - <a href="doc/new.md#api_nan_new"><b><code>Nan::New()</code></b></a>\n - <a href="doc/new.md#api_nan_undefined"><b><code>Nan::Undefined()</code></b></a>\n - <a href="doc/new.md#api_nan_null"><b><code>Nan::Null()</code></b></a>\n - <a href="doc/new.md#api_nan_true"><b><code>Nan::True()</code></b></a>\n - <a href="doc/new.md#api_nan_false"><b><code>Nan::False()</code></b></a>\n - <a href="doc/new.md#api_nan_empty_string"><b><code>Nan::EmptyString()</code></b></a>\n\n\n### Converters\n\nNAN contains functions that convert `v8::Value`s to other `v8::Value` types and native types. Since type conversion is not guaranteed to succeed, they return `Nan::Maybe` types. These converters can be used in place of `value->ToX()` and `value->XValue()` (where `X` is one of the types, e.g. `Boolean`) in a way that provides a consistent interface across V8 versions. Newer versions of V8 use the new `v8::Maybe` and `v8::MaybeLocal` types for these conversions, older versions don\'t have this functionality so it is provided by NAN.\n\n - <a href="doc/converters.md#api_nan_to"><b><code>Nan::To()</code></b></a>\n\n### Maybe Types\n\nThe `Nan::MaybeLocal` and `Nan::Maybe` types are monads that encapsulate `v8::Local` handles that _may be empty_.\n\n* **Maybe Types**\n  - <a href="doc/maybe_types.md#api_nan_maybe_local"><b><code>Nan::MaybeLocal</code></b></a>\n  - <a href="doc/maybe_types.md#api_nan_maybe"><b><code>Nan::Maybe</code></b></a>\n  - <a href="doc/maybe_types.md#api_nan_nothing"><b><code>Nan::Nothing</code></b></a>\n  - <a href="doc/maybe_types.md#api_nan_just"><b><code>Nan::Just</code></b></a>\n* **Maybe Helpers**\n  - <a href="doc/maybe_types.md#api_nan_call"><b><code>Nan::Call()</code></b></a>\n  - <a href="doc/maybe_types.md#api_nan_to_detail_string"><b><code>Nan::ToDetailString()</code></b></a>\n  - <a href="doc/maybe_types.md#api_nan_to_array_index"><b><code>Nan::ToArrayIndex()</code></b></a>\n  - <a href="doc/maybe_types.md#api_nan_equals"><b><code>Nan::Equals()</code></b></a>\n  - <a href="doc/maybe_types.md#api_nan_new_instance"><b><code>Nan::NewInstance()</code></b></a>\n  - <a href="doc/maybe_types.md#api_nan_get_function"><b><code>Nan::GetFunction()</code></b></a>\n  - <a href="doc/maybe_types.md#api_nan_set"><b><code>Nan::Set()</code></b></a>\n  - <a href="doc/maybe_types.md#api_nan_force_set"><b><code>Nan::ForceSet()</code></b></a>\n  - <a href="doc/maybe_types.md#api_nan_get"><b><code>Nan::Get()</code></b></a>\n  - <a href="doc/maybe_types.md#api_nan_get_property_attribute"><b><code>Nan::GetPropertyAttributes()</code></b></a>\n  - <a href="doc/maybe_types.md#api_nan_has"><b><code>Nan::Has()</code></b></a>\n  - <a href="doc/maybe_types.md#api_nan_delete"><b><code>Nan::Delete()</code></b></a>\n  - <a href="doc/maybe_types.md#api_nan_get_property_names"><b><code>Nan::GetPropertyNames()</code></b></a>\n  - <a href="doc/maybe_types.md#api_nan_get_own_property_names"><b><code>Nan::GetOwnPropertyNames()</code></b></a>\n  - <a href="doc/maybe_types.md#api_nan_set_prototype"><b><code>Nan::SetPrototype()</code></b></a>\n  - <a href="doc/maybe_types.md#api_nan_object_proto_to_string"><b><code>Nan::ObjectProtoToString()</code></b></a>\n  - <a href="doc/maybe_types.md#api_nan_has_own_property"><b><code>Nan::HasOwnProperty()</code></b></a>\n  - <a href="doc/maybe_types.md#api_nan_has_real_named_property"><b><code>Nan::HasRealNamedProperty()</code></b></a>\n  - <a href="doc/maybe_types.md#api_nan_has_real_indexed_property"><b><code>Nan::HasRealIndexedProperty()</code></b></a>\n  - <a href="doc/maybe_types.md#api_nan_has_real_named_callback_property"><b><code>Nan::HasRealNamedCallbackProperty()</code></b></a>\n  - <a href="doc/maybe_types.md#api_nan_get_real_named_property_in_prototype_chain"><b><code>Nan::GetRealNamedPropertyInPrototypeChain()</code></b></a>\n  - <a href="doc/maybe_types.md#api_nan_get_real_named_property"><b><code>Nan::GetRealNamedProperty()</code></b></a>\n  - <a href="doc/maybe_types.md#api_nan_call_as_function"><b><code>Nan::CallAsFunction()</code></b></a>\n  - <a href="doc/maybe_types.md#api_nan_call_as_constructor"><b><code>Nan::CallAsConstructor()</code></b></a>\n  - <a href="doc/maybe_types.md#api_nan_get_source_line"><b><code>Nan::GetSourceLine()</code></b></a>\n  - <a href="doc/maybe_types.md#api_nan_get_line_number"><b><code>Nan::GetLineNumber()</code></b></a>\n  - <a href="doc/maybe_types.md#api_nan_get_start_column"><b><code>Nan::GetStartColumn()</code></b></a>\n  - <a href="doc/maybe_types.md#api_nan_get_end_column"><b><code>Nan::GetEndColumn()</code></b></a>\n  - <a href="doc/maybe_types.md#api_nan_clone_element_at"><b><code>Nan::CloneElementAt()</code></b></a>\n  - <a href="doc/maybe_types.md#api_nan_make_maybe"><b><code>Nan::MakeMaybe()</code></b></a>\n\n### Script\n\nNAN provides a `v8::Script` helpers as the API has changed over the supported versions of V8.\n\n - <a href="doc/script.md#api_nan_compile_script"><b><code>Nan::CompileScript()</code></b></a>\n - <a href="doc/script.md#api_nan_run_script"><b><code>Nan::RunScript()</code></b></a>\n\n\n### Errors\n\nNAN includes helpers for creating, throwing and catching Errors as much of this functionality varies across the supported versions of V8 and must be abstracted.\n\nNote that an Error object is simply a specialized form of `v8::Value`.\n\nAlso consult the V8 Embedders Guide section on [Exceptions](https://developers.google.com/v8/embed#exceptions) for more information.\n\n - <a href="doc/errors.md#api_nan_error"><b><code>Nan::Error()</code></b></a>\n - <a href="doc/errors.md#api_nan_range_error"><b><code>Nan::RangeError()</code></b></a>\n - <a href="doc/errors.md#api_nan_reference_error"><b><code>Nan::ReferenceError()</code></b></a>\n - <a href="doc/errors.md#api_nan_syntax_error"><b><code>Nan::SyntaxError()</code></b></a>\n - <a href="doc/errors.md#api_nan_type_error"><b><code>Nan::TypeError()</code></b></a>\n - <a href="doc/errors.md#api_nan_throw_error"><b><code>Nan::ThrowError()</code></b></a>\n - <a href="doc/errors.md#api_nan_throw_range_error"><b><code>Nan::ThrowRangeError()</code></b></a>\n - <a href="doc/errors.md#api_nan_throw_reference_error"><b><code>Nan::ThrowReferenceError()</code></b></a>\n - <a href="doc/errors.md#api_nan_throw_syntax_error"><b><code>Nan::ThrowSyntaxError()</code></b></a>\n - <a href="doc/errors.md#api_nan_throw_type_error"><b><code>Nan::ThrowTypeError()</code></b></a>\n - <a href="doc/errors.md#api_nan_fatal_exception"><b><code>Nan::FatalException()</code></b></a>\n - <a href="doc/errors.md#api_nan_errno_exception"><b><code>Nan::ErrnoException()</code></b></a>\n - <a href="doc/errors.md#api_nan_try_catch"><b><code>Nan::TryCatch</code></b></a>\n\n\n### Buffers\n\nNAN\'s `node::Buffer` helpers exist as the API has changed across supported Node versions. Use these methods to ensure compatibility.\n\n - <a href="doc/buffers.md#api_nan_new_buffer"><b><code>Nan::NewBuffer()</code></b></a>\n - <a href="doc/buffers.md#api_nan_copy_buffer"><b><code>Nan::CopyBuffer()</code></b></a>\n - <a href="doc/buffers.md#api_nan_free_callback"><b><code>Nan::FreeCallback()</code></b></a>\n\n### Nan::Callback\n\n`Nan::Callback` makes it easier to use `v8::Function` handles as callbacks. A class that wraps a `v8::Function` handle, protecting it from garbage collection and making it particularly useful for storage and use across asynchronous execution.\n\n - <a href="doc/callback.md#api_nan_callback"><b><code>Nan::Callback</code></b></a>\n\n### Asynchronous work helpers\n\n`Nan::AsyncWorker` and `Nan::AsyncProgressWorker` are helper classes that make working with asynchronous code easier.\n\n - <a href="doc/asyncworker.md#api_nan_async_worker"><b><code>Nan::AsyncWorker</code></b></a>\n - <a href="doc/asyncworker.md#api_nan_async_progress_worker"><b><code>Nan::AsyncProgressWorker</code></b></a>\n - <a href="doc/asyncworker.md#api_nan_async_queue_worker"><b><code>Nan::AsyncQueueWorker</code></b></a>\n\n### Strings & Bytes\n\nMiscellaneous string & byte encoding and decoding functionality provided for compatibility across supported versions of V8 and Node. Implemented by NAN to ensure that all encoding types are supported, even for older versions of Node where they are missing.\n\n - <a href="doc/string_bytes.md#api_nan_encoding"><b><code>Nan::Encoding</code></b></a>\n - <a href="doc/string_bytes.md#api_nan_encode"><b><code>Nan::Encode()</code></b></a>\n - <a href="doc/string_bytes.md#api_nan_decode_bytes"><b><code>Nan::DecodeBytes()</code></b></a>\n - <a href="doc/string_bytes.md#api_nan_decode_write"><b><code>Nan::DecodeWrite()</code></b></a>\n\n\n### Object Wrappers\n\nThe `ObjectWrap` class can be used to make wrapped C++ objects and a factory of wrapped objects.\n\n - <a href="doc/object_wrappers.md#api_nan_object_wrap"><b><code>Nan::ObjectWrap</code></b></a>\n\n\n### V8 internals\n\nThe hooks to access V8 internals—including GC and statistics—are different across the supported versions of V8, therefore NAN provides its own hooks that call the appropriate V8 methods.\n\n - <a href="doc/v8_internals.md#api_nan_gc_callback"><b><code>NAN_GC_CALLBACK()</code></b></a>\n - <a href="doc/v8_internals.md#api_nan_add_gc_epilogue_callback"><b><code>Nan::AddGCEpilogueCallback()</code></b></a>\n - <a href="doc/v8_internals.md#api_nan_remove_gc_epilogue_callback"><b><code>Nan::RemoveGCEpilogueCallback()</code></b></a>\n - <a href="doc/v8_internals.md#api_nan_add_gc_prologue_callback"><b><code>Nan::AddGCPrologueCallback()</code></b></a>\n - <a href="doc/v8_internals.md#api_nan_remove_gc_prologue_callback"><b><code>Nan::RemoveGCPrologueCallback()</code></b></a>\n - <a href="doc/v8_internals.md#api_nan_get_heap_statistics"><b><code>Nan::GetHeapStatistics()</code></b></a>\n - <a href="doc/v8_internals.md#api_nan_set_counter_function"><b><code>Nan::SetCounterFunction()</code></b></a>\n - <a href="doc/v8_internals.md#api_nan_set_create_histogram_function"><b><code>Nan::SetCreateHistogramFunction()</code></b></a>\n - <a href="doc/v8_internals.md#api_nan_set_add_histogram_sample_function"><b><code>Nan::SetAddHistogramSampleFunction()</code></b></a>\n - <a href="doc/v8_internals.md#api_nan_idle_notification"><b><code>Nan::IdleNotification()</code></b></a>\n - <a href="doc/v8_internals.md#api_nan_low_memory_notification"><b><code>Nan::LowMemoryNotification()</code></b></a>\n - <a href="doc/v8_internals.md#api_nan_context_disposed_notification"><b><code>Nan::ContextDisposedNotification()</code></b></a>\n - <a href="doc/v8_internals.md#api_nan_get_internal_field_pointer"><b><code>Nan::GetInternalFieldPointer()</code></b></a>\n - <a href="doc/v8_internals.md#api_nan_set_internal_field_pointer"><b><code>Nan::SetInternalFieldPointer()</code></b></a>\n - <a href="doc/v8_internals.md#api_nan_adjust_external_memory"><b><code>Nan::AdjustExternalMemory()</code></b></a>\n\n\n### Miscellaneous V8 Helpers\n\n - <a href="doc/v8_misc.md#api_nan_utf8_string"><b><code>Nan::Utf8String</code></b></a>\n - <a href="doc/v8_misc.md#api_nan_get_current_context"><b><code>Nan::GetCurrentContext()</code></b></a>\n - <a href="doc/v8_misc.md#api_nan_set_isolate_data"><b><code>Nan::SetIsolateData()</code></b></a>\n - <a href="doc/v8_misc.md#api_nan_get_isolate_data"><b><code>Nan::GetIsolateData()</code></b></a>\n - <a href="doc/v8_misc.md#api_nan_typedarray_contents"><b><code>Nan::TypedArrayContents</code></b></a>\n\n\n### Miscellaneous Node Helpers\n\n - <a href="doc/node_misc.md#api_nan_make_callback"><b><code>Nan::MakeCallback()</code></b></a>\n - <a href="doc/node_misc.md#api_nan_module_init"><b><code>NAN_MODULE_INIT()</code></b></a>\n - <a href="doc/node_misc.md#api_nan_export"><b><code>Nan::Export()</code></b></a>\n\n<!-- END API -->\n\n\n<a name="tests"></a>\n### Tests\n\nTo run the NAN tests do:\n\n``` sh\nnpm install\nnpm run-script rebuild-tests\nnpm test\n```\n\nOr just:\n\n``` sh\nnpm install\nmake test\n```\n\n<a name="governance"></a>\n## Governance & Contributing\n\nNAN is governed by the [io.js](https://iojs.org/) Addon API Working Group\n\n### Addon API Working Group (WG)\n\nThe NAN project is jointly governed by a Working Group which is responsible for high-level guidance of the project.\n\nMembers of the WG are also known as Collaborators, there is no distinction between the two, unlike other io.js projects.\n\nThe WG has final authority over this project including:\n\n* Technical direction\n* Project governance and process (including this policy)\n* Contribution policy\n* GitHub repository hosting\n* Maintaining the list of additional Collaborators\n\nFor the current list of WG members, see the project [README.md](./README.md#collaborators).\n\nIndividuals making significant and valuable contributions are made members of the WG and given commit-access to the project. These individuals are identified by the WG and their addition to the WG is discussed via GitHub and requires unanimous consensus amongst those WG members participating in the discussion with a quorum of 50% of WG members required for acceptance of the vote.\n\n_Note:_ If you make a significant contribution and are not considered for commit-access log an issue or contact a WG member directly.\n\nFor the current list of WG members / Collaborators, see the project [README.md](./README.md#collaborators).\n\n### Consensus Seeking Process\n\nThe WG follows a [Consensus Seeking](http://en.wikipedia.org/wiki/Consensus-seeking_decision-making) decision making model.\n\nModifications of the contents of the NAN repository are made on a collaborative basis. Anybody with a GitHub account may propose a modification via pull request and it will be considered by the WG. All pull requests must be reviewed and accepted by a WG member with sufficient expertise who is able to take full responsibility for the change. In the case of pull requests proposed by an existing WG member, an additional WG member is required for sign-off. Consensus should be sought if additional WG members participate and there is disagreement around a particular modification.\n\nIf a change proposal cannot reach a consensus, a WG member can call for a vote amongst the members of the WG. Simple majority wins.\n\n<a id="developers-certificate-of-origin"></a>\n## Developer\'s Certificate of Origin 1.1\n\nBy making a contribution to this project, I certify that:\n\n* (a) The contribution was created in whole or in part by me and I\n  have the right to submit it under the open source license\n  indicated in the file; or\n\n* (b) The contribution is based upon previous work that, to the best\n  of my knowledge, is covered under an appropriate open source\n  license and I have the right under that license to submit that\n  work with modifications, whether created in whole or in part\n  by me, under the same open source license (unless I am\n  permitted to submit under a different license), as indicated\n  in the file; or\n\n* (c) The contribution was provided directly to me by some other\n  person who certified (a), (b) or (c) and I have not modified\n  it.\n\n* (d) I understand and agree that this project and the contribution\n  are public and that a record of the contribution (including all\n  personal information I submit with it, including my sign-off) is\n  maintained indefinitely and may be redistributed consistent with\n  this project or the open source license(s) involved.\n\n<a name="collaborators"></a>\n### WG Members / Collaborators\n\n<table><tbody>\n<tr><th align="left">Rod Vagg</th><td><a href="https://github.com/rvagg">GitHub/rvagg</a></td><td><a href="http://twitter.com/rvagg">Twitter/@rvagg</a></td></tr>\n<tr><th align="left">Benjamin Byholm</th><td><a href="https://github.com/kkoopa/">GitHub/kkoopa</a></td><td>-</td></tr>\n<tr><th align="left">Trevor Norris</th><td><a href="https://github.com/trevnorris">GitHub/trevnorris</a></td><td><a href="http://twitter.com/trevnorris">Twitter/@trevnorris</a></td></tr>\n<tr><th align="left">Nathan Rajlich</th><td><a href="https://github.com/TooTallNate">GitHub/TooTallNate</a></td><td><a href="http://twitter.com/TooTallNate">Twitter/@TooTallNate</a></td></tr>\n<tr><th align="left">Brett Lawson</th><td><a href="https://github.com/brett19">GitHub/brett19</a></td><td><a href="http://twitter.com/brett19x">Twitter/@brett19x</a></td></tr>\n<tr><th align="left">Ben Noordhuis</th><td><a href="https://github.com/bnoordhuis">GitHub/bnoordhuis</a></td><td><a href="http://twitter.com/bnoordhuis">Twitter/@bnoordhuis</a></td></tr>\n<tr><th align="left">David Siegel</th><td><a href="https://github.com/agnat">GitHub/agnat</a></td><td>-</td></tr>\n</tbody></table>\n\n## Licence &amp; copyright\n\nCopyright (c) 2016 NAN WG Members / Collaborators (listed above).\n\nNative Abstractions for Node.js is licensed under an MIT license. All rights not explicitly granted in the MIT license are reserved. See the included LICENSE file for more details.\n',
+133 silly resolved     readmeFilename: 'README.md',
+133 silly resolved     bugs: { url: 'https://github.com/nodejs/nan/issues' },
+133 silly resolved     homepage: 'https://github.com/nodejs/nan',
+133 silly resolved     _id: 'nan@2.3.3',
+133 silly resolved     _from: 'nan@~2.3.3' } ]
+134 info install nan@2.3.3 into /home/msc15/jw15326/linux/Private/Web Tech/Web-Tech/node_modules/sqlite3
+135 info installOne nan@2.3.3
+136 info /home/msc15/jw15326/linux/Private/Web Tech/Web-Tech/node_modules/sqlite3/node_modules/nan unbuild
+137 verbose tar unpack /home/msc15/jw15326/linux/.npm/nan/2.3.3/package.tgz
+138 silly lockFile 8194793e-modules-sqlite3-node-modules-nan tar:///home/msc15/jw15326/linux/Private/Web Tech/Web-Tech/node_modules/sqlite3/node_modules/nan
+139 verbose lock tar:///home/msc15/jw15326/linux/Private/Web Tech/Web-Tech/node_modules/sqlite3/node_modules/nan /home/msc15/jw15326/linux/.npm/8194793e-modules-sqlite3-node-modules-nan.lock
+140 silly lockFile 8ed07427--linux-npm-nan-2-3-3-package-tgz tar:///home/msc15/jw15326/linux/.npm/nan/2.3.3/package.tgz
+141 verbose lock tar:///home/msc15/jw15326/linux/.npm/nan/2.3.3/package.tgz /home/msc15/jw15326/linux/.npm/8ed07427--linux-npm-nan-2-3-3-package-tgz.lock
+142 silly gunzTarPerm modes [ '755', '644' ]
+143 silly gunzTarPerm extractEntry package.json
+144 silly gunzTarPerm extractEntry README.md
+145 silly gunzTarPerm extractEntry include_dirs.js
+146 silly gunzTarPerm extractEntry nan_implementation_12_inl.h
+147 silly gunzTarPerm extractEntry CHANGELOG.md
+148 silly gunzTarPerm extractEntry nan.h
+149 silly gunzTarPerm extractEntry nan_callbacks.h
+150 silly gunzTarPerm extractEntry nan_callbacks_12_inl.h
+151 silly gunzTarPerm extractEntry nan_callbacks_pre_12_inl.h
+152 silly gunzTarPerm extractEntry nan_converters.h
+153 silly gunzTarPerm extractEntry nan_converters_43_inl.h
+154 silly gunzTarPerm extractEntry nan_converters_pre_43_inl.h
+155 silly gunzTarPerm extractEntry LICENSE.md
+156 silly gunzTarPerm extractEntry nan_implementation_pre_12_inl.h
+157 silly gunzTarPerm extractEntry nan_maybe_43_inl.h
+158 silly gunzTarPerm extractEntry nan_maybe_pre_43_inl.h
+159 silly gunzTarPerm extractEntry nan_new.h
+160 silly gunzTarPerm extractEntry nan_object_wrap.h
+161 silly gunzTarPerm extractEntry nan_persistent_12_inl.h
+162 silly gunzTarPerm extractEntry nan_persistent_pre_12_inl.h
+163 silly gunzTarPerm extractEntry nan_string_bytes.h
+164 silly gunzTarPerm extractEntry nan_typedarray_contents.h
+165 silly gunzTarPerm extractEntry nan_weak.h
+166 silly gunzTarPerm extractEntry doc/node_misc.md
+167 silly gunzTarPerm extractEntry doc/asyncworker.md
+168 silly gunzTarPerm extractEntry doc/callback.md
+169 silly gunzTarPerm extractEntry doc/converters.md
+170 silly gunzTarPerm extractEntry doc/errors.md
+171 silly gunzTarPerm extractEntry doc/maybe_types.md
+172 silly gunzTarPerm extractEntry doc/methods.md
+173 silly gunzTarPerm extractEntry doc/new.md
+174 silly gunzTarPerm extractEntry doc/buffers.md
+175 silly gunzTarPerm extractEntry doc/object_wrappers.md
+176 silly gunzTarPerm extractEntry doc/persistent.md
+177 silly gunzTarPerm extractEntry doc/scopes.md
+178 silly gunzTarPerm extractEntry doc/script.md
+179 silly gunzTarPerm extractEntry doc/string_bytes.md
+180 silly gunzTarPerm extractEntry doc/v8_internals.md
+181 silly gunzTarPerm extractEntry doc/v8_misc.md
+182 silly gunzTarPerm extractEntry tools/package.json
+183 silly gunzTarPerm extractEntry tools/README.md
+184 silly gunzTarPerm extractEntry tools/1to2.js
+185 silly lockFile 8194793e-modules-sqlite3-node-modules-nan tar:///home/msc15/jw15326/linux/Private/Web Tech/Web-Tech/node_modules/sqlite3/node_modules/nan
+186 silly lockFile 8194793e-modules-sqlite3-node-modules-nan tar:///home/msc15/jw15326/linux/Private/Web Tech/Web-Tech/node_modules/sqlite3/node_modules/nan
+187 silly lockFile 8ed07427--linux-npm-nan-2-3-3-package-tgz tar:///home/msc15/jw15326/linux/.npm/nan/2.3.3/package.tgz
+188 silly lockFile 8ed07427--linux-npm-nan-2-3-3-package-tgz tar:///home/msc15/jw15326/linux/.npm/nan/2.3.3/package.tgz
+189 info preinstall nan@2.3.3
+190 verbose readDependencies using package.json deps
+191 verbose readDependencies using package.json deps
+192 silly resolved []
+193 verbose about to build /home/msc15/jw15326/linux/Private/Web Tech/Web-Tech/node_modules/sqlite3/node_modules/nan
+194 info build /home/msc15/jw15326/linux/Private/Web Tech/Web-Tech/node_modules/sqlite3/node_modules/nan
+195 verbose linkStuff [ false,
+195 verbose linkStuff   false,
+195 verbose linkStuff   false,
+195 verbose linkStuff   '/home/msc15/jw15326/linux/Private/Web Tech/Web-Tech/node_modules/sqlite3/node_modules' ]
+196 info linkStuff nan@2.3.3
+197 verbose linkBins nan@2.3.3
+198 verbose linkMans nan@2.3.3
+199 verbose rebuildBundles nan@2.3.3
+200 info install nan@2.3.3
+201 info postinstall nan@2.3.3
+202 verbose about to build /home/msc15/jw15326/linux/Private/Web Tech/Web-Tech/node_modules/sqlite3
+203 info build /home/msc15/jw15326/linux/Private/Web Tech/Web-Tech/node_modules/sqlite3
+204 verbose linkStuff [ false,
+204 verbose linkStuff   false,
+204 verbose linkStuff   false,
+204 verbose linkStuff   '/home/msc15/jw15326/linux/Private/Web Tech/Web-Tech/node_modules' ]
+205 info linkStuff sqlite3@3.1.4
+206 verbose linkBins sqlite3@3.1.4
+207 verbose linkMans sqlite3@3.1.4
+208 verbose rebuildBundles sqlite3@3.1.4
+209 verbose rebuildBundles [ 'nan', 'node-pre-gyp' ]
+210 verbose rebuild bundle /home/msc15/jw15326/linux/Private/Web Tech/Web-Tech/node_modules/sqlite3/node_modules/node-pre-gyp
+211 info build /home/msc15/jw15326/linux/Private/Web Tech/Web-Tech/node_modules/sqlite3/node_modules/node-pre-gyp
+212 info preinstall node-pre-gyp@0.6.28
+213 verbose linkStuff [ false,
+213 verbose linkStuff   false,
+213 verbose linkStuff   false,
+213 verbose linkStuff   '/home/msc15/jw15326/linux/Private/Web Tech/Web-Tech/node_modules/sqlite3/node_modules' ]
+214 info linkStuff node-pre-gyp@0.6.28
+215 verbose linkBins node-pre-gyp@0.6.28
+216 verbose link bins [ { 'node-pre-gyp': './bin/node-pre-gyp' },
+216 verbose link bins   '/home/msc15/jw15326/linux/Private/Web Tech/Web-Tech/node_modules/sqlite3/node_modules/.bin',
+216 verbose link bins   false ]
+217 verbose linkMans node-pre-gyp@0.6.28
+218 verbose rebuildBundles node-pre-gyp@0.6.28
+219 info install node-pre-gyp@0.6.28
+220 info postinstall node-pre-gyp@0.6.28
+221 info install sqlite3@3.1.4
+222 verbose unsafe-perm in lifecycle true
+223 info sqlite3@3.1.4 Failed to exec install script
+224 info /home/msc15/jw15326/linux/Private/Web Tech/Web-Tech/node_modules/sqlite3 unbuild
+225 info preuninstall sqlite3@3.1.4
+226 info uninstall sqlite3@3.1.4
+227 verbose true,/home/msc15/jw15326/linux/Private/Web Tech/Web-Tech/node_modules,/home/msc15/jw15326/linux/Private/Web Tech/Web-Tech/node_modules unbuild sqlite3@3.1.4
+228 info postuninstall sqlite3@3.1.4
+229 error sqlite3@3.1.4 install: `node-pre-gyp install --fallback-to-build`
+229 error Exit status 8
+230 error Failed at the sqlite3@3.1.4 install script.
+230 error This is most likely a problem with the sqlite3 package,
+230 error not with npm itself.
+230 error Tell the author that this fails on your system:
+230 error     node-pre-gyp install --fallback-to-build
+230 error You can get their info via:
+230 error     npm owner ls sqlite3
+230 error There is likely additional logging output above.
+231 error System Linux 3.10.0-327.4.5.el7.x86_64
+232 error command "/usr/local/bin/node" "/usr/local/bin/npm" "install" "sqlite3"
+233 error cwd /home/msc15/jw15326/linux/Private/Web Tech/Web-Tech
+234 error node -v v0.10.24
+235 error npm -v 1.3.21
+236 error code ELIFECYCLE
+237 verbose exit [ 1, true ]
