@@ -13,6 +13,9 @@
 // avoid privilege or port number clash problems or to add firewall protection.
 var http = require('http');
 var fs = require('fs');
+var QS = require("querystring");
+var nodemailer = require("nodemailer");
+var smtpTransport = require('nodemailer-smtp-transport');
 var OK = 200, NotFound = 404, BadType = 415, Error = 500;
 var banned = defineBanned();
 var types = defineTypes();
@@ -49,21 +52,55 @@ function handle(request, response) {
     }
 }
 
+//Handles the contact submission form, parsing the body upon a POST request and calls mailUs
 function contactHandle(request, response) {
     request.on('data', add);
     request.on('end', end);
     var body = "";
+    
     function add(chunk) {
         body = body + chunk.toString();
     }
     function end() {
-        console.log("Body:", body);
+        var params = QS.parse(body);
+        mailUs(params.contact, params.email, params.subject, params.message);
         var hdrs = { 'Content-Type': '' };
         response.writeHead(200, hdrs);
         response.write("Thank you for contacting uPd8. We will be in touch.");
         response.write('<a href="index.html"> Return to uPd8 </a>');
         response.end();
     }    
+}
+
+
+//Creates a transporter object, sends email to uPd8
+function mailUs(contact, email, subject, message) {
+    var options = {
+        service: "gmail",
+        auth: {
+            user: "upd8customerservice@gmail.com",
+            pass: "webtech1"
+        }
+    };
+
+    var transporter = nodemailer.createTransport(smtpTransport(options))
+
+    var mail = {
+        to: "upd8customerservice@gmail.com",
+        subject: subject,
+        text: message + "\n\n" + "From " + contact,
+        cc: email
+    }
+
+    transporter.sendMail(mail, function(error, response){
+        if(error){
+            console.log(error);
+        }else{
+            console.log("Message sent: " + response.message);
+        }
+
+        transporter.close();
+    });
 }
 
 // Remove the query part of a url.
