@@ -42,10 +42,7 @@
             <div id="content">
                 <p class="marquee">
                     <span id="dtText"></span>
-                    <script>
-                        var today = new Date();
-                        document.getElementById('dtText').innerHTML=today;
-                    </script>
+                    <script type="text/javascript" src="clock.js"></script>
                 </p>
                 <hr/>
                 <nav>
@@ -64,7 +61,7 @@
                     </p>
                 </section>
 
-                <form id="contact-form" method="post" action="/contact.php"> 
+                <form id="contact-form" method="post" action="contact.php"> 
                     <fieldset>
                         <p>
                             <label for="contact">Name (required)</label>
