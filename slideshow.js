@@ -1,7 +1,7 @@
 var slides = [
-    'Images/index-gallery.svg',
-    'Images/index-brush.svg',
-    'Images/index-camera.svg'];
+    'images/index-gallery.svg',
+    'images/index-brush.svg',
+    'images/index-camera.svg'];
 
 var current=0;
 var duration=5000;
