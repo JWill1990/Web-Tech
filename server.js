@@ -41,7 +41,29 @@ function handle(request, response) {
     var type = findType(url);
     if (type == null) return fail(response, BadType, "File type unsupported");
     if (type == "text/html") type = negotiate(request.headers.accept);
-    reply(response, url, type);
+    if (request.method == 'POST' && request.url == '/contactpage.html') {
+        contactHandle(request, response);        
+    }
+    else {
+        reply(response, url, type);
+    }
+}
+
+function contactHandle(request, response) {
+    request.on('data', add);
+    request.on('end', end);
+    var body = "";
+    function add(chunk) {
+        body = body + chunk.toString();
+    }
+    function end() {
+        console.log("Body:", body);
+        var hdrs = { 'Content-Type': '' };
+        response.writeHead(200, hdrs);
+        response.write("Thank you for contacting uPd8. We will be in touch.");
+        response.write('<a href="index.html"> Return to uPd8 </a>');
+        response.end();
+    }    
 }
 
 // Remove the query part of a url.
