@@ -19,6 +19,8 @@ var smtpTransport = require('nodemailer-smtp-transport');
 var OK = 200, NotFound = 404, BadType = 415, Error = 500;
 var banned = defineBanned();
 var types = defineTypes();
+"use strict";
+var sql = require("sqlite3");
 test();
 start(8080);
 
@@ -44,6 +46,9 @@ function handle(request, response) {
     var type = findType(url);
     if (type == null) return fail(response, BadType, "File type unsupported");
     if (type == "text/html") type = negotiate(request.headers.accept);
+    if (request.method == 'POST' && request.url == '/registrationpage.html') {
+        registrationHandle(request, response);        
+    }
     if (request.method == 'POST' && request.url == '/contactpage.html') {
         contactHandle(request, response);        
     }
@@ -70,6 +75,33 @@ function contactHandle(request, response) {
         response.write('<a href="index.html"> Return to uPd8 </a>');
         response.end();
     }    
+}
+
+//Handles registering a new user
+function registrationHandle(request, response) {
+    request.on('data', add);
+    request.on('end', end);
+    var body = "";
+    
+    function add(chunk) {
+        body = body + chunk.toString();
+    }
+
+    var db = new sql.Database("database.sqlite3");
+    function end() {
+        var params = QS.parse(body);
+        var ps = db.prepare(
+            "INSERT INTO Person VALUES(null,?,?,?,?)"
+        );
+        ps.run(params.uname, params.pass, params.dname, params.email);
+        ps.finalize();
+        db.close();
+        var hdrs = { 'Content-Type': '' };
+        response.writeHead(200, hdrs);
+        response.write("Welcome to uPd8!");
+        response.write('<a href="index.html"> Return to uPd8 </a>');
+        response.end();
+    }
 }
 
 

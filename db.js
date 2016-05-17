@@ -10,6 +10,7 @@ if(!exists) {
 var sqlite3 = require("sqlite3").verbose();
 var db = new sqlite3.Database(file);
 
+serialize(setUp);
 function setUp(){
   if(!exists) {
     db.run("CREATE TABLE Stuff (thing TEXT)");
@@ -30,5 +31,6 @@ function setUp(){
   });
 })
 
-db.serialize(setUp());
+
+setUp();
 db.close();

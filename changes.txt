@@ -1,0 +1,5 @@
+Why we didnt use express for contact email
+    Too complicated for our need
+
+Changes to registration
+    Too many fields, not necessary, put people off registering

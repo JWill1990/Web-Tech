@@ -1,0 +1,26 @@
+DROP TABLE IF EXISTS Follows;
+DROP TABLE IF EXISTS Upd8;
+DROP TABLE IF EXISTS Person;
+
+
+
+CREATE TABLE Person(
+    id INTEGER PRIMARY KEY,
+    uname TEXT NOT NULL UNIQUE,
+    pword TEXT NOT NULL,
+    name TEXT,
+    email TEXT NOT NULL UNIQUE
+);
+
+CREATE TABLE Upd8(
+    id INTEGER PRIMARY KEY,
+    poster INTEGER REFERENCES Person(id),
+    message TEXT NOT NULL,
+    url TEXT,
+    postedAt INTEGER NOT NULL
+);
+
+CREATE TABLE Follows(
+    follower INTEGER REFERENCES Person(id),
+    followee INTEGER REFERENCES Person(id)
+);
