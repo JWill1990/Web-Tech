@@ -40,20 +40,24 @@ function handle(request, response) {
     url = removeQuery(url);
     url = lower(url);
     url = addIndex(url);
-	 console.log(url);
     if (! valid(url)) return fail(response, NotFound, "Invalid URL");
     if (! safe(url)) return fail(response, NotFound, "Unsafe URL");
     if (! open(url)) return fail(response, NotFound, "URL has been banned");
     var type = findType(url);
     if (type == null) return fail(response, BadType, "File type unsupported");
     if (type == "text/html") type = negotiate(request.headers.accept);
-    if (request.method == 'POST' && request.url == '/registrationpage.html') {
-        registrationHandle(request, response, url, type); 
-        reply(response, "/registrationsuccess.html", type);       
-    }
-    if (request.method == 'POST' && request.url == '/contactpage.html') {
-        contactHandle(request, response, type);  
-        reply(response, "/contactsuccess.html", type);      
+    if (request.method == 'POST') { 
+        if (request.url == "/registrationpage.html") {
+            registrationHandle(request, response, url, type);
+            reply(response, "/registrationsuccess.html", type); 
+        }      
+        if (request.url == "/contactpage.html") {
+            contactHandle(request, response, type);  
+            reply(response, "/contactsuccess.html", type); 
+        }   
+        if (request.url == "/login.html") {
+            //Handle login 
+        }
     }
     else {
         reply(response, url, type);
