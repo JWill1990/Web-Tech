@@ -48,10 +48,12 @@ function handle(request, response) {
     if (type == null) return fail(response, BadType, "File type unsupported");
     if (type == "text/html") type = negotiate(request.headers.accept);
     if (request.method == 'POST' && request.url == '/registrationpage.html') {
-        registrationHandle(request, response, url, type);        
+        registrationHandle(request, response, url, type); 
+        reply(response, "/registrationsuccess.html", type);       
     }
     if (request.method == 'POST' && request.url == '/contactpage.html') {
-        contactHandle(request, response, type);        
+        contactHandle(request, response, type);  
+        reply(response, "/contactsuccess.html", type);      
     }
     else {
         reply(response, url, type);
@@ -69,8 +71,7 @@ function contactHandle(request, response, type) {
     }
     function end() {
         var params = QS.parse(body);
-        mailUs(params.contact, params.email, params.subject, params.message);
-        reply(response, "/template.html", type);
+        mailUs(params.contact, params.email, params.subject, params.message);        
     }    
 }
 
@@ -92,12 +93,7 @@ function registrationHandle(request, response, url, type) {
         );
         ps.run(params.uname, params.pass, params.dname, params.email);
         ps.finalize();
-        db.close();
-        var hdrs = { 'Content-Type': '' };
-        //response.writeHead(200, hdrs);
-        //response.write("Welcome to uPd8!");
-        //response.write('<a href="index.html"> Return to uPd8 </a>');
-        reply(response, url, type);       
+        db.close();       
     }
 }
 

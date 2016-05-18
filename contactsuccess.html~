@@ -12,13 +12,14 @@ lang="en-GB" xml:lang="en-GB">
         <link href='https://fonts.googleapis.com/css?family=Indie+Flower' rel='stylesheet' type='text/css' />
         <link href="time.css" rel="stylesheet"/>
         <link href="style.css" rel="stylesheet" type="text/css" />
+        <link href="contactform.css" rel="stylesheet" type="text/css" />
         <!--[if lt IE 9]>
         <script src="dist/html5shiv.js"></script>
         <![endif]-->
     </head>
     <body>
         <header> 
-            <img id="logo" src="Images/Logo2.png" alt="uPd8" />
+            <img id="logo" src="images/logo2.png" alt="uPd8" />
 			<section class="login">
                 <form name="login" action="index_submit" method="get" accept-charset="utf-8">
                     <ul>
@@ -59,6 +60,18 @@ lang="en-GB" xml:lang="en-GB">
                     </ul>
                 </nav>
                 <hr/>
+                <section class="con-success">
+                    <h1> Thank you! </h1>
+                    <hr/>
+                    <p> Your query has been emailed to us. </p> 
+                    <br>
+                    <p> The Customer Service team will get in touch as soon as possible! We will keep you up to date with the latest developments 
+                        and features over on our blog page. </p>
+                    <br>
+                    <p> Please keep an eye out for any more bugs or issues. </p>
+                    <br>
+                    <p> Many thanks, The uPd8 Dev team. </p>
+                </section>
             </div>
         </main>
         <footer> <small> © Copyright 2015- 2016, uPd8</small> </footer>

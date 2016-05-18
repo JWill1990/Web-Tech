@@ -42,10 +42,7 @@ lang="en-GB" xml:lang="en-GB">
             <div id="content">
                 <p class="marquee">
                     <span id="dtText"></span>
-                    <script>
-                        var today = new Date();
-                        document.getElementById('dtText').innerHTML=today;
-                    </script>
+                    <script type="text/javascript" src="clock.js"></script>
                 </p>
                 <hr/>
                 <nav>
@@ -58,23 +55,17 @@ lang="en-GB" xml:lang="en-GB">
                     </ul>
                 </nav>
                 <hr/>
-                <form id="registerform">
+                <form id="registerform" method="post" action="">
                     <fieldset>
                         <h2 class="header-title">Create your Profile</h2>
                         <h3 class="header-subtitle">Please fill in all details</h3>
+			<input type="text" name="uname" placeholder="Username" />
+                        <input type="text" name="dname" placeholder="Display name" />
                         <input type="text" name="email" placeholder="Email" />
                         <input type="password" name="pass" placeholder="Password" />
                         <input type="password" name="cpass" placeholder="Confirm Password" />
-                        <input type="text" name="fname" placeholder="First Name" />
-                        <input type="text" name="lname" placeholder="Last Name" />
-                        <input type="datetime-local" name="bdaytime" placeholder="Date of Birth" />
-                        <input type="text" name="twitter" placeholder="Twitter" />
-                        <input type="text" name="facebook" placeholder="Facebook" />
-                        <input type="text" name="gplus" placeholder="Google Plus" />
-                        <input type="text" name="phone" placeholder="Phone" />
-                        <textarea name="address" placeholder="Address"></textarea>
-                        <input type="url" name="homepage" placeholder="Add your homepage" />
-                        <input name="submit" id="submitButton" type="submit" value="Submit" onclick="document.getElementById('registerform').innerHTML = 'This information will be handled on the Server Side'" />
+                        
+                        <input name="submit" id="submitButton" type="submit" value="Submit"/>
                     </fieldset>
                 </form>
             </div>
