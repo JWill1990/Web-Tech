@@ -99,24 +99,26 @@ function registrationHandle(request, response, url, type) {
         var ps = db.prepare(
             "INSERT INTO Person VALUES(null,?,?,?,?)"
         );
-        try {
-            ps.run(params.uname, params.pass, params.dname, params.email);
+        ps.run(params.uname, params.pass, params.dname, params.email, function (err) {
+        if (err) {
+            response.write("<h1>Username already exists!</h1>");
+            response.write('<a href="index.html"> Return to uPd8 </a>');
+            response.end(); 
             ps.finalize();
+            db.close();
+            return;
+        }
+        else {
+            ps.finalize();
+            db.close();
             var hdrs = { 'Content-Type': '' };
             response.writeHead(200, hdrs);
             response.write("<h1>Welcome to uPd8!</h1>");
             response.write("<h3>Please let us know of any bugs you encounter. The uPd8 team will bein touch as soon as possible!<h3>");
             response.write('<a href="index.html"> Return to uPd8 </a>');
-            response.end();
+            response.end(); 
         }
-        catch(err){
-            console.log(err);
-            response.write("<h1>Username or email in use</h1>");
-            throw err;
-        }
-        finally{
-            db.close();
-        }
+    });             
     }
 }
 
