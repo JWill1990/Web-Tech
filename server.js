@@ -46,27 +46,13 @@ function handle(request, response) {
     var type = findType(url);
     if (type == null) return fail(response, BadType, "File type unsupported");
     if (type == "text/html") type = negotiate(request.headers.accept);
-<<<<<<< HEAD
-    if (request.method == 'POST') { 
-        if (request.url == "/registrationpage.html") {
-            registrationHandle(request, response);
-        }      
-        if (request.url == "/contactpage.html") {
-            contactHandle(request, response);   
-        }   
-=======
     if (request.method == 'POST') {
-	    if (request.url.indexOf('/registrationpage.html') == 0) {
+        if (request.url.indexOf('/registrationpage.html') == 0) {
             registrationHandle(request, response);        
         }
         if (request.url == '/contactpage.html') {
             contactHandle(request, response);    
         }   
-        if (request.url == "/login.html") {
-            //Handle login 
-
-        }
->>>>>>> 5992bb404a0ed706c304b343ccb6e0e07e53f786
     }
     else {
         reply(response, url, type);
