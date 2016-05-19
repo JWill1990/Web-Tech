@@ -46,6 +46,7 @@ function handle(request, response) {
     var type = findType(url);
     if (type == null) return fail(response, BadType, "File type unsupported");
     if (type == "text/html") type = negotiate(request.headers.accept);
+<<<<<<< HEAD
     if (request.method == 'POST') { 
         if (request.url == "/registrationpage.html") {
             registrationHandle(request, response);
@@ -53,6 +54,19 @@ function handle(request, response) {
         if (request.url == "/contactpage.html") {
             contactHandle(request, response);   
         }   
+=======
+    if (request.method == 'POST') {
+	    if (request.url.indexOf('/registrationpage.html') == 0) {
+            registrationHandle(request, response);        
+        }
+        if (request.url == '/contactpage.html') {
+            contactHandle(request, response);    
+        }   
+        if (request.url == "/login.html") {
+            //Handle login 
+
+        }
+>>>>>>> 5992bb404a0ed706c304b343ccb6e0e07e53f786
     }
     else {
         reply(response, url, type);
@@ -70,7 +84,12 @@ function contactHandle(request, response) {
     }
     function end() {
         var params = QS.parse(body);
-        mailUs(params.contact, params.email, params.subject, params.message);        
+        mailUs(params.contact, params.email, params.subject, params.message);
+        var hdrs = { 'Content-Type': '' };
+        response.writeHead(200, hdrs);
+        response.write("<h1>Thank you for contacting uPd8. We will be in touch.</h1>");
+        response.write('<a href="index.html"> Return to uPd8 </a>');
+        response.end();
     }    
 }
 
@@ -88,11 +107,28 @@ function registrationHandle(request, response) {
     function end() {
         var params = QS.parse(body);
         var ps = db.prepare(
-            "INSERT INTO Person VALUES(null,?,?,?,?)"
+            "SELECT count(*) AS count FROM Person WHERE uname=?"
         );
-        ps.run(params.uname, params.pass, params.dname, params.email);
-        ps.finalize();
-        db.close();       
+        ps.run(params.uname, params.pass, params.dname, params.email, function (err) {
+            if (err) {
+                response.write("<h1>Username already exists!</h1>");
+                response.write('<a href="index.html"> Return to uPd8 </a>');
+                response.end(); 
+                ps.finalize();
+                db.close();
+                return;
+            }
+            else {
+                ps.finalize();
+                db.close();
+                var hdrs = { 'Content-Type': '' };
+                response.writeHead(200, hdrs);
+                response.write("<h1>Welcome to uPd8!</h1>");
+                response.write("<h3>Please let us know of any bugs you encounter. The uPd8 team will bein touch as soon as possible!<h3>");
+                response.write('<a href="index.html"> Return to uPd8 </a>');
+                response.end(); 
+            }
+        });             
     }
 }
 
