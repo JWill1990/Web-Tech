@@ -3,11 +3,11 @@ form {
     margin-right: 10%;
 }
 
-#contactform {
+#post-form {
     background-color: rgba(127,127,250,0.5);
     text-align: center;
     color: black;
-    width: 80%;
+    width: 40%;
     margin-top: 10px;
     margin-left: 10% 
     margin-right: 10%;
@@ -27,9 +27,9 @@ fieldset {
     margin: 0 auto;
 }
 
-#contactform input, 
-#contactform select, 
-#contactform textarea {
+#post-form input, 
+#post-form select, 
+#post-form textarea {
     width: 50%;
     border: 1px solid rgba(0, 0, 0, 0.3);
     margin-bottom: 20px;
@@ -46,17 +46,3 @@ label {
 }
 
 
-.contact {
-    margin-top: 10px;
-    margin-left: 10%;
-    margin-right: 10%;
-    width: 80%;
-}
-
-.contact p {
-    padding: 2%;
-    margin-top: 10px;
-    border-radius: 8px;
-    border: 2px solid rgb(0, 0, 0);
-    background-color: white;
-}

@@ -32,7 +32,7 @@ lang="en-GB" xml:lang="en-GB">
                             <input type="submit" value="Login"/>
                         </li>
 								<li>
-                            <input type="submit" onclick="location.href='registrationpage.html';" value="Register"/>
+                            <input type="submit" onclick="location.href='/registrationpage.html';" value="Register"/>
                         </li>
                     </ul>
                 </form>

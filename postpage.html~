@@ -1,17 +1,17 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml"
-lang="en-GB" xml:lang="en-GB">
+    lang="en-GB" xml:lang="en-GB">
     <head>
         <meta charset="UTF-8"/>
-        <title>Registration</title>
-        <link href="resetstyle.css" rel="stylesheet"/>
-        <link href="navigation.css" rel="stylesheet"/>
-        <link href="login.css" rel="stylesheet"/>
-        <link href="registration.css" rel="stylesheet"/>
-        <link href='https://fonts.googleapis.com/css?family=Indie+Flower' rel='stylesheet' type='text/css' />
-        <link href="time.css" rel="stylesheet"/>
+        <title> Upd8s </title>
+        <link href="resetstyle.css" rel="stylesheet" type="text/css" />
+        <link href="navigation.css" rel="stylesheet" type="text/css" />
+	    <link href="login.css" rel="stylesheet"/>
+        <link href="time.css" rel="stylesheet" type="text/css" />
         <link href="style.css" rel="stylesheet" type="text/css" />
-	    <script src="registration.js"></script>
+        <link href="uPd8.css" rel="stylesheet"/>
+        <link href='https://fonts.googleapis.com/css?family=Indie+Flower' rel='stylesheet' type='text/css' />
+        <script type="text/javascript" src="html5shiv.js"></script> 
         <!--[if lt IE 9]>
         <script src="dist/html5shiv.js"></script>
         <![endif]-->
@@ -19,7 +19,7 @@ lang="en-GB" xml:lang="en-GB">
     <body>
         <header> 
             <img id="logo" src="images/logo2.png" alt="uPd8" />
-            <section class="login">
+	        <section class="login">
                 <form name="login" action="" method="post" accept-charset="utf-8">
                     <ul>
                         <li>
@@ -31,7 +31,7 @@ lang="en-GB" xml:lang="en-GB">
                         <li>
                             <input type="submit" value="Login"/>
                         </li>
-			            <li>
+                        <li>
                             <input type="submit" onclick="location.href='registrationpage.html';" value="Register"/>
                         </li>
                     </ul>
@@ -49,23 +49,35 @@ lang="en-GB" xml:lang="en-GB">
                 <nav>
                     <ul>
                         <li><a href="index.html">Home</a></li>
-                        <li><a href="postpage.html"> uPd8s </a></li>
+                        <li><a class="active" href="postpage.html"> uPd8s </a></li>
                         <li><a href="contactpage.html"> Contact </a></li>
                         <li><a href="aboutpage.html"> About </a></li>
                         <li><a href="devblog.html"> Blog </a></li>
                     </ul>
                 </nav>
                 <hr/>
-                <form id="registerform" method="" action="">
+                <form id="post-form" method="post" action=""> 
                     <fieldset>
-                        <h2 class="header-title">Create your Profile</h2>
-                        <h3 class="header-subtitle">Please fill in all details</h3>
-			               <input type="text" name="uname" placeholder="Username" />
-                        <input type="text" name="dname" placeholder="Display name" />
-                        <input type="text" name="email" placeholder="Email" />
-                        <input type="password" name="pass" placeholder="Password" />
-                        <input type="password" name="cpass" placeholder="Confirm Password" />                        
-                        <input type="submit" name="submit" onclick="return validateForm();" id="submitButton" value="Submit"/>
+                        <p>
+                            <label for="contact">Username (required)</label>
+                            <input id="contact" name="uname" role="input" aria-required="true" value="" placeholder="Name" />	
+                        </p>		
+                        <p>
+                            <label for="subject">Subject</label>
+                            <select name="subject" id="subject" aria-required="true" title="Select a subject">
+                                <option value="">– Please Select –</option>
+                                <option value="Comic" >Comic</option>
+                                <option value="Book" >Book</option>
+                                <option value="Videogame" >Videogame</option>
+                            </select>
+                        </p>
+                        <p>
+                            <label for="message">Your uPd8!</label>
+                            <textarea id="message" name="message" cols="22" aria-required="true" placeholder="Please provide details here"></textarea>	
+                        </p>
+                        <p>
+                            <input name="submit" id="submitButton" type="submit" value="Submit"/>
+                        </p>
                     </fieldset>
                 </form>
             </div>
@@ -73,4 +85,3 @@ lang="en-GB" xml:lang="en-GB">
         <footer> <small> © Copyright 2015- 2016, uPd8</small> </footer>
     </body>
 </html>
-

@@ -50,9 +50,12 @@ function handle(request, response) {
         if (request.url.indexOf('/registrationpage.html') == 0) {
             registrationHandle(request, response);        
         }
-        if (request.url == '/contactpage.html') {
+        if (request.url.indexOf('/contactpage.html') == 0) {
             contactHandle(request, response);    
         }   
+        //if (request.url.indexOf('uPd8s.hmtl') {
+            //uPd8Handle(request, response);
+        //}
     }
     else {
         reply(response, url, type);

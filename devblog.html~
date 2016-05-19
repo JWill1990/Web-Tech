@@ -18,7 +18,7 @@ lang="en-GB" xml:lang="en-GB">
         <header> 
             <img id="logo" src="images/logo2.png" alt="uPd8" />
 			<section class="login">
-                <form name="login" action="index_submit" method="get" accept-charset="utf-8">
+                <form name="login" action="" method="post" accept-charset="utf-8">
                     <ul>
                         <li>
                             <input type="email" name="usermail" placeholder="name@email.com" required="true"/>
@@ -47,7 +47,7 @@ lang="en-GB" xml:lang="en-GB">
                 <nav>
                     <ul>
                         <li><a href="index.html">Home</a></li>
-                        <li><a href="categories.html"> Categories </a></li>
+                        <li><a href="uPd8s.html"> uPd8s </a></li>
                         <li><a href="contactpage.html"> Contact </a></li>
                         <li><a href="aboutpage.html"> About </a></li>
                         <li><a class="active" href="devblog.html"> Blog </a></li>
