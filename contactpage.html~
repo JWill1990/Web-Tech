@@ -65,7 +65,7 @@
                 <form id="contactform" method="" action=""> 
                     <fieldset>
                             <label for="contact">Name (required)</label>
-                            <input type="text" name="uname" role="input" placeholder="Name" />	
+                            <input type="text" name="contact" role="input" placeholder="Name" />	
                             <label for="email">Email (required)</label>
 				            <input type="text" name="email" placeholder="Email address" />								
                             <label for="subject">Subject</label>

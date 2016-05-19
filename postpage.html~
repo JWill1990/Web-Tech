@@ -9,7 +9,7 @@
 	    <link href="login.css" rel="stylesheet"/>
         <link href="time.css" rel="stylesheet" type="text/css" />
         <link href="style.css" rel="stylesheet" type="text/css" />
-        <link href="uPd8.css" rel="stylesheet"/>
+        <link href="postpage.css" rel="stylesheet"/>
         <link href='https://fonts.googleapis.com/css?family=Indie+Flower' rel='stylesheet' type='text/css' />
         <script type="text/javascript" src="html5shiv.js"></script> 
         <!--[if lt IE 9]>
