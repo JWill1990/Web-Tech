@@ -1,4 +1,5 @@
 function validateForm() {  
+
     var name = document.getElementById("registerform").uname.value;  
     var password = document.getElementById("registerform").pass.value; 
     var cpassword = document.getElementById("registerform").cpass.value;
@@ -6,21 +7,25 @@ function validateForm() {
 
     if (name == null || name == ""){  
         alert("Name can't be blank");  
-        registrationpage.uname.focus()
-        return false;  
+        registrationpage.uname.focus();
+        document.getElementById("registerform").method = "";
     } 
     else if (email == null || email == ""){  
         alert("Email can't be blank");  
-        registrationpage.email.focus()
-        return false;  
+        registrationpage.email.focus();
+        document.getElementById("registerform").method = "";
+
     } 
     else if (password.length < 6) {  
         alert("Password must be at least 6 characters long.");  
-        return false;  
+        document.getElementById("registerform").method = "";
     }
     else if (password != cpassword) {
         alert("Passwords must match.");
-        return false;
-    }  
-    return true;
+        document.getElementById("registerform").method = "";
+
+    }
+    else {
+        document.getElementById("registerform").method = "post"; 
+    }
 }

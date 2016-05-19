@@ -47,7 +47,7 @@ function handle(request, response) {
     if (type == null) return fail(response, BadType, "File type unsupported");
     if (type == "text/html") type = negotiate(request.headers.accept);
     if (request.method == 'POST') {
-	    if (request.url == '/registrationpage.html') {
+	    if (request.url.indexOf('/registrationpage.html') == 0) {
             registrationHandle(request, response);        
         }
         if (request.url == '/contactpage.html') {
