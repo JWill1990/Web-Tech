@@ -46,26 +46,16 @@ function handle(request, response) {
     var type = findType(url);
     if (type == null) return fail(response, BadType, "File type unsupported");
     if (type == "text/html") type = negotiate(request.headers.accept);
-<<<<<<< HEAD
     if (request.method == 'POST') {
 	    if (request.url == '/registrationpage.html') {
             registrationHandle(request, response);        
         }
         if (request.url == '/contactpage.html') {
-            contactHandle(request, response);        
-=======
-    if (request.method == 'POST') { 
-        if (request.url == "/registrationpage.html") {
-            registrationHandle(request, response, url, type);
-            reply(response, "/registrationsuccess.html", type); 
-        }      
-        if (request.url == "/contactpage.html") {
-            contactHandle(request, response, type);  
-            reply(response, "/contactsuccess.html", type); 
+            contactHandle(request, response);    
         }   
         if (request.url == "/login.html") {
             //Handle login 
->>>>>>> 433993cd59df21684d27de8335d7f10a773487d1
+
         }
     }
     else {
@@ -84,16 +74,12 @@ function contactHandle(request, response, type) {
     }
     function end() {
         var params = QS.parse(body);
-<<<<<<< HEAD
         mailUs(params.contact, params.email, params.subject, params.message);
         var hdrs = { 'Content-Type': '' };
         response.writeHead(200, hdrs);
         response.write("<h1>Thank you for contacting uPd8. We will be in touch.</h1>");
         response.write('<a href="index.html"> Return to uPd8 </a>');
         response.end();
-=======
-        mailUs(params.contact, params.email, params.subject, params.message);        
->>>>>>> 433993cd59df21684d27de8335d7f10a773487d1
     }    
 }
 
@@ -115,7 +101,6 @@ function registrationHandle(request, response, url, type) {
         );
         ps.run(params.uname, params.pass, params.dname, params.email);
         ps.finalize();
-<<<<<<< HEAD
         db.close();
         var hdrs = { 'Content-Type': '' };
         response.writeHead(200, hdrs);
@@ -123,9 +108,6 @@ function registrationHandle(request, response, url, type) {
         response.write("<h3>Please let us know of any bugs you encounter. The uPd8 team will bein touch as soon as possible!<h3>");
         response.write('<a href="index.html"> Return to uPd8 </a>');
         response.end();
-=======
-        db.close();       
->>>>>>> 433993cd59df21684d27de8335d7f10a773487d1
     }
 }
 
