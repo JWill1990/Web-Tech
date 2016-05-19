@@ -48,24 +48,41 @@ function handle(request, response) {
     if (type == "text/html") type = negotiate(request.headers.accept);
     if (request.method == 'POST') { 
         if (request.url == "/registrationpage.html") {
-            registrationHandle(request, response, url, type);
-            reply(response, "/registrationsuccess.html", type); 
+            registrationHandle(request, response);
         }      
         if (request.url == "/contactpage.html") {
-            contactHandle(request, response, type);  
-            reply(response, "/contactsuccess.html", type); 
+            contactHandle(request, response);   
         }   
-        if (request.url == "/login.html") {
-            
-        }
     }
     else {
         reply(response, url, type);
     }
 }
 
+//Handles posting an upd8
+function postHandle(request, response) {
+    request.on('data', add);
+    request.on('end', end);
+    var body = "";
+    
+    function add(chunk) {
+        body = body + chunk.toString();
+    }
+
+    var db = new sql.Database("database.sqlite3");
+    function end() {
+        var params = QS.parse(body);
+        var ps = db.prepare(
+            "INSERT INTO Upd8 VALUES(null,?,?,?,?)"
+        );
+        ps.run(params.poster, params.message, params.url, params.postedAt);
+        ps.finalize();
+        db.close();       
+    }
+}
+
 //Handles the contact submission form, parsing the body upon a POST request and calls mailUs
-function contactHandle(request, response, type) {
+function contactHandle(request, response) {
     request.on('data', add);
     request.on('end', end);
     var body = "";
@@ -80,7 +97,7 @@ function contactHandle(request, response, type) {
 }
 
 //Handles registering a new user
-function registrationHandle(request, response, url, type) {
+function registrationHandle(request, response) {
     request.on('data', add);
     request.on('end', end);
     var body = "";

@@ -48,16 +48,11 @@ function handle(request, response) {
     if (type == "text/html") type = negotiate(request.headers.accept);
     if (request.method == 'POST') { 
         if (request.url == "/registrationpage.html") {
-            registrationHandle(request, response, url, type);
-            reply(response, "/registrationsuccess.html", type); 
+            registrationHandle(request, response);
         }      
         if (request.url == "/contactpage.html") {
-            contactHandle(request, response, type);  
-            reply(response, "/contactsuccess.html", type); 
+            contactHandle(request, response);   
         }   
-        if (request.url == "/login.html") {
-            //Handle login 
-        }
     }
     else {
         reply(response, url, type);
@@ -65,7 +60,7 @@ function handle(request, response) {
 }
 
 //Handles the contact submission form, parsing the body upon a POST request and calls mailUs
-function contactHandle(request, response, type) {
+function contactHandle(request, response) {
     request.on('data', add);
     request.on('end', end);
     var body = "";
@@ -80,7 +75,7 @@ function contactHandle(request, response, type) {
 }
 
 //Handles registering a new user
-function registrationHandle(request, response, url, type) {
+function registrationHandle(request, response) {
     request.on('data', add);
     request.on('end', end);
     var body = "";
