@@ -97,7 +97,7 @@ function registrationHandle(request, response, url, type) {
     function end() {
         var params = QS.parse(body);
         var ps = db.prepare(
-            "INSERT INTO Person VALUES(null,?,?,?,?)"
+            "SELECT count(*) AS count FROM Person WHERE uname=?"
         );
         ps.run(params.uname, params.pass, params.dname, params.email, function (err) {
             if (err) {
