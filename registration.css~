@@ -1,69 +1,85 @@
-
 #registerform {
-	width: 50%;
-	margin: 10px auto;
-	text-align: center;
-	position: relative;
+    width: 50%;
+    margin: 10px auto;
+    text-align: center;
+    position: relative;
 }
 
 #registerform fieldset {
-	background: rgba(127,127,250,0.5);
-	border: 0 none;
-	border-radius: 3px;
-	box-shadow: 0 0 15px 1px rgba(0, 0, 0, 0.4);
-	padding: 20px 30px;
-	box-sizing: border-box;
-	width: 80%;
-	margin: 0 10%;
-	position: relative;
+    background: rgba(127,127,250,0.5);
+    border: 0 none;
+    border-radius: 3px;
+    box-shadow: 0 0 15px 1px rgba(0, 0, 0, 0.4);
+    padding: 20px 30px;
+    box-sizing: border-box;
+    width: 80%;
+    margin: 0 10%;
+    position: relative;
 }
 
 #registerform fieldset:not(:first-of-type) {
-	display: none;
+    display: none;
 }
-
 
 #registerform input, #registerform textarea {
-	padding: 15px;
-	border: 1px solid #ccc;
-	border-radius: 3px;
-	margin-bottom: 10px;
-	width: 100%;
-	box-sizing: border-box;
-	font-family: montserrat;
-	color: rgb(44,62,80);
-	font-size: 13px;
+    padding: 15px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    margin-bottom: 10px;
+    width: 100%;
+    box-sizing: border-box;
+    font-family: montserrat;
+    color: rgb(44,62,80);
+    font-size: 13px;
 }
-
 
 #registerform .action-button {
-	width: 50%;
-	background: #27AE60;
-	font-weight: bold;
-	color: white;
-	border: 0 none;
-	border-radius: 1px;
-	cursor: pointer;
-	padding: 10px 5px;
-	margin: 10px 5px;
+    width: 50%;
+    background: #27AE60;
+    font-weight: bold;
+    color: white;
+    border: 0 none;
+    border-radius: 1px;
+    cursor: pointer;
+    padding: 10px 5px;
+    margin: 10px 5px;
 }
+
 #registerform .action-button:hover, #registerform .action-button:focus {
-	box-shadow: 0 0 0 2px white, 0 0 0 3px #27AE60;
+    box-shadow: 0 0 0 2px white, 0 0 0 3px #27AE60;
 }
 
 
 .header-title {
-	font-size: 15px;
-	text-transform: uppercase;
-	color: black;
-	margin-bottom: 10px;
+    font-size: 15px;
+    text-transform: uppercase;
+    color: black;
+    margin-bottom: 10px;
 }
 
 .header-subtitle {
-	font-size: 13px;
-	color: black;
-	margin-bottom: 20px;
+    font-size: 13px;
+    color: black;
+    margin-bottom: 20px;
 }
 
+.reg-success {
+    margin-top: 10px;
+    margin-left: 10%;
+    margin-right: 10%;
+    width: 80%;
+    padding: 2%;
+    border: 2px solid rgb(0, 0, 0);
+    border-radius: 8px;
+    background-color: white;
+}
 
+.reg-success p {
+    margin-bottom: 1%;
+}
 
+.reg-success h1 {
+    text-align: center;
+    font-size: 50px;    
+       
+}

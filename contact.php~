@@ -1,0 +1,33 @@
+<?php 
+    if (isset($_POST["submit"])) {
+        $contact = $_POST['contact']; // required 
+		$email_from = $_POST['email']; // required 
+	    $subject = $_POST['subject']; // required 
+		$message = $_POST['message']; // required 
+        $from = 'Demo Contact Form';
+        $to = 'jack.williams1990@hotmail.co.uk';
+		
+        $body = "From: $contact\n E-Mail: $email\n Message:\n $message";
+    }
+
+    if (!$_POST['contact']) {
+	    $errContact = 'Please enter your name';
+    }
+ 
+    if (!$_POST['email'] || !filter_var($_POST['email'], FILTER_VALIDATE_EMAIL)) {
+        $errEmail = 'Please enter a valid email address';
+	}
+ 
+    if (!$_POST['message']) {
+	    $errMessage = 'Please enter your message';
+	}
+ 
+    if (!$errContact && !$errEmail && !$errMessage) {
+	    if (mail ($to, $subject, $body, $from)) {
+		    $result='<div class="alert alert-success">Thank You! I will be in touch</div>';
+	    } 
+        else {
+		    $result='<div class="alert alert-danger">Sorry there was an error sending your message. Please try again later</div>';
+	    }
+    }
+?>

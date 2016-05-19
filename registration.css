@@ -62,3 +62,25 @@
     color: black;
     margin-bottom: 20px;
 }
+
+.reg-success {
+    margin-top: 10px;
+    margin-left: 10%;
+    margin-right: 10%;
+    width: 80%;
+    padding: 2%;
+    border: 2px solid rgb(0, 0, 0);
+    border-radius: 8px;
+    background-color: white;
+}
+
+.reg-success p {
+    margin-bottom: 1%;
+}
+
+.reg-success h1 {
+    text-align: center;
+    font-size: 50px;   
+    padding: 4%; 
+       
+}

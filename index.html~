@@ -12,15 +12,16 @@ lang="en-GB" xml:lang="en-GB">
         <link href="slideshow.css" rel="stylesheet" />
         <link href='https://fonts.googleapis.com/css?family=Indie+Flower' rel='stylesheet' type='text/css' />
         <script type="text/javascript" src="html5shiv.js"></script>
+        <script type="text/javascript" src="login.js"></script>
         <!--[if lt IE 9]>
         <script src="dist/html5shiv.js"></script>
         <![endif]-->
     </head>
     <body>
         <header> 
-            <img id="logo" src="Images/Logo2.png" alt="uPd8" />
+            <img id="logo" src="images/logo2.png" alt="uPd8" />
             <section class="login">
-                <form name="login" action="index_submit" method="get" accept-charset="utf-8">
+                <form name="login" method="post" action="" accept-charset="utf-8">
                     <ul>
                         <li>
                             <input type="email" name="usermail" placeholder="name@email.com" required="true"/>
@@ -29,7 +30,7 @@ lang="en-GB" xml:lang="en-GB">
                             <input type="password" name="password" placeholder="password" required="true"/>
                         </li>
                         <li>
-                            <input type="submit" value="Login"/>
+                            <input type="submit" onclick="location.href='/login.html';" value="Login"/>
                         </li>
                         <li>
                             <input type="submit" onclick="location.href='registrationpage.html';" value="Register"/>
@@ -43,10 +44,7 @@ lang="en-GB" xml:lang="en-GB">
             <div id="content">
                 <p class="marquee">
                     <span id="dtText"></span>
-                    <script>
-                        var today = new Date();
-                        document.getElementById('dtText').innerHTML=today;
-                    </script>
+                    <script type="text/javascript" src="clock.js"></script>
                 </p>
                 <hr/>
                 <nav>
