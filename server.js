@@ -99,28 +99,26 @@ function registrationHandle(request, response, url, type) {
         var ps = db.prepare(
             "SELECT count(*) AS count FROM Person WHERE uname=?"
         );
-        var unameOk = true;
-        ps.all(params.uname, function(err, rs){
-            console.log("Result: "+ rs[0].count);
-            if(rs[0].count > 0){
-                response.write("<h1>Username in use</h1>");
+        ps.run(params.uname, params.pass, params.dname, params.email, function (err) {
+            if (err) {
+                response.write("<h1>Username already exists!</h1>");
+                response.write('<a href="index.html"> Return to uPd8 </a>');
+                response.end(); 
+                ps.finalize();
                 db.close();
-                unameOk = false;
+                return;
+            }
+            else {
+                ps.finalize();
+                db.close();
+                var hdrs = { 'Content-Type': '' };
+                response.writeHead(200, hdrs);
+                response.write("<h1>Welcome to uPd8!</h1>");
+                response.write("<h3>Please let us know of any bugs you encounter. The uPd8 team will bein touch as soon as possible!<h3>");
+                response.write('<a href="index.html"> Return to uPd8 </a>');
+                response.end(); 
             }
         });
-        if(!unameOk) return;
-        ps = db.prepare(
-            "INSERT INTO Person VALUES(null,?,?,?,?)"
-        );
-        ps.run(params.uname, params.pass, params.dname, params.email);
-        ps.finalize();
-        db.close();
-        var hdrs = { 'Content-Type': '' };
-        response.writeHead(200, hdrs);
-        response.write("<h1>Welcome to uPd8!</h1>");
-        response.write("<h3>Please let us know of any bugs you encounter. The uPd8 team will bein touch as soon as possible!<h3>");
-        response.write('<a href="index.html"> Return to uPd8 </a>');
-        response.end();
     }
 }
 
