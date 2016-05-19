@@ -46,11 +46,13 @@ function handle(request, response) {
     var type = findType(url);
     if (type == null) return fail(response, BadType, "File type unsupported");
     if (type == "text/html") type = negotiate(request.headers.accept);
-    if (request.method == 'POST' && request.url == '/registrationpage.html') {
-        registrationHandle(request, response);        
-    }
-    if (request.method == 'POST' && request.url == '/contactpage.html') {
-        contactHandle(request, response);        
+    if (request.method == 'POST') {
+	    if (request.url == '/registrationpage.html') {
+            registrationHandle(request, response);        
+        }
+        if (request.url == '/contactpage.html') {
+            contactHandle(request, response);        
+        }
     }
     else {
         reply(response, url, type);
@@ -71,7 +73,7 @@ function contactHandle(request, response) {
         mailUs(params.contact, params.email, params.subject, params.message);
         var hdrs = { 'Content-Type': '' };
         response.writeHead(200, hdrs);
-        response.write("Thank you for contacting uPd8. We will be in touch.");
+        response.write("<h1>Thank you for contacting uPd8. We will be in touch.</h1>");
         response.write('<a href="index.html"> Return to uPd8 </a>');
         response.end();
     }    
@@ -98,7 +100,8 @@ function registrationHandle(request, response) {
         db.close();
         var hdrs = { 'Content-Type': '' };
         response.writeHead(200, hdrs);
-        response.write("Welcome to uPd8!");
+        response.write("<h1>Welcome to uPd8!</h1>");
+        response.write("<h3>Please let us know of any bugs you encounter. The uPd8 team will bein touch as soon as possible!<h3>");
         response.write('<a href="index.html"> Return to uPd8 </a>');
         response.end();
     }
