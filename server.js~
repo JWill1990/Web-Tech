@@ -14,6 +14,7 @@
 var http = require('http');
 var fs = require('fs');
 var QS = require("querystring");
+var passwordHash = require('password-hash');
 var nodemailer = require("nodemailer");
 var smtpTransport = require('nodemailer-smtp-transport');
 var OK = 200, NotFound = 404, BadType = 415, Error = 500;
@@ -37,6 +38,7 @@ function start(port) {
 // Serve a request.  Process and validate the url, then deliver the file.
 function handle(request, response) {
     var url = request.url;
+    var query = getQuery(request.url);
     url = removeQuery(url);
     url = lower(url);
     url = addIndex(url);
@@ -52,15 +54,19 @@ function handle(request, response) {
         }
         if (request.url.indexOf('/contactpage.html') == 0) {
             contactHandle(request, response);    
-        }   
-        //if (request.url.indexOf('uPd8s.hmtl') {
-            //uPd8Handle(request, response);
-        //}
-    }
-    if (request.method == 'GET') {
-        if (request.url.indexOf('/users.html') == 0) {
-            usersHandle(request, response);
         }
+        if (request.url.indexOf('/postpage.html') == 0) {
+            postHandle(request, response);
+        }
+    }    
+    else if (request.method == 'GET' && request.url.indexOf('/users.html') == 0) {
+        usersHandle(request, response);
+    }
+    else if (request.method == 'GET' && request.url.indexOf('/user') == 0) {
+        userHandle(request, response, query);
+    }
+    else if (request.method == 'GET' && request.url.indexOf('/feed') == 0) {
+        feedHandle(request, response, query);
     }
     else {
         reply(response, url, type);
@@ -101,9 +107,10 @@ function registrationHandle(request, response) {
     function end() {
         var params = QS.parse(body);
         var ps = db.prepare(
-            "SELECT count(*) AS count FROM Person WHERE uname=?"
+            "INSERT INTO Person VALUES (null,?,?,?,?)"
         );
-        ps.run(params.uname, params.pass, params.dname, params.email, function (err) {
+        var hashedPassword = passwordHash.generate(params.pass);
+        ps.run(params.uname, hashedPassword, params.dname, params.email, function (err) {
             if (err) {
                 response.write("<h1>Username already exists!</h1>");
                 response.write('<a href="index.html"> Return to uPd8 </a>');
@@ -112,13 +119,13 @@ function registrationHandle(request, response) {
                 db.close();
                 return;
             }
-            else {
+            else {                	
                 ps.finalize();
                 db.close();
                 var hdrs = { 'Content-Type': '' };
                 response.writeHead(200, hdrs);
                 response.write("<h1>Welcome to uPd8!</h1>");
-                response.write("<h3>Please let us know of any bugs you encounter. The uPd8 team will bein touch as soon as possible!<h3>");
+                response.write("<h3>Please let us know of any bugs you encounter. The uPd8 team will be in touch as soon as possible!<h3>");
                 response.write('<a href="index.html"> Return to uPd8 </a>');
                 response.end(); 
             }
@@ -126,22 +133,184 @@ function registrationHandle(request, response) {
     }
 }
 
+/*function loginHandle(request, response) {
+    request.on('data', add);
+    request.on('end', end);
+    var body = "";
+    
+    function add(chunk) {
+        body = body + chunk.toString();
+    }
+    console.log("Here");
+    var db = new sql.Database("database.sqlite3");
+    function end() {
+        var params = QS.parse(body);
+        var ps = db.prepare(
+            "SELECT uname, pword FROM Person WHERE name = ? AND pword = ?"
+        );
+        ps.run(params.uname, params.pass, function (err) {
+            if (err) {
+                response.write("<h1>Sorry, this account does not exist!</h1>");
+                response.write('<a href="postpage.html"> Return to uPd8 </a>');
+                response.end(); 
+                ps.finalize();
+                db.close();
+                return;
+            }
+            else {		
+                ps.finalize();
+                db.close();
+                var hdrs = { 'Content-Type': '' };
+                response.writeHead(200, hdrs);
+                response.write("<h1>Welcome " + params.uname + "!</h1>");
+                response.write('<a href="index.html"> Return to uPd8 </a>');
+                response.end(); 
+            }
+        }); 
+    }
+}*/
 
-function usersHandle(request, response){
-    var html = pageHead();
-    html += '<div class="general"><p>List of Users</p><ul id="userList">';
+function feedHandle(request, response, query){
+    var db = new sql.Database("database.sqlite3");
+    var ps0 = db.prepare(
+        "SELECT id FROM Person WHERE uname=?"
+    );
+    ps0.all(query, function (err, res) {
+        var userId = res[0].id;
+        ps0.finalize();
+        var ps = db.prepare(
+            "SELECT uname, dname, message, url, postedAt " +
+            "FROM Person AS p JOIN Upd8 AS u " +
+            "ON p.id=u.poster " +
+            "JOIN Follows AS f " +
+            "ON u.poster=f.followee " +
+            "WHERE f.follower = ? " +
+            "ORDER BY u.postedAt DESC"
+        );
+        ps.all(userId, function(err, rows) {
+            var html = pageHead();
+            html += postUpd8Form();
+            html += '<div class="general"><h1>upd8s for '+query+'</h1>';
+            for(var i = 0; i < rows.length; i++){
+                html += genUpd8(rows[i].dname, rows[i].message, rows[i].url, rows[i].postedAt);
+            }
+            ps.finalize();
+            db.close();
+            html += pageFoot();
+            response.write(html);
+            response.end(); 
+        });
+    });
+}
+
+
+function userHandle(request, response, query){
     var db = new sql.Database("database.sqlite3");
     var ps = db.prepare(
-        "SELECT uname, name FROM Person"
+        "SELECT uname, dname, message, url, postedAt " +
+        "FROM Person AS p JOIN Upd8 AS u " +
+        "ON p.id=u.poster " +
+        "WHERE p.uname = ? " +
+        "ORDER BY u.postedAt DESC"
     );
-    ps.each(function(err, row) {
-        html += '<li><a href="'+row.uname+'.html">';
-        html+= row.uname+' - '+row.name+'</a></li>';
+    ps.all(query, function(err, rows) {
+        var html = pageHead();
+        html += '<div class="general"><h1>upd8s from '+rows[0].dname+'</h1>';
+        for(var i = 0; i < rows.length; i++){
+            html += genUpd8(rows[i].dname, rows[i].message, rows[i].url, rows[i].postedAt);
+        }
+        ps.finalize();
+        db.close();
+        html += pageFoot();
+        response.write(html);
+        response.end(); 
     });
-    html += '</ul>';
-    html += pageFoot();
-    response.write(html);
-    response.end(); 
+}
+
+function genUpd8(dname, message, url, postedAt){
+    var html = '<div class="upd8"><h1>'+dname+'</h1>';
+    html += '<p>'+message+'</p>';
+    html += '<p>'+url+'</p>';
+    html += '<p>'+postedAt+'</p>';
+    html += '</div>';
+    return html;
+}
+
+function usersHandle(request, response){
+    var db = new sql.Database("database.sqlite3");
+    var ps = db.prepare(
+        "SELECT uname, dname FROM Person"
+    );
+    ps.all(function(err, rows) {
+        var html = pageHead();
+        html += '<div class="general"><h1>List of Users</h1><hr/><ul id="userList">';
+        for(var i = 0; i < rows.length; i++){
+            html += '<p><a href="user.html?'+rows[i].uname+'">';
+            html += rows[i].uname+' - '+rows[i].dname+'</a></p>';
+        }
+        ps.finalize();
+        db.close();
+        html += '</ul>';
+        html += pageFoot();
+        response.write(html);
+        response.end(); 
+    });
+}
+
+function postHandle(request, response) {
+    request.on('data', add);
+    request.on('end', end);
+    var body = "";
+    
+    function add(chunk) {
+        body = body + chunk.toString();
+    }
+    var postTime = new Date();
+
+    var db = new sql.Database("database.sqlite3");
+    function end() {
+        var params = QS.parse(body);
+        var ps0 = db.prepare(
+            "SELECT id FROM Person WHERE uname=?"
+        );
+        ps0.all(params.uname, function (err, res) {
+				if (err) {
+					console.log("Here?");
+					response.write("<h1>Sorry, your uPd8 could not be posted! Please check input parameters</h1>");
+               response.write('<a href="postpage.html"> Return to uPd8 </a>');
+               response.end(); 
+               ps.finalize();
+               db.close();
+               return;
+            }
+				else {
+		         var userId = res[0].id;
+		         ps0.finalize();
+		         var ps = db.prepare(
+		             "INSERT INTO Upd8 VALUES (null,?,?,?,?)"
+		         );
+		         ps.run(userId, params.message, params.url, postTime, function (err) {
+		             if (err) {
+		                 response.write("<h1>Sorry, your uPd8 could not be posted! Please check input parameters</h1>");
+		                 response.write('<a href="postpage.html"> Return to uPd8 </a>');
+		                 response.end(); 
+		                 ps.finalize();
+		                 db.close();
+		                 return;
+		             }
+		             else {		
+		                 ps.finalize();
+		                 db.close();
+		                 var hdrs = { 'Content-Type': '' };
+		                 response.writeHead(200, hdrs);
+		                 response.write("<h1>Your uPd8 has been accepted!</h1>");
+		                 response.write('<a href="index.html"> Return to uPd8 </a>');
+		                 response.end(); 
+		             }
+		         });
+				}
+		     });             
+    }
 }
 
 
@@ -180,6 +349,14 @@ function removeQuery(url) {
     var n = url.indexOf('?');
     if (n >= 0) url = url.substring(0, n);
     return url;
+}
+
+function getQuery(url) {
+    var res = url.split('?');
+    if(res[1]) {
+        return res[1];
+    }
+    return '';
 }
 
 // Make the url lower case, so the server is case insensitive, even on Linux.
@@ -375,69 +552,94 @@ function check(x, out, message) {
 }
 
 function pageHead() {
-    var html = '<!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml" lang="en-GB" xml:lang="en-GB"><head>'
-    html += '<meta charset="UTF-8"/>'
-    html += '<title>Users</title>'
-    html += '<link href="resetstyle.css" rel="stylesheet"/>'
-    html += '<link href="login.css" rel="stylesheet"/>'
-    html += '<link href="navigation.css" rel="stylesheet"/>'
-    html += '<link href=\'https://fonts.googleapis.com/css?family=Indie+Flower\' rel=\'stylesheet\' type=\'text/css\' />'
-    html += '<link href="time.css" rel="stylesheet"/>'
-    html += '<link href="style.css" rel="stylesheet" type="text/css" />'
-    html += '<!--[if lt IE 9]>'
-    html += '<script src="dist/html5shiv.js"></script>'
-    html += '<![endif]-->'
-    html += '</head>'
-    html += '<body>'
-    html += '<header>'
-    html += '<img id="logo" src="images/logo2.png" alt="uPd8" />'
-	html += '<section class="login">'
-    html += '<form name="login" action="" method="post" accept-charset="utf-8">'
-    html += '<ul>'
-    html += '<li>'
-    html += '<input type="email" name="usermail" placeholder="name@email.com" required="true"/>'
-    html += '</li>'
-    html += '<li>'
-    html += '<input type="password" name="password" placeholder="password" required="true"/>'
-    html += '</li>'
-    html += '<li>'
-    html += '<input type="submit" value="Login"/>'
-    html += '</li>'
-	html += '<li>'
-    html += '<input type="submit" onclick="location.href=\'registrationpage.html\';" value="Register"/>'
-    html += '</li>'
-    html += '</ul>'
-    html += '</form>'
-    html += '</section>'
-    html += '<h1> Stay uPd8ed </h1>'
-    html += '</header>'
-    html += '<main id="container">'
-    html += '<div id="content">'
-    html += '<p class="marquee">'
-    html += '<span id="dtText"></span>'
-    html += '<script type="text/javascript" src="clock.js"></script>'
-    html += '</p>'
-    html += '<hr/>'
-    html += '<nav>'
-    html += '<ul>'
-    html += '<li><a href="index.html">Home</a></li>'
-    html += '<li><a href="postpage.html"> uPd8s </a></li>'
-    html += '<li><a href="users.html"> Users </a></li>'
-    html += '<li><a href="contactpage.html"> Contact </a></li>'
-    html += '<li><a href="aboutpage.html"> About </a></li>'
-    html += '</ul>'
-    html += '</nav>'
-    html += '<hr/>'
+    var html = '<!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml" lang="en-GB" xml:lang="en-GB"><head>';
+    html += '<meta charset="UTF-8"/>';
+    html += '<title>Users</title>';
+    html += '<link href="resetstyle.css" rel="stylesheet"/>';
+    html += '<link href="login.css" rel="stylesheet"/>';
+    html += '<link href="postpage.css" rel="stylesheet"/>';
+    html += '<link href="navigation.css" rel="stylesheet"/>';
+    html += '<link href=\'https://fonts.googleapis.com/css?family=Indie+Flower\' rel=\'stylesheet\'; type=\'text/css\' />';
+    html += '<link href="time.css" rel="stylesheet"/>';
+    html += '<link href="style.css" rel="stylesheet" type="text/css" />';
+    html += '<!--[if lt IE 9]>';
+    html += '<script src="dist/html5shiv.js"></script>';
+    html += '<![endif]-->';
+    html += '</head>';
+    html += '<body>';
+    html += '<header>';
+    html += '<img id="logo" src="images/logo2.png" alt="uPd8" />';
+	html += '<section class="login">';
+    html += '<form name="login" action="" method="post" accept-charset="utf-8">';
+    html += '<ul>';
+    html += '<li>';
+    html += '<input type="email" name="usermail" placeholder="name@email.com" required="true"/>';
+    html += '</li>';
+    html += '<li>';
+    html += '<input type="password" name="password" placeholder="password" required="true"/>';
+    html += '</li>';
+    html += '<li>';
+    html += '<input type="submit" value="Login"/>';
+    html += '</li>';
+	html += '<li>';
+    html += '<input type="submit" onclick="location.href=\'registrationpage.html\';" value="Register"/>';
+    html += '</li>';
+    html += '</ul>';
+    html += '</form>';
+    html += '</section>';
+    html += '<h1> Stay uPd8ed </h1>';
+    html += '</header>';
+    html += '<main id="container">';
+    html += '<div id="content">';
+    html += '<p class="marquee">';
+    html += '<span id="dtText"></span>';
+    html += '<script type="text/javascript" src="clock.js"></script>';
+    html += '</p>';
+    html += '<hr/>';
+    html += '<nav>';
+    html += '<ul>';
+    html += '<li><a href="index.html">Home</a></li>';
+    html += '<li><a href="postpage.html"> uPd8s </a></li>';
+    html += '<li><a href="users.html"> Users </a></li>';
+    html += '<li><a href="contactpage.html"> Contact </a></li>';
+    html += '<li><a href="aboutpage.html"> About </a></li>';
+    html += '</ul>';
+    html += '</nav>';
+    html += '<hr/>';
 
     return html;
 }
 
 function pageFoot(){
-    var html = '</div>'
-    html += '</main>'
-    html += '<footer> <small> © Copyright 2015- 2016, uPd8</small> </footer>'
-    html += '</body>'
-    html += '</html>'
+    var html = '</div>';
+    html += '</main>';
+    html += '<footer> <small> © Copyright 2015- 2016, uPd8</small> </footer>';
+    html += '</body>';
+    html += '</html>';
+
+    return html;
+}
+
+function postUpd8Form(){
+    var html = '<form id="post-form" method="" action="">';
+    html += '<fieldset>';
+    html += '<p>';
+    html += '<label for="contact">Username (required)</label>';
+    html += '<input name="uname" role="input" aria-required="true" value="" placeholder="Name" />';	
+    html += '</p>';
+    html += '<p>';
+    html += '<label for="url">uPd8 URL</label>';
+    html += '<input name="url" role="input" aria-required="true" value="" placeholder="Company URL" />';
+    html += '</p>';
+    html += '<p>';
+    html += '<label for="message">Your uPd8!</label>';
+    html += '<textarea name="message" cols="22" aria-required="true" placeholder="Please provide details here"></textarea>';
+    html += '</p>';
+    html += '<p>';
+    html += '<input name="submit" id="submitButton" onclick="return validateForm();" type="submit" value="Submit"/>';
+    html += '</p>';
+    html += '</fieldset>';
+    html += '</form>';
 
     return html;
 }
