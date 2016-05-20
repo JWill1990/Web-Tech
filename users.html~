@@ -3,7 +3,7 @@
 lang="en-GB" xml:lang="en-GB">
     <head>
         <meta charset="UTF-8"/>
-        <title>Development blog</title>
+        <title>Users</title>
         <link href="resetstyle.css" rel="stylesheet"/>
         <link href="login.css" rel="stylesheet"/>
         <link href="navigation.css" rel="stylesheet"/>
@@ -54,6 +54,11 @@ lang="en-GB" xml:lang="en-GB">
                     </ul>
                 </nav>
                 <hr/>
+                <div class="general">
+					<p>List of Users</p>
+                    <ul>
+                    </ul>
+                </div>
             </div>
         </main>
         <footer> <small> © Copyright 2015- 2016, uPd8</small> </footer>

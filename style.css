@@ -74,3 +74,18 @@ hr {
     height: 3px;
     background-image: linear-gradient(to right, rgba(248, 211, 6, 0), rgba(248, 211, 6, 0.75), rgba(248, 211, 6, 0));	
 }
+
+.general {
+    background-color: rgba(127,127,250,0.5);
+    text-align: center;
+    color: black;
+    clear: both;
+    list-style: none;
+    overflow: hidden;	
+    width: 80%;
+    min-width: 630px;
+    margin: 0 auto;
+    margin-top: 10px;
+    border-radius: 8px;
+    border: 1px solid rgb(248, 211, 6);
+}

@@ -8,7 +8,7 @@ CREATE TABLE Person(
     id INTEGER PRIMARY KEY,
     uname TEXT NOT NULL UNIQUE,
     pword TEXT NOT NULL,
-    name TEXT,
+    name TEXT NOT NULL,
     email TEXT NOT NULL UNIQUE
 );
 
