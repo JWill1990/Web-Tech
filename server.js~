@@ -176,6 +176,14 @@ function feedHandle(request, response, query){
         "SELECT id FROM Person WHERE uname=?"
     );
     ps0.all(query, function (err, res) {
+        if (err) {
+             response.write("<h1>Sorry, this account does not exist!</h1>");
+                response.write('<a href="postpage.html"> Return to uPd8 </a>');
+                response.end(); 
+                ps.finalize();
+                db.close();
+                return;
+        }       
         var userId = res[0].id;
         ps0.finalize();
         var ps = db.prepare(
@@ -274,42 +282,31 @@ function postHandle(request, response) {
             "SELECT id FROM Person WHERE uname=?"
         );
         ps0.all(params.uname, function (err, res) {
-				if (err) {
-					console.log("Here?");
-					response.write("<h1>Sorry, your uPd8 could not be posted! Please check input parameters</h1>");
-               response.write('<a href="postpage.html"> Return to uPd8 </a>');
-               response.end(); 
-               ps.finalize();
-               db.close();
-               return;
-            }
-				else {
-		         var userId = res[0].id;
-		         ps0.finalize();
-		         var ps = db.prepare(
-		             "INSERT INTO Upd8 VALUES (null,?,?,?,?)"
-		         );
-		         ps.run(userId, params.message, params.url, postTime, function (err) {
-		             if (err) {
-		                 response.write("<h1>Sorry, your uPd8 could not be posted! Please check input parameters</h1>");
-		                 response.write('<a href="postpage.html"> Return to uPd8 </a>');
-		                 response.end(); 
-		                 ps.finalize();
-		                 db.close();
-		                 return;
-		             }
-		             else {		
-		                 ps.finalize();
-		                 db.close();
-		                 var hdrs = { 'Content-Type': '' };
-		                 response.writeHead(200, hdrs);
-		                 response.write("<h1>Your uPd8 has been accepted!</h1>");
-		                 response.write('<a href="index.html"> Return to uPd8 </a>');
-		                 response.end(); 
-		             }
-		         });
-				}
-		     });             
+            var userId = res[0].id;
+            ps0.finalize();
+            var ps = db.prepare(
+                "INSERT INTO Upd8 VALUES (null,?,?,?,?)"
+            );
+            ps.run(userId, params.message, params.url, postTime, function (err) {
+                if (err) {
+                    response.write("<h1>Sorry, your uPd8 could not be posted! Please check input parameters</h1>");
+                    response.write('<a href="postpage.html"> Return to uPd8 </a>');
+                    response.end(); 
+                    ps.finalize();
+                    db.close();
+                    return;
+                }
+                else {		
+                    ps.finalize();
+                    db.close();
+                    var hdrs = { 'Content-Type': '' };
+                    response.writeHead(200, hdrs);
+                    response.write("<h1>Your uPd8 has been accepted!</h1>");
+                    response.write('<a href="index.html"> Return to uPd8 </a>');
+                    response.end(); 
+                }
+            });
+        });             
     }
 }
 

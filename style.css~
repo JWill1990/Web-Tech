@@ -75,9 +75,9 @@ hr {
     background-image: linear-gradient(to right, rgba(248, 211, 6, 0), rgba(248, 211, 6, 0.75), rgba(248, 211, 6, 0));	
 }
 
-.general {
-    background-color: rgba(127,127,250,0.5);
+.general {   
     text-align: center;
+    font-size: 30px;
     color: black;
     clear: both;
     list-style: none;
@@ -86,6 +86,47 @@ hr {
     min-width: 630px;
     margin: 0 auto;
     margin-top: 10px;
-    border-radius: 8px;
-    border: 3px rgb(248, 211, 6);
 }
+
+.general h1 {
+    background-color: rgba(127,127,250,0.5);
+    font-size: 50px;
+	 font-style: underline
+    border-radius: 8px;
+	 padding: 10px;
+	 border-radius: 8px;
+    border: 2px solid rgb(248, 211, 6);
+}
+
+.general p {
+    background-color: rgb(255,255,255);
+    font-size: 30px;
+    border-radius: 8px;
+    border: 2px solid rgb(248, 211, 6);
+}
+
+.upd8 {
+    background-color: rgb(0,0,0);
+    text-align: center;
+	 font-size: 30px;
+    color: black;
+    clear: both;
+    list-style: none;
+    overflow: hidden;	
+    width: 80%;
+    min-width: 630px;
+    margin-left: 10%;
+    margin-right: 10%;
+    margin-bottom: 10px;
+    margin-top: 10px;
+    padding: 10px;
+    border-radius: 8px;
+    border: 2px solid rgb(248, 211, 6);
+}
+
+.upd8 p {
+    border-radius: 8px;
+    border: 1px solid rgb(248, 211, 6);
+    background-image: linear-gradient(to right, rgba(248, 211, 6, 0), rgba(248, 211, 6, 0), rgba(248, 211, 6, 0));
+}
+
