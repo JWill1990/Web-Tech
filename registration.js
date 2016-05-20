@@ -1,13 +1,13 @@
 function validateForm() {  
 
-    var name = document.getElementById("register-form").uname.value;
-    var name = document.getElementById("register-form").dname.value; 
+    var uname = document.getElementById("register-form").uname.value;
+    var dname = document.getElementById("register-form").dname.value; 
     var password = document.getElementById("register-form").pass.value; 
     var cpassword = document.getElementById("register-form").cpass.value;
     var email = document.getElementById("register-form").email.value;	
 
 
-    if (name == null || name == "") {  
+    if (uname == null || uname == "") {  
         alert("Name can't be blank");  
         document.uname.focus();
         document.getElementById("register-form").method = "";
@@ -32,7 +32,8 @@ function validateForm() {
 	document.cpassword.focus();
         document.getElementById("register-form").method = "";
     }
-    else {
+    else {	
         document.getElementById("register-form").method = "post";
     }
 }
+
