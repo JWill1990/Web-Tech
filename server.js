@@ -65,6 +65,9 @@ function handle(request, response) {
     else if (request.method == 'GET' && request.url.indexOf('/user') == 0) {
         userHandle(request, response, query);
     }
+    else if (request.method == 'GET' && request.url.indexOf('/feed') == 0) {
+        feedHandle(request, response, query);
+    }
     else {
         reply(response, url, type);
     }
@@ -167,6 +170,39 @@ function registrationHandle(request, response) {
     }
 }*/
 
+function feedHandle(request, response, query){
+    var db = new sql.Database("database.sqlite3");
+    var ps0 = db.prepare(
+        "SELECT id FROM Person WHERE uname=?"
+    );
+    ps0.all(query, function (err, res) {
+        var userId = res[0].id;
+        ps0.finalize();
+        var ps = db.prepare(
+            "SELECT uname, dname, message, url, postedAt " +
+            "FROM Person AS p JOIN Upd8 AS u " +
+            "ON p.id=u.poster " +
+            "JOIN Follows AS f " +
+            "ON u.poster=f.followee " +
+            "WHERE f.follower = ? " +
+            "ORDER BY u.postedAt DESC"
+        );
+        ps.all(userId, function(err, rows) {
+            var html = pageHead();
+            html += postUpd8Form();
+            html += '<div class="general"><h1>upd8s for '+query+'</h1>';
+            for(var i = 0; i < rows.length; i++){
+                html += genUpd8(rows[i].dname, rows[i].message, rows[i].url, rows[i].postedAt);
+            }
+            ps.finalize();
+            db.close();
+            html += pageFoot();
+            response.write(html);
+            response.end(); 
+        });
+    });
+}
+
 
 function userHandle(request, response, query){
     var db = new sql.Database("database.sqlite3");
@@ -181,7 +217,7 @@ function userHandle(request, response, query){
         var html = pageHead();
         html += '<div class="general"><h1>upd8s from '+rows[0].dname+'</h1>';
         for(var i = 0; i < rows.length; i++){
-            html += createUpd8(rows[i].dname, rows[i].message, rows[i].url, rows[i].postedAt);
+            html += genUpd8(rows[i].dname, rows[i].message, rows[i].url, rows[i].postedAt);
         }
         ps.finalize();
         db.close();
@@ -191,7 +227,7 @@ function userHandle(request, response, query){
     });
 }
 
-function createUpd8(dname, message, url, postedAt){
+function genUpd8(dname, message, url, postedAt){
     var html = '<div class="upd8"><h1>'+dname+'</h1>';
     html += '<p>'+message+'</p>';
     html += '<p>'+url+'</p>';
@@ -510,6 +546,7 @@ function pageHead() {
     html += '<title>Users</title>';
     html += '<link href="resetstyle.css" rel="stylesheet"/>';
     html += '<link href="login.css" rel="stylesheet"/>';
+    html += '<link href="postpage.css" rel="stylesheet"/>';
     html += '<link href="navigation.css" rel="stylesheet"/>';
     html += '<link href=\'https://fonts.googleapis.com/css?family=Indie+Flower\' rel=\'stylesheet\'; type=\'text/css\' />';
     html += '<link href="time.css" rel="stylesheet"/>';
@@ -568,6 +605,30 @@ function pageFoot(){
     html += '<footer> <small> © Copyright 2015- 2016, uPd8</small> </footer>';
     html += '</body>';
     html += '</html>';
+
+    return html;
+}
+
+function postUpd8Form(){
+    var html = '<form id="post-form" method="" action="">';
+    html += '<fieldset>';
+    html += '<p>';
+    html += '<label for="contact">Username (required)</label>';
+    html += '<input name="uname" role="input" aria-required="true" value="" placeholder="Name" />';	
+    html += '</p>';
+    html += '<p>';
+    html += '<label for="url">uPd8 URL</label>';
+    html += '<input name="url" role="input" aria-required="true" value="" placeholder="Company URL" />';
+    html += '</p>';
+    html += '<p>';
+    html += '<label for="message">Your uPd8!</label>';
+    html += '<textarea name="message" cols="22" aria-required="true" placeholder="Please provide details here"></textarea>';
+    html += '</p>';
+    html += '<p>';
+    html += '<input name="submit" id="submitButton" onclick="return validateForm();" type="submit" value="Submit"/>';
+    html += '</p>';
+    html += '</fieldset>';
+    html += '</form>';
 
     return html;
 }

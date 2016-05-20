@@ -31,5 +31,16 @@ INSERT INTO Person VALUES (null, 'ianh', 'sha1$66bf5894$1$992b5366848df3807e6f68
 INSERT INTO Person VALUES (null, 'supercool123', 'sha1$ae32a91b$1$b1c1f17feafc7ab3b15669c176af67d9cf5a9b9c', 'Super Cool', 'sc123@email.com');
 INSERT INTO Person VALUES (null, 'compsci', 'sha1$710e8a4b$1$7d61ef9d4ddf4b7883cc48a582004c77d17fa661', 'Computer Science', 'compsci@email.com');
 
-INSERT INTO Upd8 VALUES (null, 1, 'message 1', 'url 1', 1463751854892);
-INSERT INTO Upd8 VALUES (null, 1, 'message 2', 'url 2', 1463752903202);
+INSERT INTO Upd8 VALUES (null, 1, 'message 1-1', 'url 1', 1463751854892);
+INSERT INTO Upd8 VALUES (null, 1, 'message 1-2', 'url 2', 1463752903202);
+
+INSERT INTO Upd8 VALUES (null, 2, 'message 2-1', 'url 1', 1463751854892);
+INSERT INTO Upd8 VALUES (null, 2, 'message 2-2', 'url 2', 1463752903202);
+
+INSERT INTO Upd8 VALUES (null, 3, 'message 3-1', 'url 1', 1463751854892);
+INSERT INTO Upd8 VALUES (null, 3, 'message 3-2', 'url 2', 1463752903202);
+
+INSERT INTO Follows VALUES (1,2);
+INSERT INTO Follows VALUES (1,3);
+INSERT INTO Follows VALUES (2,1);
+INSERT INTO Follows VALUES (3,2);
