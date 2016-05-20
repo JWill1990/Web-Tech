@@ -57,10 +57,8 @@ function handle(request, response) {
             //uPd8Handle(request, response);
         //}
     }
-    if (request.method == 'GET') {
-        if (request.url.indexOf('/users.html') == 0) {
-            usersHandle(request, response);
-        }
+    if (request.method == 'GET' && request.url.indexOf('/users.html') == 0) {
+        usersHandle(request, response);
     }
     else {
         reply(response, url, type);
@@ -375,69 +373,69 @@ function check(x, out, message) {
 }
 
 function pageHead() {
-    var html = '<!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml" lang="en-GB" xml:lang="en-GB"><head>'
-    html += '<meta charset="UTF-8"/>'
-    html += '<title>Users</title>'
-    html += '<link href="resetstyle.css" rel="stylesheet"/>'
-    html += '<link href="login.css" rel="stylesheet"/>'
-    html += '<link href="navigation.css" rel="stylesheet"/>'
-    html += '<link href=\'https://fonts.googleapis.com/css?family=Indie+Flower\' rel=\'stylesheet\' type=\'text/css\' />'
-    html += '<link href="time.css" rel="stylesheet"/>'
-    html += '<link href="style.css" rel="stylesheet" type="text/css" />'
-    html += '<!--[if lt IE 9]>'
-    html += '<script src="dist/html5shiv.js"></script>'
-    html += '<![endif]-->'
-    html += '</head>'
-    html += '<body>'
-    html += '<header>'
-    html += '<img id="logo" src="images/logo2.png" alt="uPd8" />'
-	html += '<section class="login">'
-    html += '<form name="login" action="" method="post" accept-charset="utf-8">'
-    html += '<ul>'
-    html += '<li>'
-    html += '<input type="email" name="usermail" placeholder="name@email.com" required="true"/>'
-    html += '</li>'
-    html += '<li>'
-    html += '<input type="password" name="password" placeholder="password" required="true"/>'
-    html += '</li>'
-    html += '<li>'
-    html += '<input type="submit" value="Login"/>'
-    html += '</li>'
-	html += '<li>'
-    html += '<input type="submit" onclick="location.href=\'registrationpage.html\';" value="Register"/>'
-    html += '</li>'
-    html += '</ul>'
-    html += '</form>'
-    html += '</section>'
-    html += '<h1> Stay uPd8ed </h1>'
-    html += '</header>'
-    html += '<main id="container">'
-    html += '<div id="content">'
-    html += '<p class="marquee">'
-    html += '<span id="dtText"></span>'
-    html += '<script type="text/javascript" src="clock.js"></script>'
-    html += '</p>'
-    html += '<hr/>'
-    html += '<nav>'
-    html += '<ul>'
-    html += '<li><a href="index.html">Home</a></li>'
-    html += '<li><a href="postpage.html"> uPd8s </a></li>'
-    html += '<li><a href="users.html"> Users </a></li>'
-    html += '<li><a href="contactpage.html"> Contact </a></li>'
-    html += '<li><a href="aboutpage.html"> About </a></li>'
-    html += '</ul>'
-    html += '</nav>'
-    html += '<hr/>'
+    var html = '<!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml" lang="en-GB" xml:lang="en-GB"><head>';
+    html += '<meta charset="UTF-8"/>';
+    html += '<title>Users</title>';
+    html += '<link href="resetstyle.css" rel="stylesheet"/>';
+    html += '<link href="login.css" rel="stylesheet"/>';
+    html += '<link href="navigation.css" rel="stylesheet"/>';
+    html += '<link href=\'https://fonts.googleapis.com/css?family=Indie+Flower\' rel=\'stylesheet\'; type=\'text/css\' />';
+    html += '<link href="time.css" rel="stylesheet"/>';
+    html += '<link href="style.css" rel="stylesheet" type="text/css" />';
+    html += '<!--[if lt IE 9]>';
+    html += '<script src="dist/html5shiv.js"></script>';
+    html += '<![endif]-->';
+    html += '</head>';
+    html += '<body>';
+    html += '<header>';
+    html += '<img id="logo" src="images/logo2.png" alt="uPd8" />';
+	html += '<section class="login">';
+    html += '<form name="login" action="" method="post" accept-charset="utf-8">';
+    html += '<ul>';
+    html += '<li>';
+    html += '<input type="email" name="usermail" placeholder="name@email.com" required="true"/>';
+    html += '</li>';
+    html += '<li>';
+    html += '<input type="password" name="password" placeholder="password" required="true"/>';
+    html += '</li>';
+    html += '<li>';
+    html += '<input type="submit" value="Login"/>';
+    html += '</li>';
+	html += '<li>';
+    html += '<input type="submit" onclick="location.href=\'registrationpage.html\';" value="Register"/>';
+    html += '</li>';
+    html += '</ul>';
+    html += '</form>';
+    html += '</section>';
+    html += '<h1> Stay uPd8ed </h1>';
+    html += '</header>';
+    html += '<main id="container">';
+    html += '<div id="content">';
+    html += '<p class="marquee">';
+    html += '<span id="dtText"></span>';
+    html += '<script type="text/javascript" src="clock.js"></script>';
+    html += '</p>';
+    html += '<hr/>';
+    html += '<nav>';
+    html += '<ul>';
+    html += '<li><a href="index.html">Home</a></li>';
+    html += '<li><a href="postpage.html"> uPd8s </a></li>';
+    html += '<li><a href="users.html"> Users </a></li>';
+    html += '<li><a href="contactpage.html"> Contact </a></li>';
+    html += '<li><a href="aboutpage.html"> About </a></li>';
+    html += '</ul>';
+    html += '</nav>';
+    html += '<hr/>';
 
     return html;
 }
 
 function pageFoot(){
-    var html = '</div>'
-    html += '</main>'
-    html += '<footer> <small> © Copyright 2015- 2016, uPd8</small> </footer>'
-    html += '</body>'
-    html += '</html>'
+    var html = '</div>';
+    html += '</main>';
+    html += '<footer> <small> © Copyright 2015- 2016, uPd8</small> </footer>';
+    html += '</body>';
+    html += '</html>';
 
     return html;
 }
