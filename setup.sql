@@ -6,7 +6,7 @@ CREATE TABLE Person(
     id INTEGER PRIMARY KEY,
     uname TEXT NOT NULL UNIQUE,
     pword TEXT NOT NULL,
-    name TEXT NOT NULL,
+    dname TEXT NOT NULL,
     email TEXT NOT NULL
 );
 
@@ -28,3 +28,6 @@ INSERT INTO Person VALUES (null, 'jackw', 'pass2', 'Jack', 'jack@email.com');
 INSERT INTO Person VALUES (null, 'ianh', 'pass3', 'Ian', 'ian@email.com');
 INSERT INTO Person VALUES (null, 'supercool123', 'pass4', 'Super Cool', 'sc123@email.com');
 INSERT INTO Person VALUES (null, 'compsci', 'pass5', 'Computer Science', 'compsci@email.com');
+
+INSERT INTO Upd8 VALUES (null, 1, 'message 1', 'url 1', 1463751854892);
+INSERT INTO Upd8 VALUES (null, 1, 'message 2', 'url 2', 1463752903202);

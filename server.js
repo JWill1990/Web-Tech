@@ -37,6 +37,7 @@ function start(port) {
 // Serve a request.  Process and validate the url, then deliver the file.
 function handle(request, response) {
     var url = request.url;
+    var query = getQuery(request.url);
     url = removeQuery(url);
     url = lower(url);
     url = addIndex(url);
@@ -59,6 +60,9 @@ function handle(request, response) {
     }    
     else if (request.method == 'GET' && request.url.indexOf('/users.html') == 0) {
         usersHandle(request, response);
+    }
+    else if (request.method == 'GET' && request.url.indexOf('/user') == 0) {
+        userHandle(request, response, query);
     }
     else {
         reply(response, url, type);
@@ -162,17 +166,48 @@ function registrationHandle(request, response) {
 }*/
 
 
+function userHandle(request, response, query){
+    var db = new sql.Database("database.sqlite3");
+    var ps = db.prepare(
+        "SELECT uname, dname, message, url, postedAt " +
+        "FROM Person AS p JOIN Upd8 AS u " +
+        "ON p.id=u.poster " +
+        "WHERE p.uname = ? " +
+        "ORDER BY u.postedAt DESC"
+    );
+    ps.all(query, function(err, rows) {
+        var html = pageHead();
+        html += '<div class="general"><h1>upd8s from '+rows[0].dname+'</h1>';
+        for(var i = 0; i < rows.length; i++){
+            html += createUpd8(rows[i].dname, rows[i].message, rows[i].url, rows[i].postedAt);
+        }
+        ps.finalize();
+        db.close();
+        html += pageFoot();
+        response.write(html);
+        response.end(); 
+    });
+}
+
+function createUpd8(dname, message, url, postedAt){
+    var html = '<div class="upd8"><h1>'+dname+'</h1>';
+    html += '<p>'+message+'</p>';
+    html += '<p>'+url+'</p>';
+    html += '<p>'+postedAt+'</p>';
+    html += '</div>';
+    return html;
+}
 
 function usersHandle(request, response){
     var db = new sql.Database("database.sqlite3");
     var ps = db.prepare(
-        "SELECT uname, name AS dname FROM Person"
+        "SELECT uname, dname FROM Person"
     );
     ps.all(function(err, rows) {
         var html = pageHead();
         html += '<div class="general"><h1>List of Users</><ul id="userList">';
         for(var i = 0; i < rows.length; i++){
-            html += '<li><a href="user/'+rows[i].uname+'.html">';
+            html += '<li><a href="user.html?'+rows[i].uname+'">';
             html += rows[i].uname+' - '+rows[i].dname+'</a></li>';
         }
         ps.finalize();
@@ -258,6 +293,14 @@ function removeQuery(url) {
     var n = url.indexOf('?');
     if (n >= 0) url = url.substring(0, n);
     return url;
+}
+
+function getQuery(url) {
+    var res = url.split('?');
+    if(res[1]) {
+        return res[1];
+    }
+    return '';
 }
 
 // Make the url lower case, so the server is case insensitive, even on Linux.
