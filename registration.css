@@ -1,11 +1,11 @@
-#registerform {
+#register-form {
     width: 50%;
     margin: 10px auto;
     text-align: center;
     position: relative;
 }
 
-#registerform fieldset {
+#register-form fieldset {
     background: rgba(127,127,250,0.5);
     border: 0 none;
     border-radius: 3px;
@@ -17,11 +17,11 @@
     position: relative;
 }
 
-#registerform fieldset:not(:first-of-type) {
+#register-form fieldset:not(:first-of-type) {
     display: none;
 }
 
-#registerform input, #registerform textarea {
+#register-form input, #registerform textarea {
     padding: 15px;
     border: 1px solid #ccc;
     border-radius: 3px;
@@ -33,7 +33,7 @@
     font-size: 13px;
 }
 
-#registerform .action-button {
+#register-form .action-button {
     width: 50%;
     background: #27AE60;
     font-weight: bold;
@@ -45,7 +45,7 @@
     margin: 10px 5px;
 }
 
-#registerform .action-button:hover, #registerform .action-button:focus {
+#register-form .action-button:hover, #register-form .action-button:focus {
     box-shadow: 0 0 0 2px white, 0 0 0 3px #27AE60;
 }
 
@@ -63,24 +63,3 @@
     margin-bottom: 20px;
 }
 
-.reg-success {
-    margin-top: 10px;
-    margin-left: 10%;
-    margin-right: 10%;
-    width: 80%;
-    padding: 2%;
-    border: 2px solid rgb(0, 0, 0);
-    border-radius: 8px;
-    background-color: white;
-}
-
-.reg-success p {
-    margin-bottom: 1%;
-}
-
-.reg-success h1 {
-    text-align: center;
-    font-size: 50px;   
-    padding: 4%; 
-       
-}

@@ -52,12 +52,12 @@ function handle(request, response) {
         }
         if (request.url.indexOf('/contactpage.html') == 0) {
             contactHandle(request, response);    
-        }   
-        //if (request.url.indexOf('uPd8s.hmtl') {
-            //uPd8Handle(request, response);
-        //}
-    }
-    if (request.method == 'GET' && request.url.indexOf('/users.html') == 0) {
+        }
+        if (request.url.indexOf('/postpage.html') == 0) {
+            postHandle(request, response);
+        }
+    }    
+    else if (request.method == 'GET' && request.url.indexOf('/users.html') == 0) {
         usersHandle(request, response);
     }
     else {
@@ -99,7 +99,7 @@ function registrationHandle(request, response) {
     function end() {
         var params = QS.parse(body);
         var ps = db.prepare(
-            "SELECT count(*) AS count FROM Person WHERE uname=?"
+            "INSERT INTO Person VALUES (null,?,?,?,?)"
         );
         ps.run(params.uname, params.pass, params.dname, params.email, function (err) {
             if (err) {
@@ -110,19 +110,56 @@ function registrationHandle(request, response) {
                 db.close();
                 return;
             }
-            else {
+            else {		
                 ps.finalize();
                 db.close();
                 var hdrs = { 'Content-Type': '' };
                 response.writeHead(200, hdrs);
                 response.write("<h1>Welcome to uPd8!</h1>");
-                response.write("<h3>Please let us know of any bugs you encounter. The uPd8 team will bein touch as soon as possible!<h3>");
+                response.write("<h3>Please let us know of any bugs you encounter. The uPd8 team will be in touch as soon as possible!<h3>");
                 response.write('<a href="index.html"> Return to uPd8 </a>');
                 response.end(); 
             }
         });             
     }
 }
+
+/*function loginHandle(request, response) {
+    request.on('data', add);
+    request.on('end', end);
+    var body = "";
+    
+    function add(chunk) {
+        body = body + chunk.toString();
+    }
+    console.log("Here");
+    var db = new sql.Database("database.sqlite3");
+    function end() {
+        var params = QS.parse(body);
+        var ps = db.prepare(
+            "SELECT uname, pword FROM Person WHERE name = ? AND pword = ?"
+        );
+        ps.run(params.uname, params.pass, function (err) {
+            if (err) {
+                response.write("<h1>Sorry, this account does not exist!</h1>");
+                response.write('<a href="postpage.html"> Return to uPd8 </a>');
+                response.end(); 
+                ps.finalize();
+                db.close();
+                return;
+            }
+            else {		
+                ps.finalize();
+                db.close();
+                var hdrs = { 'Content-Type': '' };
+                response.writeHead(200, hdrs);
+                response.write("<h1>Welcome " + params.uname + "!</h1>");
+                response.write('<a href="index.html"> Return to uPd8 </a>');
+                response.end(); 
+            }
+        }); 
+    }
+}*/
 
 
 function usersHandle(request, response){
@@ -140,6 +177,44 @@ function usersHandle(request, response){
     html += pageFoot();
     response.write(html);
     response.end(); 
+}
+
+function postHandle(request, response) {
+    request.on('data', add);
+    request.on('end', end);
+    var body = "";
+    
+    function add(chunk) {
+        body = body + chunk.toString();
+    }
+    var postTime = new Date();
+
+    var db = new sql.Database("database.sqlite3");
+    function end() {
+        var params = QS.parse(body);
+        var ps = db.prepare(
+            "INSERT INTO Upd8 VALUES (null,?,?,?,?)"
+        );
+        ps.run(params.uname, params.message, params.url, postTime, function (err) {
+            if (err) {
+                response.write("<h1>Sorry, your uPd8 could not be posted! Please check input parameters</h1>");
+                response.write('<a href="postpage.html"> Return to uPd8 </a>');
+                response.end(); 
+                ps.finalize();
+                db.close();
+                return;
+            }
+            else {		
+                ps.finalize();
+                db.close();
+                var hdrs = { 'Content-Type': '' };
+                response.writeHead(200, hdrs);
+                response.write("<h1>Your uPd8 has been accepted!</h1>");
+                response.write('<a href="index.html"> Return to uPd8 </a>');
+                response.end(); 
+            }
+        });             
+    }
 }
 
 
