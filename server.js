@@ -162,21 +162,26 @@ function registrationHandle(request, response) {
 }*/
 
 
+
 function usersHandle(request, response){
-    var html = pageHead();
-    html += '<div class="general"><p>List of Users</p><ul id="userList">';
     var db = new sql.Database("database.sqlite3");
     var ps = db.prepare(
         "SELECT uname, name AS dname FROM Person"
     );
-    ps.each(function(err, row) {
-        html += '<li><a href="'+row.uname+'.html">';
-        html+= row.uname+' - '+row.dname+'</a></li>';
+    ps.all(function(err, rows) {
+        var html = pageHead();
+        html += '<div class="general"><h1>List of Users</><ul id="userList">';
+        for(var i = 0; i < rows.length; i++){
+            html += '<li><a href="user/'+rows[i].uname+'.html">';
+            html += rows[i].uname+' - '+rows[i].dname+'</a></li>';
+        }
+        ps.finalize();
+        db.close();
+        html += '</ul>';
+        html += pageFoot();
+        response.write(html);
+        response.end(); 
     });
-    html += '</ul>';
-    html += pageFoot();
-    response.write(html);
-    response.end(); 
 }
 
 function postHandle(request, response) {
