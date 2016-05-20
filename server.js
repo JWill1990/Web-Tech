@@ -207,10 +207,10 @@ function usersHandle(request, response){
     );
     ps.all(function(err, rows) {
         var html = pageHead();
-        html += '<div class="general"><h1>List of Users</><ul id="userList">';
+        html += '<div class="general"><h1>List of Users</h1><hr/><ul id="userList">';
         for(var i = 0; i < rows.length; i++){
-            html += '<li><a href="user.html?'+rows[i].uname+'">';
-            html += rows[i].uname+' - '+rows[i].dname+'</a></li>';
+            html += '<p><a href="user.html?'+rows[i].uname+'">';
+            html += rows[i].uname+' - '+rows[i].dname+'</a></p>';
         }
         ps.finalize();
         db.close();
