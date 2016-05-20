@@ -21,7 +21,7 @@
     display: none;
 }
 
-#register-form input, #registerform textarea {
+#register-form input, #register-form textarea {
     padding: 15px;
     border: 1px solid #ccc;
     border-radius: 3px;

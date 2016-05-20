@@ -14,6 +14,7 @@
 var http = require('http');
 var fs = require('fs');
 var QS = require("querystring");
+var passwordHash = require('password-hash');
 var nodemailer = require("nodemailer");
 var smtpTransport = require('nodemailer-smtp-transport');
 var OK = 200, NotFound = 404, BadType = 415, Error = 500;
@@ -105,7 +106,8 @@ function registrationHandle(request, response) {
         var ps = db.prepare(
             "INSERT INTO Person VALUES (null,?,?,?,?)"
         );
-        ps.run(params.uname, params.pass, params.dname, params.email, function (err) {
+        var hashedPassword = passwordHash.generate(params.pass);
+        ps.run(params.uname, hashedPassword, params.dname, params.email, function (err) {
             if (err) {
                 response.write("<h1>Username already exists!</h1>");
                 response.write('<a href="index.html"> Return to uPd8 </a>');
@@ -114,7 +116,7 @@ function registrationHandle(request, response) {
                 db.close();
                 return;
             }
-            else {		
+            else {                	
                 ps.finalize();
                 db.close();
                 var hdrs = { 'Content-Type': '' };
@@ -232,27 +234,34 @@ function postHandle(request, response) {
     var db = new sql.Database("database.sqlite3");
     function end() {
         var params = QS.parse(body);
-        var ps = db.prepare(
-            "INSERT INTO Upd8 VALUES (null,?,?,?,?)"
+        var ps0 = db.prepare(
+            "SELECT id FROM Person WHERE uname=?"
         );
-        ps.run(params.uname, params.message, params.url, postTime, function (err) {
-            if (err) {
-                response.write("<h1>Sorry, your uPd8 could not be posted! Please check input parameters</h1>");
-                response.write('<a href="postpage.html"> Return to uPd8 </a>');
-                response.end(); 
-                ps.finalize();
-                db.close();
-                return;
-            }
-            else {		
-                ps.finalize();
-                db.close();
-                var hdrs = { 'Content-Type': '' };
-                response.writeHead(200, hdrs);
-                response.write("<h1>Your uPd8 has been accepted!</h1>");
-                response.write('<a href="index.html"> Return to uPd8 </a>');
-                response.end(); 
-            }
+        ps0.all(params.uname, function (err, res) {
+            var userId = res[0].id;
+            ps0.finalize();
+            var ps = db.prepare(
+                "INSERT INTO Upd8 VALUES (null,?,?,?,?)"
+            );
+            ps.run(userId, params.message, params.url, postTime, function (err) {
+                if (err) {
+                    response.write("<h1>Sorry, your uPd8 could not be posted! Please check input parameters</h1>");
+                    response.write('<a href="postpage.html"> Return to uPd8 </a>');
+                    response.end(); 
+                    ps.finalize();
+                    db.close();
+                    return;
+                }
+                else {		
+                    ps.finalize();
+                    db.close();
+                    var hdrs = { 'Content-Type': '' };
+                    response.writeHead(200, hdrs);
+                    response.write("<h1>Your uPd8 has been accepted!</h1>");
+                    response.write('<a href="index.html"> Return to uPd8 </a>');
+                    response.end(); 
+                }
+            });
         });             
     }
 }
