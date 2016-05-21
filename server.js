@@ -65,7 +65,8 @@ function handle(request, response) {
     else if (request.method == 'GET' && request.url.indexOf('/user') == 0) {
         userHandle(request, response, query);
     }
-    else if (request.method == 'GET' && request.url.indexOf('/feed') == 0) {
+    else if (request.method == 'GET' && request.url.indexOf('/upd8s') == 0 &&
+             query != "") {
         feedHandle(request, response, query);
     }
     else {
@@ -189,13 +190,15 @@ function feedHandle(request, response, query){
         );
         ps.all(userId, function(err, rows) {
             var html = pageHead();
+            html += '<div class="general">';
             html += postUpd8Form();
-            html += '<div class="general"><h1>upd8s for '+query+'</h1>';
+            html += '<section class="right"><h1>upd8s for '+query+'</h1>';
             for(var i = 0; i < rows.length; i++){
                 html += genUpd8(rows[i].dname, rows[i].message, rows[i].url, rows[i].postedAt);
             }
             ps.finalize();
             db.close();
+            html += '</section></div>';
             html += pageFoot();
             response.write(html);
             response.end(); 
@@ -221,6 +224,7 @@ function userHandle(request, response, query){
         }
         ps.finalize();
         db.close();
+        html += '</div>';
         html += pageFoot();
         response.write(html);
         response.end(); 
@@ -250,7 +254,7 @@ function usersHandle(request, response){
         }
         ps.finalize();
         db.close();
-        html += '</ul>';
+        html += '</ul></div>';
         html += pageFoot();
         response.write(html);
         response.end(); 
@@ -588,7 +592,7 @@ function pageHead() {
     html += '<nav>';
     html += '<ul>';
     html += '<li><a href="index.html">Home</a></li>';
-    html += '<li><a href="postpage.html"> uPd8s </a></li>';
+    html += '<li><a href="upd8s.html"> uPd8s </a></li>';
     html += '<li><a href="users.html"> Users </a></li>';
     html += '<li><a href="contactpage.html"> Contact </a></li>';
     html += '<li><a href="aboutpage.html"> About </a></li>';
@@ -610,7 +614,7 @@ function pageFoot(){
 }
 
 function postUpd8Form(){
-    var html = '<form id="post-form" method="" action="">';
+    var html = '<section class="left"><form id="post-form" method="" action="">';
     html += '<fieldset>';
     html += '<p>';
     html += '<label for="contact">Username (required)</label>';
@@ -629,6 +633,7 @@ function postUpd8Form(){
     html += '</p>';
     html += '</fieldset>';
     html += '</form>';
+    html += '</section>';
 
     return html;
 }
