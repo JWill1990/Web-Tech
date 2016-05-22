@@ -552,7 +552,7 @@ function pageHead() {
     html += '<ul>';
     html += '<li><a href="index.html">Home</a></li>';
     html += '<li><a href="upd8s.html"> uPd8s </a></li>';
-    html += '<li><a href="users.html"> Users </a></li>';
+    html += '<li><a class="active" href="users.html"> Users </a></li>';
     html += '<li><a href="contactpage.html"> Contact </a></li>';
     html += '<li><a href="aboutpage.html"> About </a></li>';
     html += '</ul>';

@@ -96,9 +96,15 @@ hr {
 }
 
 .general p {
+	 background-color: rgba(127,127,250,0.5);
+	 padding: 10px;
     font-size: 30px;
     border-radius: 8px;
     border: 2px solid rgb(248, 211, 6);
+}
+
+.general p a {
+	 color: white;
 }
 
 .upd8 {
@@ -127,20 +133,7 @@ hr {
     background-image: linear-gradient(to right, rgba(248, 211, 6, 0), rgba(248, 211, 6, 0), rgba(248, 211, 6, 0));
 }
 
-.post {
-    text-align: center;
-    font-size: 30px;
-    color: black;
-    clear: both;
-    list-style: none;
-    overflow: hidden;	
-    width: 80%;
-    min-width: 630px;
-    margin: 0 auto;
-    margin-top: 10px;
-}
-
-.reg, .cont {
+.postpage {
 	 text-align: center;
     font-size: 30px;
     color: black;
@@ -153,7 +146,26 @@ hr {
     margin-top: 10px;
 }
 
-.reg a, .cont a {
+.postpage p {
+    font-size: 30px;
+    border-radius: 8px;
+    border: 2px solid rgb(248, 211, 6);
+}
+
+.reg, .cont, .post {
+	 text-align: center;
+    font-size: 30px;
+    color: black;
+    clear: both;
+    list-style: none;
+    overflow: hidden;	
+    width: 80%;
+    min-width: 630px;
+    margin: 0 auto;
+    margin-top: 10px;
+}
+
+.reg a, .cont a, .post a {
 	color: white;
 	font-size: 40px;
 }
