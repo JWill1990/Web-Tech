@@ -118,11 +118,31 @@ hr {
     border: 2px solid rgb(248, 211, 6);
 }
 
-.upd8 p {
+.upd8 h1 {
+	 font-size: 30px;
+	 text-align: center;
     background-color: rgb(255,255,255);
     border-radius: 8px;
     border: 1px solid rgb(248, 211, 6);
     background-image: linear-gradient(to right, rgba(248, 211, 6, 0), rgba(248, 211, 6, 0), rgba(248, 211, 6, 0));
+}
+
+.reg, .cont, .post {
+	 text-align: center;
+    font-size: 30px;
+    color: black;
+    clear: both;
+    list-style: none;
+    overflow: hidden;	
+    width: 80%;
+    min-width: 630px;
+    margin: 0 auto;
+    margin-top: 10px;
+}
+
+.reg a, .cont a, .post a {
+	color: white;
+	font-size: 40px;
 }
 
 section.left {

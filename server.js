@@ -55,7 +55,7 @@ function handle(request, response) {
         if (request.url.indexOf('/contactpage.html') == 0) {
             contactHandle(request, response);    
         }
-        if (request.url.indexOf('/postpage.html') == 0) {
+        if (request.url.indexOf('/upd8s.html') == 0) {
             postHandle(request, response);
         }
     }    
@@ -84,12 +84,14 @@ function contactHandle(request, response) {
         body = body + chunk.toString();
     }
     function end() {
+        var html = pageHead();
         var params = QS.parse(body);
         mailUs(params.contact, params.email, params.subject, params.message);
-        var hdrs = { 'Content-Type': '' };
-        response.writeHead(200, hdrs);
-        response.write("<h1>Thank you for contacting uPd8. We will be in touch.</h1>");
-        response.write('<a href="index.html"> Return to uPd8 </a>');
+        html += '<div class="cont"><h1>Thank you for contacting uPd8. We will be in touch.</h1>'; 
+        html += '<a href="index.html"> Return to home</a>';
+        html += '</div>';
+        html += pageFoot();
+        response.write(html);
         response.end();
     }    
 }
@@ -106,70 +108,29 @@ function registrationHandle(request, response) {
 
     var db = new sql.Database("database.sqlite3");
     function end() {
+        var html = pageHead();
         var params = QS.parse(body);
         var ps = db.prepare(
             "INSERT INTO Person VALUES (null,?,?,?,?)"
         );
         var hashedPassword = passwordHash.generate(params.pass);
         ps.run(params.uname, hashedPassword, params.dname, params.email, function (err) {
-            if (err) {
-                response.write("<h1>Username already exists!</h1>");
-                response.write('<a href="index.html"> Return to uPd8 </a>');
-                response.end(); 
-                ps.finalize();
-                db.close();
-                return;
+            if (err) {                
+                html += '<div class="reg"><h1>Username already exists!</h1>'; 
+                html += '<a href="registrationpage.html"> Try again </a>';                       
             }
             else {                	
-                ps.finalize();
-                db.close();
-                var hdrs = { 'Content-Type': '' };
-                response.writeHead(200, hdrs);
-                response.write("<h1>Welcome to uPd8!</h1>");
-                response.write("<h3>Please let us know of any bugs you encounter. The uPd8 team will be in touch as soon as possible!<h3>");
-                response.write('<a href="index.html"> Return to uPd8 </a>');
-                response.end(); 
+                html += 'div class="reg"><h1>Welcome to uPd8!</h1>';    
             }
+            ps.finalize();
+            db.close();
+            html += '</div>';
+            html += pageFoot();
+            response.write(html);
+            response.end();
         });             
     }
 }
-
-/*function loginHandle(request, response) {
-    request.on('data', add);
-    request.on('end', end);
-    var body = "";
-    
-    function add(chunk) {
-        body = body + chunk.toString();
-    }
-    console.log("Here");
-    var db = new sql.Database("database.sqlite3");
-    function end() {
-        var params = QS.parse(body);
-        var ps = db.prepare(
-            "SELECT uname, pword FROM Person WHERE name = ? AND pword = ?"
-        );
-        ps.run(params.uname, params.pass, function (err) {
-            if (err) {
-                response.write("<h1>Sorry, this account does not exist!</h1>");
-                response.write('<a href="postpage.html"> Return to uPd8 </a>');
-                response.end(); 
-                ps.finalize();
-                db.close();
-                return;
-            }
-            else {		
-                ps.finalize();
-                db.close();
-                var hdrs = { 'Content-Type': '' };
-                response.writeHead(200, hdrs);
-                response.write("<h1>Welcome " + params.uname + "!</h1>");
-                response.write('<a href="index.html"> Return to uPd8 </a>');
-                response.end(); 
-            }
-        }); 
-    }
-}*/
 
 function feedHandle(request, response, query){
     var db = new sql.Database("database.sqlite3");
@@ -273,11 +234,13 @@ function postHandle(request, response) {
 
     var db = new sql.Database("database.sqlite3");
     function end() {
+		var html = pageHead();	
         var params = QS.parse(body);
         var ps0 = db.prepare(
             "SELECT id FROM Person WHERE uname=?"
         );
         ps0.all(params.uname, function (err, res) {
+            var html = pageHead();
             var userId = res[0].id;
             ps0.finalize();
             var ps = db.prepare(
@@ -285,22 +248,18 @@ function postHandle(request, response) {
             );
             ps.run(userId, params.message, params.url, postTime, function (err) {
                 if (err) {
-                    response.write("<h1>Sorry, your uPd8 could not be posted! Please check input parameters</h1>");
-                    response.write('<a href="postpage.html"> Return to uPd8 </a>');
-                    response.end(); 
-                    ps.finalize();
-                    db.close();
-                    return;
+                    html += '<div class="post"><h1>Sorry, your uPd8 could not be posted! Please check input parameters.</h1>';
+                    html += '<a href="upd8s.html"> Try again </a>';  
                 }
                 else {		
-                    ps.finalize();
-                    db.close();
-                    var hdrs = { 'Content-Type': '' };
-                    response.writeHead(200, hdrs);
-                    response.write("<h1>Your uPd8 has been accepted!</h1>");
-                    response.write('<a href="index.html"> Return to uPd8 </a>');
-                    response.end(); 
-                }
+                    html += '<div class="post"><h1>Your uPd8 has been accepted!</h1>';
+                }               
+                ps.finalize();
+                db.close();
+                html += '</div>';
+                html += pageFoot();
+                response.write(html);
+                response.end();
             });
         });             
     }
