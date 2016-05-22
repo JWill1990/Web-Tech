@@ -8,23 +8,23 @@ function validateForm() {
 
     if (name == null || name == ""){  
         alert("Name can't be blank");  
-        document.uname.focus();
         document.getElementById("contactform").method = "";
+		  return false;
     }
     else if (!emailFilter.test(email)) {
         alert('Please enter a valid e-mail address.');
-        document.email.focus();
         document.getElementById("contactform").method = "";
+		  return false;
     }
     else if (subject == null) {
         alert("Please choose a subject");  
-        document.subject.focus();
         document.getElementById("contactform").method = "";
+		  return false;
     }
     else if (message == null) {
         alert("You haven't written anything!");
-        document.message.focus();
         document.getElementById("contactform").method = "";
+		  return false;
     }
     else {
         document.getElementById("contactform").method = "post"; 

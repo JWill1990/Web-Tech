@@ -10,7 +10,6 @@ function validateForm() {
     } 
     else if (message == null || message == ""){  
         alert("You haven't written anything!");  
-        document.message.focus();
         document.getElementById("post-form").method = "";
 		  return false;
     } 

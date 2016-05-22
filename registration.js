@@ -9,28 +9,28 @@ function validateForm() {
 
     if (uname == null || uname == "") {  
         alert("Name can't be blank");  
-        document.uname.focus();
         document.getElementById("register-form").method = "";
+		  return false;
     } 
     else if (dname == null || dname == "") {
         alert("Display name can't be blank");
-        document.dname.focus();
         document.getElementById("register-form").method = "";
+        return false;
     }
     else if (email == null || email == ""){  
         alert("Email can't be blank");  
-        document.email.focus();
         document.getElementById("register-form").method = "";
+        return false;
     } 
     else if (password.length < 6) {  
         alert("Password must be at least 6 characters long."); 
-	document.password.focus(); 
         document.getElementById("register-form").method = "";
+        return false;
     }
     else if (password != cpassword) {
         alert("Passwords must match.");
-	document.cpassword.focus();
         document.getElementById("register-form").method = "";
+        return false;
     }
     else {	
         document.getElementById("register-form").method = "post";
